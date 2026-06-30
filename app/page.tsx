@@ -19,8 +19,65 @@ export default function Home() {
             Vinç, forklift, manlift ve platform filomuzla camiden gökdelene, tarihi su
             kulesinden film setine kadar 15 yıldır her işi yukarı taşıyoruz.
           </p>
+
+          <div className="hero-search">
+            <div className="hero-search-bar">
+              <div className="hero-search-field">
+                <select defaultValue="">
+                  <option value="" disabled>
+                    Ne arıyorsunuz?
+                  </option>
+                  <option>Mobil Vinç</option>
+                  <option>Kule Vinç</option>
+                  <option>Paletli Vinç</option>
+                  <option>Teleskopik Vinç</option>
+                  <option>Dizel Forklift</option>
+                  <option>LPG Forklift</option>
+                  <option>Elektrikli Forklift</option>
+                  <option>Reach Truck</option>
+                  <option>Eklemli Manlift</option>
+                  <option>Teleskopik Manlift</option>
+                  <option>Makaslı Manlift</option>
+                  <option>Örümcek Manlift</option>
+                  <option>Teleskopik Platform</option>
+                  <option>Eklemli Platform</option>
+                  <option>İkiz Kollu Platform</option>
+                  <option>Kompakt Platform</option>
+                </select>
+                <svg className="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
+              <div className="hero-search-field">
+                <select defaultValue="">
+                  <option value="" disabled>
+                    Kategori seçin
+                  </option>
+                  <option>Vinç</option>
+                  <option>Forklift</option>
+                  <option>Manlift</option>
+                  <option>Platform</option>
+                </select>
+                <svg className="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
+              <div className="hero-search-field dates">
+                <input type="date" defaultValue="2026-06-30" />
+                <span>–</span>
+                <input type="date" defaultValue="2026-06-30" />
+              </div>
+              <button type="button" className="hero-search-btn">
+                Ara
+              </button>
+            </div>
+            <p className="hero-search-note">
+              Veya <a href="#hizmetler">tüm hizmetlerimizi</a> ve ürün kataloğumuzu inceleyin.
+            </p>
+          </div>
+
           <div className="hero-ctas">
-            <a className="btn btn-gold" href="#iletisim">
+            <a className="btn btn-gold" href="/iletisim">
               Hemen Teklif Al →
             </a>
             <a className="btn btn-glass" href="#sahalar">
@@ -49,7 +106,7 @@ export default function Home() {
       </section>
 
       {/* ============ CATEGORY TILES ============ */}
-      <section>
+      <section id="hizmetler">
         <div className="wrap">
           <div className="section-head">
             <span className="eyebrow">Hizmetlerimiz</span>
