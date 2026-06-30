@@ -38,10 +38,10 @@ export default function Footer() {
                 <a href="/#teknik">Teknik Veriler</a>
               </li>
               <li>
-                <a href="/#sss">SSS</a>
+                <a href="/sss">SSS</a>
               </li>
               <li>
-                <a href="/#iletisim">İletişim</a>
+                <a href="/iletisim">İletişim</a>
               </li>
             </ul>
           </div>
@@ -49,7 +49,7 @@ export default function Footer() {
             <h5>İletişim</h5>
             <ul>
               <li>0532 303 90 89</li>
-              <li>teklif@vincburada.com</li>
+              <li>info@vincburada.com.tr</li>
               <li>
                 İkitelli OSB, Giyim Sanatkarları İş ve Ticaret Merkezi
                 <br />

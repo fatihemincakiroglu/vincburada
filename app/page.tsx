@@ -433,8 +433,8 @@ export default function Home() {
                 <a className="btn btn-gold" href="tel:+905323039089">
                   0532 303 90 89
                 </a>
-                <a className="btn btn-glass" href="mailto:teklif@vincburada.com">
-                  teklif@vincburada.com
+                <a className="btn btn-glass" href="mailto:info@vincburada.com.tr">
+                  info@vincburada.com.tr
                 </a>
               </div>
             </div>

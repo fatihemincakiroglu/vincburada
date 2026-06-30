@@ -26,7 +26,7 @@ export default function VincPage() {
             şantiyeden enerji santraline her kaldırma operasyonu.
           </p>
           <div className="hero-ctas">
-            <a className="btn btn-gold" href="/#iletisim">
+            <a className="btn btn-gold" href="/iletisim">
               Vinç Teklifi Al →
             </a>
             <a className="btn btn-glass" href="tel:+905323039089">
@@ -218,7 +218,7 @@ export default function VincPage() {
               <h2>Vinç ihtiyacını bugün planlayalım.</h2>
               <div style={{ display: "flex", gap: "14px", flexWrap: "wrap" }}>
                 <a className="btn btn-gold" href="tel:+905323039089">0532 303 90 89</a>
-                <a className="btn btn-glass" href="mailto:teklif@vincburada.com">teklif@vincburada.com</a>
+                <a className="btn btn-glass" href="mailto:info@vincburada.com.tr">info@vincburada.com.tr</a>
               </div>
             </div>
           </div>
