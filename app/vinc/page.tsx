@@ -1,9 +1,125 @@
 import type { Metadata } from "next";
+import ProductCatalog, { Product } from "../components/ProductCatalog";
 
 export const metadata: Metadata = {
   title: "Vinç Kiralama — Vinç Burada",
   description: "Mobil, kule, paletli ve teleskopik vinç kiralama. Operatörlü, sigortalı ve 7/24 saha desteğiyle.",
 };
+
+const vincProducts: Product[] = [
+  {
+    id: "vb-m60",
+    name: "VB-M60",
+    tag: "Mobil Vinç",
+    image: "/gallery/gokdelen-yuksek-platform.jpg",
+    blurb: "Şehir içi ve orta ölçekli şantiye operasyonları için hızlı konuşlanan mobil vinç.",
+    price: "₺13.500 – 17.000 / gün",
+    specs: [
+      { label: "Kapasite", value: "60 ton" },
+      { label: "Bom Uzunluğu", value: "34 m" },
+      { label: "Maks. Yükseklik", value: "45 m" },
+      { label: "Konuşlanma", value: "~1.5 saat" },
+    ],
+  },
+  {
+    id: "vb-m120",
+    name: "VB-M120",
+    tag: "Mobil Vinç",
+    image: "/gallery/kongre-merkezi-gece.jpg",
+    blurb: "Ağır parça montajı ve büyük ölçekli kurulumlar için yüksek kapasiteli mobil vinç.",
+    price: "₺18.500 – 24.000 / gün",
+    specs: [
+      { label: "Kapasite", value: "120 ton" },
+      { label: "Bom Uzunluğu", value: "48 m" },
+      { label: "Maks. Yükseklik", value: "62 m" },
+      { label: "Konuşlanma", value: "~2 saat" },
+    ],
+  },
+  {
+    id: "vb-m200",
+    name: "VB-M200",
+    tag: "Mobil Vinç",
+    image: "/gallery/istanbul-skyline-vinc.jpg",
+    blurb: "Endüstriyel tesis ve enerji santrali projelerinde ağır ekipman kaldırma için filomuzun en güçlü mobil vinci.",
+    price: "₺26.000 – 33.000 / gün",
+    specs: [
+      { label: "Kapasite", value: "200 ton" },
+      { label: "Bom Uzunluğu", value: "55 m" },
+      { label: "Maks. Yükseklik", value: "70 m" },
+      { label: "Konuşlanma", value: "~3 saat" },
+    ],
+  },
+  {
+    id: "vb-k8t",
+    name: "VB-K8T",
+    tag: "Kule Vinç",
+    image: "/gallery/fatih-camii-minare.jpg",
+    blurb: "Uzun süreli yüksek katlı inşaat projelerinde sabit kurulum ve geniş çalışma yarıçapı.",
+    price: "₺9.200 – 13.000 / gün",
+    specs: [
+      { label: "Kapasite", value: "8 ton" },
+      { label: "Çalışma Yarıçapı", value: "60 m" },
+      { label: "Maks. Yükseklik", value: "160 m" },
+      { label: "Konuşlanma", value: "3–5 gün" },
+    ],
+  },
+  {
+    id: "vb-k12t",
+    name: "VB-K12T",
+    tag: "Kule Vinç",
+    image: "/gallery/su-kulesi-gece-vinc.jpg",
+    blurb: "Daha yüksek kapasite ve geniş radyus gerektiren büyük rezidans ve gökdelen projeleri için.",
+    price: "₺11.500 – 15.000 / gün",
+    specs: [
+      { label: "Kapasite", value: "12 ton" },
+      { label: "Çalışma Yarıçapı", value: "65 m" },
+      { label: "Maks. Yükseklik", value: "180 m" },
+      { label: "Konuşlanma", value: "4–6 gün" },
+    ],
+  },
+  {
+    id: "vb-p250",
+    name: "VB-P250",
+    tag: "Paletli Vinç",
+    image: "/gallery/tarihi-bina-cephe-platform.jpg",
+    blurb: "Zemini zayıf veya yumuşak sahalarda yüksek stabilite gerektiren ağır montaj işleri için.",
+    price: "₺32.000 – 41.500 / gün",
+    specs: [
+      { label: "Kapasite", value: "250 ton" },
+      { label: "Bom Uzunluğu", value: "66 m" },
+      { label: "Maks. Yükseklik", value: "78 m" },
+      { label: "Konuşlanma", value: "~6 saat" },
+    ],
+  },
+  {
+    id: "vb-p400",
+    name: "VB-P400",
+    tag: "Paletli Vinç",
+    image: "/gallery/anitkabir-vinc.jpg",
+    blurb: "Filomuzun en yüksek kapasiteli vinci; endüstriyel tesis kurulumu ve ağır ekipman taşımada tercih edilir.",
+    price: "₺46.000 – 58.000 / gün",
+    specs: [
+      { label: "Kapasite", value: "400 ton" },
+      { label: "Bom Uzunluğu", value: "78 m" },
+      { label: "Maks. Yükseklik", value: "96 m" },
+      { label: "Konuşlanma", value: "~8 saat" },
+    ],
+  },
+  {
+    id: "vb-t35",
+    name: "VB-T35",
+    tag: "Teleskopik Vinç",
+    image: "/gallery/cami-vinc-kabin.jpg",
+    blurb: "Ayarlanabilir bom uzunluğu sayesinde dar alanlarda ve değişken yükseklik ihtiyaçlarında esneklik sunar.",
+    price: "₺11.000 – 15.500 / gün",
+    specs: [
+      { label: "Kapasite", value: "35 ton" },
+      { label: "Bom Uzunluğu", value: "32 m" },
+      { label: "Maks. Yükseklik", value: "40 m" },
+      { label: "Konuşlanma", value: "~1 saat" },
+    ],
+  },
+];
 
 export default function VincPage() {
   return (
@@ -151,39 +267,15 @@ export default function VincPage() {
       <section id="teknik">
         <div className="wrap">
           <div className="section-head">
-            <span className="eyebrow">Teknik Veriler</span>
-            <h2>Vinç filo karşılaştırma tablosu</h2>
-            <p>Doğru modeli seçmeden önce kapasite, bom uzunluğu ve sahaya konuşlanma süresini karşılaştırın.</p>
+            <span className="eyebrow">Ürün Kataloğu</span>
+            <h2>8 vinç modeli, tek tek incele</h2>
+            <p>Mobilden paletliye, kuleden teleskopiğe kadar tüm vinç çeşitlerimizi karşılaştırarak doğru modeli seçin.</p>
           </div>
-          <div className="table-wrap">
-            <table className="specs-table">
-              <thead>
-                <tr>
-                  <th>Model</th><th>Sınıf</th><th>Maks. Kapasite</th><th>Bom Uzunluğu</th><th>Maks. Yükseklik</th><th>Konuşlanma</th><th>Günlük Bedel*</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td className="model">VB-M120</td><td><span className="tag-cell">Mobil</span></td><td>120 ton</td><td>48 m</td><td>62 m</td><td>~2 saat</td><td>₺18.500 – 24.000</td>
-                </tr>
-                <tr>
-                  <td className="model">VB-K8T</td><td><span className="tag-cell">Kule</span></td><td>8 ton</td><td>60 m radyus</td><td>160 m</td><td>3–5 gün</td><td>₺9.200 – 13.000</td>
-                </tr>
-                <tr>
-                  <td className="model">VB-P250</td><td><span className="tag-cell">Paletli</span></td><td>250 ton</td><td>66 m</td><td>78 m</td><td>~6 saat</td><td>₺32.000 – 41.500</td>
-                </tr>
-                <tr>
-                  <td className="model">VB-T35</td><td><span className="tag-cell">Teleskopik</span></td><td>35 ton</td><td>32 m</td><td>40 m</td><td>~1 saat</td><td>₺11.000 – 15.500</td>
-                </tr>
-                <tr>
-                  <td className="model">VB-P400</td><td><span className="tag-cell">Paletli</span></td><td>400 ton</td><td>78 m</td><td>96 m</td><td>~8 saat</td><td>₺46.000 – 58.000</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+          <ProductCatalog products={vincProducts} />
           <p className="table-note">* Fiyatlar operatör, yakıt ve sahaya nakliye dahil gösterge niteliğindedir; kesin teklif saha keşfi sonrası verilir.</p>
         </div>
       </section>
+
 
       <section className="section-alt" id="sss">
         <div className="wrap">

@@ -1,9 +1,117 @@
 import type { Metadata } from "next";
+import ProductCatalog, { Product } from "../components/ProductCatalog";
 
 export const metadata: Metadata = {
   title: "Platform Kiralama — Vinç Burada",
   description: "Sepetli, teleskopik ve eklemli kamyon üstü platform kiralama. Cephe, cami restorasyonu ve bakım işleri için.",
 };
+
+const platformProducts: Product[] = [
+  {
+    id: "vb-pt32",
+    name: "VB-PT32",
+    tag: "Teleskopik Platform",
+    image: "/gallery/zebra-desenli-platform.jpg",
+    blurb: "Orta yükseklikteki cephe ve bakım işleri için hızlı konuşlanan teleskopik platform.",
+    price: "₺6.200 – 7.600 / gün",
+    specs: [
+      { label: "Erişim Mesafesi", value: "32 m" },
+      { label: "Yatay Erişim", value: "16 m" },
+      { label: "Sepet Kapasite", value: "250 kg" },
+    ],
+  },
+  {
+    id: "vb-pt45",
+    name: "VB-PT45",
+    tag: "Teleskopik Platform",
+    image: "/gallery/fatih-camii-platform.jpg",
+    blurb: "Düz bom yapısı ile uzun mesafeli, dik erişim gerektiren cephe ve minare gibi yüksek noktalar için.",
+    price: "₺7.800 – 9.600 / gün",
+    specs: [
+      { label: "Erişim Mesafesi", value: "45 m" },
+      { label: "Yatay Erişim", value: "22 m" },
+      { label: "Sepet Kapasite", value: "250 kg" },
+    ],
+  },
+  {
+    id: "vb-pt58",
+    name: "VB-PT58",
+    tag: "Teleskopik Platform",
+    image: "/gallery/platform-cam-bulutlar.jpg",
+    blurb: "Filomuzun en uzun erişimli platformu; gökdelen ve yüksek kule projelerinde tercih edilir.",
+    price: "₺9.500 – 11.800 / gün",
+    specs: [
+      { label: "Erişim Mesafesi", value: "58 m" },
+      { label: "Yatay Erişim", value: "26 m" },
+      { label: "Sepet Kapasite", value: "250 kg" },
+    ],
+  },
+  {
+    id: "vb-pa24",
+    name: "VB-PA24",
+    tag: "Eklemli Platform",
+    image: "/gallery/rezidans-cephe-vinc.jpg",
+    blurb: "Çıkıntılı çatı, sundurma veya engebeli cephe detaylarının üzerinden geçerek erişim sağlar.",
+    price: "₺5.100 – 6.300 / gün",
+    specs: [
+      { label: "Erişim Mesafesi", value: "24 m" },
+      { label: "Yatay Erişim", value: "14 m" },
+      { label: "Sepet Kapasite", value: "230 kg" },
+    ],
+  },
+  {
+    id: "vb-pa32",
+    name: "VB-PA32",
+    tag: "Eklemli Platform",
+    image: "/gallery/rezidans-cephe-vinc-2.jpg",
+    blurb: "Daha geniş yatay erişim gerektiren karmaşık cephe geometrilerinde esnek erişim çözümü.",
+    price: "₺5.900 – 7.200 / gün",
+    specs: [
+      { label: "Erişim Mesafesi", value: "32 m" },
+      { label: "Yatay Erişim", value: "18 m" },
+      { label: "Sepet Kapasite", value: "230 kg" },
+    ],
+  },
+  {
+    id: "vb-pd24",
+    name: "VB-PD24",
+    tag: "İkiz Kollu Platform",
+    image: "/gallery/cam-cephe-platform.jpg",
+    blurb: "İki ayrı kol sayesinde aynı anda iki ayrı noktaya erişim; iskele kurulumlarında zaman kazandırır.",
+    price: "₺6.400 – 7.900 / gün",
+    specs: [
+      { label: "Erişim Mesafesi", value: "24 m (her kol)" },
+      { label: "Yatay Erişim", value: "14 m" },
+      { label: "Sepet Kapasite", value: "2x200 kg" },
+    ],
+  },
+  {
+    id: "vb-pk16",
+    name: "VB-PK16",
+    tag: "Kompakt Platform",
+    image: "/gallery/cephe-giyim-platform.jpg",
+    blurb: "Dar sokak ve avlu gibi kısıtlı alanlarda hızlı konuşlanan, küçük gabarili şehir içi çözüm.",
+    price: "₺3.400 – 4.200 / gün",
+    specs: [
+      { label: "Erişim Mesafesi", value: "16 m" },
+      { label: "Yatay Erişim", value: "9 m" },
+      { label: "Sepet Kapasite", value: "200 kg" },
+    ],
+  },
+  {
+    id: "vb-pk20",
+    name: "VB-PK20",
+    tag: "Kompakt Platform",
+    image: "/gallery/express-platform-kamyon.jpg",
+    blurb: "Kompakt seride biraz daha yüksek erişim sunan, şehir içi bakım işleri için ideal model.",
+    price: "₺3.900 – 4.800 / gün",
+    specs: [
+      { label: "Erişim Mesafesi", value: "20 m" },
+      { label: "Yatay Erişim", value: "11 m" },
+      { label: "Sepet Kapasite", value: "200 kg" },
+    ],
+  },
+];
 
 export default function PlatformPage() {
   return (
@@ -153,25 +261,15 @@ export default function PlatformPage() {
       <section id="teknik">
         <div className="wrap">
           <div className="section-head">
-            <span className="eyebrow">Teknik Veriler</span>
-            <h2>Platform filo karşılaştırma tablosu</h2>
+            <span className="eyebrow">Ürün Kataloğu</span>
+            <h2>8 platform modeli, tek tek incele</h2>
+            <p>Teleskopikten eklemliye, ikiz kollu&apos;dan kompakta kadar tüm platform çeşitlerimizi karşılaştırarak doğru modeli seçin.</p>
           </div>
-          <div className="table-wrap">
-            <table className="specs-table">
-              <thead>
-                <tr><th>Model</th><th>Sınıf</th><th>Erişim Mesafesi</th><th>Yatay Erişim</th><th>Sepet Kapasite</th><th>Günlük Bedel*</th></tr>
-              </thead>
-              <tbody>
-                <tr><td className="model">VB-PT45</td><td><span className="tag-cell">Teleskopik</span></td><td>45 m</td><td>22 m</td><td>250 kg</td><td>₺7.800 – 9.600</td></tr>
-                <tr><td className="model">VB-PA32</td><td><span className="tag-cell">Eklemli</span></td><td>32 m</td><td>18 m</td><td>230 kg</td><td>₺5.900 – 7.200</td></tr>
-                <tr><td className="model">VB-PD24</td><td><span className="tag-cell">İkiz Kollu</span></td><td>24 m (her kol)</td><td>14 m</td><td>2x200 kg</td><td>₺6.400 – 7.900</td></tr>
-                <tr><td className="model">VB-PK16</td><td><span className="tag-cell">Kompakt</span></td><td>16 m</td><td>9 m</td><td>200 kg</td><td>₺3.400 – 4.200</td></tr>
-              </tbody>
-            </table>
-          </div>
+          <ProductCatalog products={platformProducts} />
           <p className="table-note">* Fiyatlar operatör dahil gösterge niteliğindedir; kesin teklif saha keşfi sonrası verilir.</p>
         </div>
       </section>
+
 
       <section className="section-alt" id="sss">
         <div className="wrap">

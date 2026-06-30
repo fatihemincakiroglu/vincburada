@@ -1,9 +1,117 @@
 import type { Metadata } from "next";
+import ProductCatalog, { Product } from "../components/ProductCatalog";
 
 export const metadata: Metadata = {
   title: "Forklift Kiralama — Vinç Burada",
   description: "Dizel, LPG, elektrikli ve reach truck forklift kiralama. Depo, liman ve şantiye için operatörlü çözümler.",
 };
+
+const forkliftProducts: Product[] = [
+  {
+    id: "vb-f16d",
+    name: "VB-F16D",
+    tag: "Dizel Forklift",
+    image: "/gallery/express-platform-kamyon.jpg",
+    blurb: "Küçük ve orta ölçekli depo/şantiye işleri için ekonomik dizel forklift.",
+    price: "₺2.100 – 2.700 / gün",
+    specs: [
+      { label: "Kapasite", value: "1.6 ton" },
+      { label: "Maks. Kaldırma", value: "4 m" },
+      { label: "Yakıt", value: "Dizel" },
+    ],
+  },
+  {
+    id: "vb-f25d",
+    name: "VB-F25D",
+    tag: "Dizel Forklift",
+    image: "/gallery/cephe-montaj-yuksek.jpg",
+    blurb: "Açık alan ve şantiye sahalarında yüksek tork gerektiren orta segment yük operasyonları için.",
+    price: "₺2.400 – 3.100 / gün",
+    specs: [
+      { label: "Kapasite", value: "2.5 ton" },
+      { label: "Maks. Kaldırma", value: "4.5 m" },
+      { label: "Yakıt", value: "Dizel" },
+    ],
+  },
+  {
+    id: "vb-f50d",
+    name: "VB-F50D",
+    tag: "Dizel Forklift",
+    image: "/gallery/cam-cephe-platform.jpg",
+    blurb: "Ağır palet ve büyük hacimli yüklerde dayanıklılık öne çıkan güçlü dizel forklift.",
+    price: "₺3.600 – 4.500 / gün",
+    specs: [
+      { label: "Kapasite", value: "5 ton" },
+      { label: "Maks. Kaldırma", value: "5 m" },
+      { label: "Yakıt", value: "Dizel" },
+    ],
+  },
+  {
+    id: "vb-f100d",
+    name: "VB-F100D",
+    tag: "Ağır Tip Dizel Forklift",
+    image: "/gallery/cephe-giyim-platform.jpg",
+    blurb: "Liman ve ağır sanayi sahalarında konteyner ve büyük ekipman taşıma için filomuzun en güçlü forklifti.",
+    price: "₺6.800 – 8.500 / gün",
+    specs: [
+      { label: "Kapasite", value: "10 ton" },
+      { label: "Maks. Kaldırma", value: "6 m" },
+      { label: "Yakıt", value: "Dizel" },
+    ],
+  },
+  {
+    id: "vb-f25l",
+    name: "VB-F25L",
+    tag: "LPG Forklift",
+    image: "/gallery/rezidans-cephe-vinc.jpg",
+    blurb: "Hem kapalı hem açık alanda çalışabilen, dizele kıyasla daha düşük emisyonlu orta segment çözüm.",
+    price: "₺2.700 – 3.400 / gün",
+    specs: [
+      { label: "Kapasite", value: "2.5 ton" },
+      { label: "Maks. Kaldırma", value: "4.5 m" },
+      { label: "Yakıt", value: "LPG" },
+    ],
+  },
+  {
+    id: "vb-f20e",
+    name: "VB-F20E",
+    tag: "Elektrikli Forklift",
+    image: "/gallery/rezidans-cephe-vinc-2.jpg",
+    blurb: "Kapalı depo ve gıda/ilaç gibi emisyon hassasiyeti olan sahalarda sessiz ve temiz operasyon.",
+    price: "₺2.900 – 3.700 / gün",
+    specs: [
+      { label: "Kapasite", value: "2 ton" },
+      { label: "Maks. Kaldırma", value: "4 m" },
+      { label: "Yakıt", value: "Elektrik" },
+    ],
+  },
+  {
+    id: "vb-f30e",
+    name: "VB-F30E",
+    tag: "Elektrikli Forklift",
+    image: "/gallery/platform-cam-bulutlar.jpg",
+    blurb: "Daha yüksek kapasiteli elektrikli model; çok vardiyalı depo operasyonları için uzun batarya ömrü.",
+    price: "₺3.300 – 4.100 / gün",
+    specs: [
+      { label: "Kapasite", value: "3 ton" },
+      { label: "Maks. Kaldırma", value: "4.5 m" },
+      { label: "Yakıt", value: "Elektrik" },
+    ],
+  },
+  {
+    id: "vb-rt16",
+    name: "VB-RT16",
+    tag: "Reach Truck",
+    image: "/gallery/zebra-desenli-platform.jpg",
+    blurb: "Dar koridorlu yüksek raf depolarında hassas yerleştirme ve maksimum kaldırma yüksekliği.",
+    price: "₺4.200 – 5.300 / gün",
+    specs: [
+      { label: "Kapasite", value: "1.6 ton" },
+      { label: "Maks. Kaldırma", value: "11 m" },
+      { label: "Yakıt", value: "Elektrik" },
+    ],
+  },
+];
 
 export default function ForkliftPage() {
   return (
@@ -112,26 +220,15 @@ export default function ForkliftPage() {
       <section className="section-alt" id="teknik">
         <div className="wrap">
           <div className="section-head">
-            <span className="eyebrow">Teknik Veriler</span>
-            <h2>Forklift filo karşılaştırma tablosu</h2>
+            <span className="eyebrow">Ürün Kataloğu</span>
+            <h2>8 forklift modeli, tek tek incele</h2>
+            <p>Dizelden elektrikliye, standarttan reach truck&apos;a kadar tüm forklift çeşitlerimizi karşılaştırarak doğru modeli seçin.</p>
           </div>
-          <div className="table-wrap">
-            <table className="specs-table">
-              <thead>
-                <tr><th>Model</th><th>Sınıf</th><th>Maks. Kapasite</th><th>Maks. Kaldırma</th><th>Yakıt</th><th>Günlük Bedel*</th></tr>
-              </thead>
-              <tbody>
-                <tr><td className="model">VB-F25D</td><td><span className="tag-cell">Dizel</span></td><td>2.5 ton</td><td>4.5 m</td><td>Dizel</td><td>₺2.400 – 3.100</td></tr>
-                <tr><td className="model">VB-F50D</td><td><span className="tag-cell">Dizel</span></td><td>5 ton</td><td>5 m</td><td>Dizel</td><td>₺3.600 – 4.500</td></tr>
-                <tr><td className="model">VB-F25L</td><td><span className="tag-cell">LPG</span></td><td>2.5 ton</td><td>4.5 m</td><td>LPG</td><td>₺2.700 – 3.400</td></tr>
-                <tr><td className="model">VB-F20E</td><td><span className="tag-cell">Elektrikli</span></td><td>2 ton</td><td>4 m</td><td>Elektrik</td><td>₺2.900 – 3.700</td></tr>
-                <tr><td className="model">VB-RT16</td><td><span className="tag-cell">Reach Truck</span></td><td>1.6 ton</td><td>11 m</td><td>Elektrik</td><td>₺4.200 – 5.300</td></tr>
-              </tbody>
-            </table>
-          </div>
+          <ProductCatalog products={forkliftProducts} />
           <p className="table-note">* Fiyatlar operatör dahil gösterge niteliğindedir; kesin teklif saha keşfi sonrası verilir.</p>
         </div>
       </section>
+
 
       <section id="sss">
         <div className="wrap">

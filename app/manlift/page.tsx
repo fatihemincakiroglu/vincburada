@@ -1,9 +1,117 @@
 import type { Metadata } from "next";
+import ProductCatalog, { Product } from "../components/ProductCatalog";
 
 export const metadata: Metadata = {
   title: "Manlift Kiralama — Vinç Burada",
   description: "Eklemli, teleskopik, makaslı ve örümcek manlift kiralama. İç/dış mekan bakım ve montaj erişimi.",
 };
+
+const manliftProducts: Product[] = [
+  {
+    id: "vb-a12",
+    name: "VB-A12",
+    tag: "Eklemli Manlift",
+    image: "/gallery/cekim-platform-orman.jpg",
+    blurb: "Kompakt eklemli kol ile dar alanlarda küçük engelleri aşarak erişim sağlar.",
+    price: "₺3.200 – 4.000 / gün",
+    specs: [
+      { label: "Çalışma Yüksekliği", value: "12 m" },
+      { label: "Yatay Erişim", value: "6 m" },
+      { label: "Platform Kapasite", value: "230 kg" },
+    ],
+  },
+  {
+    id: "vb-a16",
+    name: "VB-A16",
+    tag: "Eklemli Manlift",
+    image: "/gallery/gokdelen-yuksek-platform.jpg",
+    blurb: "Engeller üzerinden geçerek erişim sağlayan, yatay ve dikey hareket esnekliği yüksek orta segment model.",
+    price: "₺3.800 – 4.700 / gün",
+    specs: [
+      { label: "Çalışma Yüksekliği", value: "16 m" },
+      { label: "Yatay Erişim", value: "8 m" },
+      { label: "Platform Kapasite", value: "230 kg" },
+    ],
+  },
+  {
+    id: "vb-a20",
+    name: "VB-A20",
+    tag: "Eklemli Manlift",
+    image: "/gallery/istanbul-skyline-vinc.jpg",
+    blurb: "Daha geniş yatay erişim gerektiren cephe ve çatı işleri için yüksek menzilli eklemli manlift.",
+    price: "₺4.600 – 5.700 / gün",
+    specs: [
+      { label: "Çalışma Yüksekliği", value: "20 m" },
+      { label: "Yatay Erişim", value: "11 m" },
+      { label: "Platform Kapasite", value: "230 kg" },
+    ],
+  },
+  {
+    id: "vb-t28",
+    name: "VB-T28",
+    tag: "Teleskopik Manlift",
+    image: "/gallery/cephe-montaj-yuksek.jpg",
+    blurb: "Düz bom ile maksimum yükseklik ve yatay erişim gerektiren geniş alan operasyonları için.",
+    price: "₺6.200 – 7.800 / gün",
+    specs: [
+      { label: "Çalışma Yüksekliği", value: "28 m" },
+      { label: "Yatay Erişim", value: "22 m" },
+      { label: "Platform Kapasite", value: "250 kg" },
+    ],
+  },
+  {
+    id: "vb-t36",
+    name: "VB-T36",
+    tag: "Teleskopik Manlift",
+    image: "/gallery/su-kulesi-gece-vinc.jpg",
+    blurb: "Filomuzun en uzun menzilli manlifti; büyük çaplı endüstriyel tesis ve depo çatı işleri için.",
+    price: "₺7.500 – 9.300 / gün",
+    specs: [
+      { label: "Çalışma Yüksekliği", value: "36 m" },
+      { label: "Yatay Erişim", value: "24 m" },
+      { label: "Platform Kapasite", value: "250 kg" },
+    ],
+  },
+  {
+    id: "vb-s10",
+    name: "VB-S10",
+    tag: "Makaslı Manlift",
+    image: "/gallery/cami-vinc-kabin.jpg",
+    blurb: "Düz zeminli kapalı alanlarda geniş platform yüzeyiyle ekonomik dikey çalışma çözümü.",
+    price: "₺2.200 – 2.800 / gün",
+    specs: [
+      { label: "Çalışma Yüksekliği", value: "10 m" },
+      { label: "Yatay Erişim", value: "—" },
+      { label: "Platform Kapasite", value: "320 kg" },
+    ],
+  },
+  {
+    id: "vb-s12",
+    name: "VB-S12",
+    tag: "Makaslı Manlift",
+    image: "/gallery/tarihi-bina-cephe-platform.jpg",
+    blurb: "Daha yüksek platform kapasitesiyle birden fazla kişi ve malzemenin aynı anda taşınmasına imkân verir.",
+    price: "₺2.600 – 3.300 / gün",
+    specs: [
+      { label: "Çalışma Yüksekliği", value: "12 m" },
+      { label: "Yatay Erişim", value: "—" },
+      { label: "Platform Kapasite", value: "450 kg" },
+    ],
+  },
+  {
+    id: "vb-sp18",
+    name: "VB-SP18",
+    tag: "Örümcek Manlift",
+    image: "/gallery/fatih-camii-minare.jpg",
+    blurb: "Paletli ve daraltılabilir ayaklarıyla merdivenden geçebilen, iç mekân yüksek tavan işleri için.",
+    price: "₺4.400 – 5.500 / gün",
+    specs: [
+      { label: "Çalışma Yüksekliği", value: "18 m" },
+      { label: "Yatay Erişim", value: "9 m" },
+      { label: "Platform Kapasite", value: "200 kg" },
+    ],
+  },
+];
 
 export default function ManliftPage() {
   return (
@@ -134,25 +242,15 @@ export default function ManliftPage() {
       <section id="teknik">
         <div className="wrap">
           <div className="section-head">
-            <span className="eyebrow">Teknik Veriler</span>
-            <h2>Manlift filo karşılaştırma tablosu</h2>
+            <span className="eyebrow">Ürün Kataloğu</span>
+            <h2>8 manlift modeli, tek tek incele</h2>
+            <p>Eklemliden makaslıya, teleskopikten örümceğe kadar tüm manlift çeşitlerimizi karşılaştırarak doğru modeli seçin.</p>
           </div>
-          <div className="table-wrap">
-            <table className="specs-table">
-              <thead>
-                <tr><th>Model</th><th>Sınıf</th><th>Çalışma Yüksekliği</th><th>Yatay Erişim</th><th>Platform Kapasite</th><th>Günlük Bedel*</th></tr>
-              </thead>
-              <tbody>
-                <tr><td className="model">VB-A16</td><td><span className="tag-cell">Eklemli</span></td><td>16 m</td><td>8 m</td><td>230 kg</td><td>₺3.800 – 4.700</td></tr>
-                <tr><td className="model">VB-T28</td><td><span className="tag-cell">Teleskopik</span></td><td>28 m</td><td>22 m</td><td>250 kg</td><td>₺6.200 – 7.800</td></tr>
-                <tr><td className="model">VB-S12</td><td><span className="tag-cell">Makaslı</span></td><td>12 m</td><td>—</td><td>450 kg</td><td>₺2.600 – 3.300</td></tr>
-                <tr><td className="model">VB-SP18</td><td><span className="tag-cell">Örümcek</span></td><td>18 m</td><td>9 m</td><td>200 kg</td><td>₺4.400 – 5.500</td></tr>
-              </tbody>
-            </table>
-          </div>
+          <ProductCatalog products={manliftProducts} />
           <p className="table-note">* Fiyatlar operatör dahil gösterge niteliğindedir; kesin teklif saha keşfi sonrası verilir.</p>
         </div>
       </section>
+
 
       <section className="section-alt" id="sss">
         <div className="wrap">
