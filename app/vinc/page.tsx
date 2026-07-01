@@ -50,10 +50,10 @@ export default function VincPage() {
               <span className="num">01 / MOBİL</span>
               <svg viewBox="0 0 200 100" fill="none">
                 <rect x="20" y="60" width="90" height="22" rx="3" fill="#E8E2D5" />
-                <circle cx="40" cy="86" r="9" fill="#1C1A17" />
-                <circle cx="95" cy="86" r="9" fill="#1C1A17" />
-                <line x1="60" y1="60" x2="170" y2="20" stroke="#A9762E" strokeWidth="7" strokeLinecap="round" />
-                <line x1="170" y1="20" x2="170" y2="45" stroke="#7A7367" strokeWidth="2" />
+                <circle cx="40" cy="86" r="9" fill="#10141A" />
+                <circle cx="95" cy="86" r="9" fill="#10141A" />
+                <line x1="60" y1="60" x2="170" y2="20" stroke="#F2B400" strokeWidth="7" strokeLinecap="round" />
+                <line x1="170" y1="20" x2="170" y2="45" stroke="#6C7078" strokeWidth="2" />
               </svg>
               <h3>Mobil Vinç</h3>
               <p>Hızlı konuşlanma gerektiren şehir içi ve şantiye operasyonları için lastik tekerlekli, kendinden tahrikli çözüm.</p>
@@ -65,11 +65,11 @@ export default function VincPage() {
             <div className="fleet-card">
               <span className="num">02 / KULE</span>
               <svg viewBox="0 0 200 100" fill="none">
-                <line x1="100" y1="10" x2="100" y2="95" stroke="#1C1A17" strokeWidth="6" />
-                <line x1="100" y1="20" x2="180" y2="20" stroke="#A9762E" strokeWidth="6" />
-                <line x1="100" y1="20" x2="40" y2="20" stroke="#7A7367" strokeWidth="6" />
-                <line x1="100" y1="20" x2="180" y2="60" stroke="#7A7367" strokeWidth="2" />
-                <line x1="160" y1="20" x2="160" y2="50" stroke="#7A7367" strokeWidth="2" />
+                <line x1="100" y1="10" x2="100" y2="95" stroke="#10141A" strokeWidth="6" />
+                <line x1="100" y1="20" x2="180" y2="20" stroke="#F2B400" strokeWidth="6" />
+                <line x1="100" y1="20" x2="40" y2="20" stroke="#6C7078" strokeWidth="6" />
+                <line x1="100" y1="20" x2="180" y2="60" stroke="#6C7078" strokeWidth="2" />
+                <line x1="160" y1="20" x2="160" y2="50" stroke="#6C7078" strokeWidth="2" />
                 <rect x="86" y="92" width="28" height="6" fill="#E8E2D5" />
               </svg>
               <h3>Kule Vinç</h3>
@@ -82,10 +82,10 @@ export default function VincPage() {
             <div className="fleet-card">
               <span className="num">03 / PALETLİ</span>
               <svg viewBox="0 0 200 100" fill="none">
-                <rect x="20" y="75" width="100" height="14" rx="6" fill="#1C1A17" />
+                <rect x="20" y="75" width="100" height="14" rx="6" fill="#10141A" />
                 <rect x="55" y="55" width="40" height="22" fill="#E8E2D5" />
-                <line x1="80" y1="58" x2="175" y2="25" stroke="#A9762E" strokeWidth="8" strokeLinecap="round" />
-                <line x1="175" y1="25" x2="175" y2="48" stroke="#7A7367" strokeWidth="2" />
+                <line x1="80" y1="58" x2="175" y2="25" stroke="#F2B400" strokeWidth="8" strokeLinecap="round" />
+                <line x1="175" y1="25" x2="175" y2="48" stroke="#6C7078" strokeWidth="2" />
               </svg>
               <h3>Paletli Vinç</h3>
               <p>Zemini zayıf veya yumuşak sahalarda, ağır montaj işlerinde yüksek stabilite gerektiren işler için.</p>
@@ -98,11 +98,11 @@ export default function VincPage() {
               <span className="num">04 / TELESKOPİK</span>
               <svg viewBox="0 0 200 100" fill="none">
                 <rect x="15" y="62" width="85" height="20" rx="3" fill="#E8E2D5" />
-                <circle cx="35" cy="86" r="8" fill="#1C1A17" />
-                <circle cx="80" cy="86" r="8" fill="#1C1A17" />
-                <line x1="55" y1="62" x2="100" y2="38" stroke="#7A7367" strokeWidth="6" strokeLinecap="round" />
-                <line x1="100" y1="38" x2="150" y2="20" stroke="#A9762E" strokeWidth="6" strokeLinecap="round" />
-                <line x1="150" y1="20" x2="185" y2="8" stroke="#A9762E" strokeWidth="4" strokeLinecap="round" />
+                <circle cx="35" cy="86" r="8" fill="#10141A" />
+                <circle cx="80" cy="86" r="8" fill="#10141A" />
+                <line x1="55" y1="62" x2="100" y2="38" stroke="#6C7078" strokeWidth="6" strokeLinecap="round" />
+                <line x1="100" y1="38" x2="150" y2="20" stroke="#F2B400" strokeWidth="6" strokeLinecap="round" />
+                <line x1="150" y1="20" x2="185" y2="8" stroke="#F2B400" strokeWidth="4" strokeLinecap="round" />
               </svg>
               <h3>Teleskopik Vinç</h3>
               <p>Ayarlanabilir bom uzunluğu sayesinde dar alanlarda ve değişken yükseklik ihtiyaçlarında esneklik sunar.</p>

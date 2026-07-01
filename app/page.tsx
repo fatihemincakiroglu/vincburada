@@ -92,101 +92,69 @@ export default function Home() {
       {/* ============ EQUIPMENT NAMEPLATES ============ */}
       <section id="filo" style={{ paddingTop: "88px" }}>
         <div className="wrap">
-          <div className="section-head">
+          <div className="ghost-head">
+            <span className="ghost-text">LET&apos;S CHOOSE</span>
             <span className="eyebrow">Filomuz</span>
-            <h2>4 ana kategori, 1.500&apos;den fazla ekipman</h2>
-            <p>
+            <h2>Kategoriler</h2>
+            <div className="underline"></div>
+            <p style={{ marginTop: "16px", maxWidth: "560px" }}>
               Vinç, manlift, forklift ve platform ailelerinin tüm alt tiplerini — iş
               makinesi ve istif makinesi kiralama dahil — tek çatı altında, aynı gün
               sevkiyat garantisiyle sunuyoruz.
             </p>
           </div>
 
-          <div className="hx-plate-grid">
-            <a className="hx-plate cat-vinc" href="/vinc">
-              <span className="rivet-b1"></span>
-              <span className="rivet-b2"></span>
-              <span className="code">VB-01 · MOBİL &amp; KULE</span>
-              <span className="ic">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-                  <path d="M4 21V9" strokeLinecap="round" />
-                  <path d="M4 9l14-5" strokeLinecap="round" strokeLinejoin="round" />
-                  <path d="M18 4v9" strokeLinecap="round" />
-                  <path d="M18 13l3 3" strokeLinecap="round" />
-                  <path d="M2 21h6" strokeLinecap="round" />
-                </svg>
-              </span>
+          <div className="cat-showcase-grid">
+            <a className="cat-showcase-card cat-vinc" href="/vinc">
+              <div className="cat-showcase-media">
+                <span className="cat-showcase-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+                    <path d="M4 21V9" strokeLinecap="round" />
+                    <path d="M4 9l14-5" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M18 4v9" strokeLinecap="round" />
+                    <path d="M18 13l3 3" strokeLinecap="round" />
+                    <path d="M2 21h6" strokeLinecap="round" />
+                  </svg>
+                </span>
+              </div>
               <h3>Vinç</h3>
-              <p>Mobil vinç, kule vinç ve iş makinesi taşıma operasyonları için ağır kaldırma filosu.</p>
-              <div className="specs">
-                <div><b>Kapasite:</b> 5 – 500 ton</div>
-                <div><b>Erişim:</b> 12 – 80 m</div>
-              </div>
-              <span className="more">Filoyu İncele →</span>
+              <span className="sub">Mobil &amp; Kule · 5–500 ton</span>
             </a>
 
-            <a className="hx-plate cat-manlift" href="/manlift">
-              <span className="rivet-b1"></span>
-              <span className="rivet-b2"></span>
-              <span className="code">VB-02 · DİKEY, EKLEMLİ &amp; TELESKOPİK</span>
-              <span className="ic">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-                  <path d="M4 21c0-4 2-6 6-7" strokeLinecap="round" />
-                  <path d="M10 14c3-1 5-3 6-6" strokeLinecap="round" />
-                  <rect x="14" y="3" width="6" height="4" rx="1" />
-                  <path d="M3 21h8" strokeLinecap="round" />
-                </svg>
-              </span>
+            <a className="cat-showcase-card cat-manlift" href="/manlift">
+              <div className="cat-showcase-media">
+                <img src="/products/zoomlion-zt38je.webp" alt="Manlift" />
+              </div>
               <h3>Manlift</h3>
-              <p>İnsan yükseltme platformları ile cephe, tavan ve iç mekân bakım-onarım işleri.</p>
-              <div className="specs">
-                <div><b>Platform:</b> 120 – 450 kg</div>
-                <div><b>Erişim:</b> 6 – 40 m</div>
-              </div>
-              <span className="more">Filoyu İncele →</span>
+              <span className="sub">Dikey, Eklemli &amp; Teleskopik · 6–40 m</span>
             </a>
 
-            <a className="hx-plate cat-forklift" href="/forklift">
-              <span className="rivet-b1"></span>
-              <span className="rivet-b2"></span>
-              <span className="code">VB-03 · DİZEL</span>
-              <span className="ic">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-                  <path d="M4 3v14" strokeLinecap="round" />
-                  <path d="M4 8h5v9H4z" strokeLinejoin="round" />
-                  <path d="M9 10h7l3-3" strokeLinecap="round" strokeLinejoin="round" />
-                  <circle cx="7" cy="19" r="1.6" />
-                  <circle cx="16" cy="19" r="1.6" />
-                  <path d="M9 17h9v2H9z" strokeLinejoin="round" />
-                </svg>
-              </span>
+            <a className="cat-showcase-card cat-forklift" href="/forklift">
+              <div className="cat-showcase-media">
+                <img src="/products/zoomlion-fd70.webp" alt="Forklift" />
+              </div>
               <h3>Forklift</h3>
-              <p>Depo, liman ve şantiye içi malzeme taşıma için dizel forklift filosu.</p>
-              <div className="specs">
-                <div><b>Kapasite:</b> 3 – 7 ton</div>
-                <div><b>Kaldırma:</b> 3 – 6 m</div>
-              </div>
-              <span className="more">Filoyu İncele →</span>
+              <span className="sub">Dizel · 3–7 ton</span>
             </a>
 
-            <a className="hx-plate cat-platform" href="/platform">
-              <span className="rivet-b1"></span>
-              <span className="rivet-b2"></span>
-              <span className="code">VB-04 · MAKASLI &amp; ÖRÜMCEK</span>
-              <span className="ic">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-                  <path d="M4 20h16" strokeLinecap="round" />
-                  <path d="M6 20V9l5 5 5-5v11" strokeLinecap="round" strokeLinejoin="round" />
-                  <path d="M4 9h16" strokeLinecap="round" />
-                </svg>
-              </span>
-              <h3>Platform</h3>
-              <p>Cam cephe, kubbe ve dar erişimli sahalar için makaslı ve örümcek platform çözümleri.</p>
-              <div className="specs">
-                <div><b>Kapasite:</b> 200 – 500 kg</div>
-                <div><b>Erişim:</b> 8 – 58 m</div>
+            <a className="cat-showcase-card cat-platform" href="/platform">
+              <div className="cat-showcase-media">
+                <span className="cat-showcase-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+                    <path d="M4 20h16" strokeLinecap="round" />
+                    <path d="M6 20V9l5 5 5-5v11" strokeLinecap="round" strokeLinejoin="round" />
+                    <path d="M4 9h16" strokeLinecap="round" />
+                  </svg>
+                </span>
               </div>
-              <span className="more">Filoyu İncele →</span>
+              <h3>Platform</h3>
+              <span className="sub">Makaslı &amp; Örümcek · 8–58 m</span>
+            </a>
+          </div>
+
+          <div style={{ textAlign: "center", marginTop: "36px" }}>
+            <a className="btn btn-glass" href="/urunler">
+              Tüm Ürünleri Gör →
             </a>
           </div>
         </div>

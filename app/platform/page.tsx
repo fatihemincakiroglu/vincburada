@@ -43,10 +43,10 @@ export default function PlatformPage() {
             <div className="fleet-card">
               <span className="num">01 / TELESKOPİK</span>
               <svg viewBox="0 0 200 100" fill="none">
-                <rect x="15" y="68" width="80" height="18" rx="3" fill="#1C1A17" />
-                <circle cx="35" cy="88" r="8" fill="#1C1A17" />
-                <circle cx="78" cy="88" r="8" fill="#1C1A17" />
-                <line x1="55" y1="68" x2="170" y2="20" stroke="#A9762E" strokeWidth="7" strokeLinecap="round" />
+                <rect x="15" y="68" width="80" height="18" rx="3" fill="#10141A" />
+                <circle cx="35" cy="88" r="8" fill="#10141A" />
+                <circle cx="78" cy="88" r="8" fill="#10141A" />
+                <line x1="55" y1="68" x2="170" y2="20" stroke="#F2B400" strokeWidth="7" strokeLinecap="round" />
                 <rect x="166" y="13" width="18" height="12" rx="2" fill="#E8E2D5" />
               </svg>
               <h3>Teleskopik Platform</h3>
@@ -59,11 +59,11 @@ export default function PlatformPage() {
             <div className="fleet-card">
               <span className="num">02 / EKLEMLİ</span>
               <svg viewBox="0 0 200 100" fill="none">
-                <rect x="15" y="68" width="80" height="18" rx="3" fill="#1C1A17" />
-                <circle cx="35" cy="88" r="8" fill="#1C1A17" />
-                <circle cx="78" cy="88" r="8" fill="#1C1A17" />
-                <line x1="55" y1="68" x2="90" y2="30" stroke="#7A7367" strokeWidth="7" strokeLinecap="round" />
-                <line x1="90" y1="30" x2="160" y2="45" stroke="#A9762E" strokeWidth="6" strokeLinecap="round" />
+                <rect x="15" y="68" width="80" height="18" rx="3" fill="#10141A" />
+                <circle cx="35" cy="88" r="8" fill="#10141A" />
+                <circle cx="78" cy="88" r="8" fill="#10141A" />
+                <line x1="55" y1="68" x2="90" y2="30" stroke="#6C7078" strokeWidth="7" strokeLinecap="round" />
+                <line x1="90" y1="30" x2="160" y2="45" stroke="#F2B400" strokeWidth="6" strokeLinecap="round" />
                 <rect x="158" y="38" width="18" height="12" rx="2" fill="#E8E2D5" />
               </svg>
               <h3>Eklemli Platform</h3>
@@ -76,9 +76,9 @@ export default function PlatformPage() {
             <div className="fleet-card">
               <span className="num">03 / İKİZ KOLLU</span>
               <svg viewBox="0 0 200 100" fill="none">
-                <rect x="60" y="70" width="80" height="16" rx="3" fill="#1C1A17" />
-                <line x1="75" y1="70" x2="40" y2="25" stroke="#A9762E" strokeWidth="6" strokeLinecap="round" />
-                <line x1="125" y1="70" x2="160" y2="25" stroke="#A9762E" strokeWidth="6" strokeLinecap="round" />
+                <rect x="60" y="70" width="80" height="16" rx="3" fill="#10141A" />
+                <line x1="75" y1="70" x2="40" y2="25" stroke="#F2B400" strokeWidth="6" strokeLinecap="round" />
+                <line x1="125" y1="70" x2="160" y2="25" stroke="#F2B400" strokeWidth="6" strokeLinecap="round" />
                 <rect x="32" y="18" width="16" height="11" rx="2" fill="#E8E2D5" />
                 <rect x="152" y="18" width="16" height="11" rx="2" fill="#E8E2D5" />
               </svg>
@@ -92,10 +92,10 @@ export default function PlatformPage() {
             <div className="fleet-card">
               <span className="num">04 / KOMPAKT</span>
               <svg viewBox="0 0 200 100" fill="none">
-                <rect x="20" y="65" width="60" height="20" rx="3" fill="#1C1A17" />
-                <circle cx="35" cy="88" r="8" fill="#1C1A17" />
-                <circle cx="68" cy="88" r="8" fill="#1C1A17" />
-                <line x1="50" y1="65" x2="120" y2="30" stroke="#A9762E" strokeWidth="6" strokeLinecap="round" />
+                <rect x="20" y="65" width="60" height="20" rx="3" fill="#10141A" />
+                <circle cx="35" cy="88" r="8" fill="#10141A" />
+                <circle cx="68" cy="88" r="8" fill="#10141A" />
+                <line x1="50" y1="65" x2="120" y2="30" stroke="#F2B400" strokeWidth="6" strokeLinecap="round" />
                 <rect x="116" y="23" width="16" height="11" rx="2" fill="#E8E2D5" />
               </svg>
               <h3>Kompakt Platform</h3>

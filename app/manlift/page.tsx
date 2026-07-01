@@ -43,9 +43,9 @@ export default function ManliftPage() {
             <div className="fleet-card">
               <span className="num">01 / EKLEMLİ</span>
               <svg viewBox="0 0 200 100" fill="none">
-                <rect x="20" y="75" width="50" height="14" rx="4" fill="#1C1A17" />
-                <line x1="45" y1="75" x2="80" y2="40" stroke="#A9762E" strokeWidth="7" strokeLinecap="round" />
-                <line x1="80" y1="40" x2="140" y2="55" stroke="#7A7367" strokeWidth="6" strokeLinecap="round" />
+                <rect x="20" y="75" width="50" height="14" rx="4" fill="#10141A" />
+                <line x1="45" y1="75" x2="80" y2="40" stroke="#F2B400" strokeWidth="7" strokeLinecap="round" />
+                <line x1="80" y1="40" x2="140" y2="55" stroke="#6C7078" strokeWidth="6" strokeLinecap="round" />
                 <rect x="138" y="48" width="20" height="14" rx="2" fill="#E8E2D5" />
               </svg>
               <h3>Eklemli (Articulating)</h3>
@@ -58,8 +58,8 @@ export default function ManliftPage() {
             <div className="fleet-card">
               <span className="num">02 / TELESKOPİK</span>
               <svg viewBox="0 0 200 100" fill="none">
-                <rect x="20" y="75" width="50" height="14" rx="4" fill="#1C1A17" />
-                <line x1="45" y1="75" x2="160" y2="25" stroke="#A9762E" strokeWidth="7" strokeLinecap="round" />
+                <rect x="20" y="75" width="50" height="14" rx="4" fill="#10141A" />
+                <line x1="45" y1="75" x2="160" y2="25" stroke="#F2B400" strokeWidth="7" strokeLinecap="round" />
                 <rect x="156" y="18" width="18" height="13" rx="2" fill="#E8E2D5" />
               </svg>
               <h3>Teleskopik Manlift</h3>
@@ -73,11 +73,11 @@ export default function ManliftPage() {
               <span className="num">03 / MAKASLI</span>
               <svg viewBox="0 0 200 100" fill="none">
                 <rect x="50" y="20" width="100" height="14" rx="2" fill="#E8E2D5" />
-                <line x1="60" y1="34" x2="100" y2="80" stroke="#7A7367" strokeWidth="5" />
-                <line x1="100" y1="34" x2="60" y2="80" stroke="#7A7367" strokeWidth="5" />
-                <line x1="100" y1="34" x2="140" y2="80" stroke="#A9762E" strokeWidth="5" />
-                <line x1="140" y1="34" x2="100" y2="80" stroke="#A9762E" strokeWidth="5" />
-                <rect x="45" y="80" width="110" height="10" rx="3" fill="#1C1A17" />
+                <line x1="60" y1="34" x2="100" y2="80" stroke="#6C7078" strokeWidth="5" />
+                <line x1="100" y1="34" x2="60" y2="80" stroke="#6C7078" strokeWidth="5" />
+                <line x1="100" y1="34" x2="140" y2="80" stroke="#F2B400" strokeWidth="5" />
+                <line x1="140" y1="34" x2="100" y2="80" stroke="#F2B400" strokeWidth="5" />
+                <rect x="45" y="80" width="110" height="10" rx="3" fill="#10141A" />
               </svg>
               <h3>Makaslı (Scissor)</h3>
               <p>Düz zeminli kapalı alanlarda geniş platform yüzeyiyle dikey çalışma için en stabil çözüm.</p>
