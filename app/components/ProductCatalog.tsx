@@ -1,16 +1,8 @@
 "use client";
 
 import { useState } from "react";
-
-type Spec = { label: string; value: string };
-export type Product = {
-  id: string;
-  name: string;
-  tag: string;
-  image: string;
-  blurb: string;
-  specs: Spec[];
-};
+import type { Product } from "../data/products/types";
+export type { Product };
 
 export default function ProductCatalog({ products }: { products: Product[] }) {
   const [selected, setSelected] = useState<string[]>([]);

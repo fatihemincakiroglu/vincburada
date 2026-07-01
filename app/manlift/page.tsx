@@ -1,133 +1,11 @@
 import type { Metadata } from "next";
-import ProductCatalog, { Product } from "../components/ProductCatalog";
+import ProductCatalog from "../components/ProductCatalog";
+import { manliftProducts } from "../data/products/manlift";
 
 export const metadata: Metadata = {
   title: "Manlift Kiralama — Vinç Burada",
-  description: "Eklemli, teleskopik, makaslı ve örümcek manlift kiralama. İç/dış mekan bakım ve montaj erişimi.",
+  description: "Dikey direk, eklemli, teleskopik ve makaslı manlift kiralama. İç/dış mekan bakım ve montaj erişimi.",
 };
-
-const manliftProducts: Product[] = [
-  {
-    id: "vb-a12",
-    name: "VB-A12",
-    tag: "Eklemli Manlift",
-    image: "/gallery/cekim-platform-orman.jpg",
-    blurb: "Kompakt eklemli kol ile dar alanlarda küçük engelleri aşarak erişim sağlar.",
-    specs: [
-      { label: "Çalışma Yüksekliği", value: "12 m" },
-      { label: "Yatay Erişim", value: "6 m" },
-      { label: "Platform Kapasite", value: "230 kg" },
-    ],
-  },
-  {
-    id: "vb-a16",
-    name: "VB-A16",
-    tag: "Eklemli Manlift",
-    image: "/gallery/gokdelen-yuksek-platform.jpg",
-    blurb: "Engeller üzerinden geçerek erişim sağlayan, yatay ve dikey hareket esnekliği yüksek orta segment model.",
-    specs: [
-      { label: "Çalışma Yüksekliği", value: "16 m" },
-      { label: "Yatay Erişim", value: "8 m" },
-      { label: "Platform Kapasite", value: "230 kg" },
-    ],
-  },
-  {
-    id: "vb-a20",
-    name: "VB-A20",
-    tag: "Eklemli Manlift",
-    image: "/gallery/istanbul-skyline-vinc.jpg",
-    blurb: "Daha geniş yatay erişim gerektiren cephe ve çatı işleri için yüksek menzilli eklemli manlift.",
-    specs: [
-      { label: "Çalışma Yüksekliği", value: "20 m" },
-      { label: "Yatay Erişim", value: "11 m" },
-      { label: "Platform Kapasite", value: "230 kg" },
-    ],
-  },
-  {
-    id: "vb-t28",
-    name: "VB-T28",
-    tag: "Teleskopik Manlift",
-    image: "/gallery/cephe-montaj-yuksek.jpg",
-    blurb: "Düz bom ile maksimum yükseklik ve yatay erişim gerektiren geniş alan operasyonları için.",
-    specs: [
-      { label: "Çalışma Yüksekliği", value: "28 m" },
-      { label: "Yatay Erişim", value: "22 m" },
-      { label: "Platform Kapasite", value: "250 kg" },
-    ],
-  },
-  {
-    id: "vb-t36",
-    name: "VB-T36",
-    tag: "Teleskopik Manlift",
-    image: "/gallery/su-kulesi-gece-vinc.jpg",
-    blurb: "Filomuzun en uzun menzilli manlifti; büyük çaplı endüstriyel tesis ve depo çatı işleri için.",
-    specs: [
-      { label: "Çalışma Yüksekliği", value: "36 m" },
-      { label: "Yatay Erişim", value: "24 m" },
-      { label: "Platform Kapasite", value: "250 kg" },
-    ],
-  },
-  {
-    id: "vb-s10",
-    name: "VB-S10",
-    tag: "Makaslı Manlift",
-    image: "/gallery/cami-vinc-kabin.jpg",
-    blurb: "Düz zeminli kapalı alanlarda geniş platform yüzeyiyle ekonomik dikey çalışma çözümü.",
-    specs: [
-      { label: "Çalışma Yüksekliği", value: "10 m" },
-      { label: "Yatay Erişim", value: "—" },
-      { label: "Platform Kapasite", value: "320 kg" },
-    ],
-  },
-  {
-    id: "vb-s12",
-    name: "VB-S12",
-    tag: "Makaslı Manlift",
-    image: "/gallery/tarihi-bina-cephe-platform.jpg",
-    blurb: "Daha yüksek platform kapasitesiyle birden fazla kişi ve malzemenin aynı anda taşınmasına imkân verir.",
-    specs: [
-      { label: "Çalışma Yüksekliği", value: "12 m" },
-      { label: "Yatay Erişim", value: "—" },
-      { label: "Platform Kapasite", value: "450 kg" },
-    ],
-  },
-  {
-    id: "vb-sp18",
-    name: "VB-SP18",
-    tag: "Örümcek Manlift",
-    image: "/gallery/fatih-camii-minare.jpg",
-    blurb: "Paletli ve daraltılabilir ayaklarıyla merdivenden geçebilen, iç mekân yüksek tavan işleri için.",
-    specs: [
-      { label: "Çalışma Yüksekliği", value: "18 m" },
-      { label: "Yatay Erişim", value: "9 m" },
-      { label: "Platform Kapasite", value: "200 kg" },
-    ],
-  },
-  {
-    id: "vb-s18rt",
-    name: "VB-S18RT",
-    tag: "Arazi Tipi Makaslı Manlift",
-    image: "/gallery/cekim-platform-orman.jpg",
-    blurb: "Düz olmayan ve açık şantiye zeminlerinde dört çeker şasisiyle güvenli dikey erişim sağlayan geniş platformlu manlift.",
-    specs: [
-      { label: "Çalışma Yüksekliği", value: "18 m" },
-      { label: "Yatay Erişim", value: "—" },
-      { label: "Platform Kapasite", value: "450 kg" },
-    ],
-  },
-  {
-    id: "vb-t44",
-    name: "VB-T44",
-    tag: "Teleskopik Manlift",
-    image: "/gallery/istanbul-skyline-vinc.jpg",
-    blurb: "Filomuzun en yüksek ve en uzun yatay erişimli manlifti; büyük endüstriyel tesis ve stadyum çatı işleri için.",
-    specs: [
-      { label: "Çalışma Yüksekliği", value: "44 m" },
-      { label: "Yatay Erişim", value: "24 m" },
-      { label: "Platform Kapasite", value: "250 kg" },
-    ],
-  },
-];
 
 export default function ManliftPage() {
   return (
@@ -144,7 +22,7 @@ export default function ManliftPage() {
             <span className="accent">güvenle</span> aş.
           </h1>
           <p className="lead">
-            Eklemli, teleskopik, makaslı ve örümcek manliftlerle iç/dış mekan bakım, montaj ve prodüksiyon
+            Dikey direk, eklemli, teleskopik ve makaslı manliftlerle iç/dış mekan bakım, montaj ve prodüksiyon
             erişimi — dar alanlarda da yüksekte de.
           </p>
           <div className="hero-ctas">
@@ -209,19 +87,20 @@ export default function ManliftPage() {
               </div>
             </div>
             <div className="fleet-card">
-              <span className="num">04 / ÖRÜMCEK</span>
+              <span className="num">04 / DİKEY DİREK</span>
               <svg viewBox="0 0 200 100" fill="none">
-                <rect x="80" y="60" width="40" height="20" rx="3" fill="#E8E2D5" />
-                <line x1="70" y1="80" x2="40" y2="95" stroke="#1C1A17" strokeWidth="5" strokeLinecap="round" />
-                <line x1="130" y1="80" x2="160" y2="95" stroke="#1C1A17" strokeWidth="5" strokeLinecap="round" />
-                <line x1="100" y1="60" x2="120" y2="20" stroke="#A9762E" strokeWidth="6" strokeLinecap="round" />
-                <line x1="120" y1="20" x2="160" y2="10" stroke="#7A7367" strokeWidth="4" strokeLinecap="round" />
+                <rect x="70" y="12" width="42" height="20" rx="3" fill="#E8E2D5" />
+                <rect x="86" y="32" width="10" height="52" fill="#10141A" />
+                <rect x="97" y="32" width="7" height="52" fill="#F2B400" />
+                <rect x="60" y="84" width="80" height="10" rx="2" fill="#10141A" />
+                <circle cx="76" cy="96" r="6" fill="#6C7078" />
+                <circle cx="124" cy="96" r="6" fill="#6C7078" />
               </svg>
-              <h3>Örümcek (Spider)</h3>
-              <p>Paletli ve daraltılabilir ayaklarıyla merdivenden geçebilen, iç mekân yüksek tavan işleri için.</p>
+              <h3>Dikey Direk (Mast)</h3>
+              <p>Tek veya çift direkli teleskopik yapısıyla dar koridor ve depo içi işlerde dar gabarili dikey erişim.</p>
               <div className="specs">
-                <span><b>Çalışma Yük.:</b> 14–30 m</span>
-                <span><b>Genişlik:</b> 78–110 cm</span>
+                <span><b>Çalışma Yük.:</b> 12–16 m</span>
+                <span><b>Genişlik:</b> 70–90 cm</span>
               </div>
             </div>
           </div>
@@ -259,10 +138,10 @@ export default function ManliftPage() {
         <div className="wrap">
           <div className="section-head">
             <span className="eyebrow">Ürün Kataloğu</span>
-            <h2>10 manlift modeli, tek tek incele</h2>
+            <h2>15 manlift modeli, tek tek incele</h2>
             <p>Eklemliden makaslıya, teleskopikten örümceğe kadar tüm manlift çeşitlerimizi karşılaştırarak doğru modeli seçin.</p>
           </div>
-          <ProductCatalog products={manliftProducts} />
+          <div className="cat-manlift"><ProductCatalog products={manliftProducts} /></div>
           <p className="table-note">* Fiyat, ekipman tipi, süre ve saha koşullarına göre değişir; size özel teklif için “Teklif Al” butonunu kullanın.</p>
         </div>
       </section>
@@ -281,7 +160,7 @@ export default function ManliftPage() {
             </details>
             <details className="faq-item">
               <summary>İç mekanda kullanılabilir mi?<span className="plus"></span></summary>
-              <div className="body">Evet, elektrikli makaslı ve örümcek modellerimiz iç mekan kullanımına uygundur; gaz emisyonu yapmaz.</div>
+              <div className="body">Evet, akülü dikey direk, eklemli ve makaslı modellerimiz iç mekan kullanımına uygundur; gaz emisyonu yapmaz.</div>
             </details>
             <details className="faq-item">
               <summary>Operatör eğitimi gerekiyor mu?<span className="plus"></span></summary>

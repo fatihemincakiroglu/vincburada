@@ -42,6 +42,7 @@ export default function Header() {
               <a href="/forklift">Forklift</a>
               <a href="/manlift">Manlift</a>
               <a href="/platform">Platform</a>
+              <a href="/urunler">Ürünler</a>
               <a href="/sss">SSS</a>
               <a href="/iletisim">İletişim</a>
             </div>

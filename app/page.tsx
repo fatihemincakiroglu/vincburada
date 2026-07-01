@@ -103,7 +103,7 @@ export default function Home() {
           </div>
 
           <div className="hx-plate-grid">
-            <a className="hx-plate" href="/vinc">
+            <a className="hx-plate cat-vinc" href="/vinc">
               <span className="rivet-b1"></span>
               <span className="rivet-b2"></span>
               <span className="code">VB-01 · MOBİL &amp; KULE</span>
@@ -125,10 +125,10 @@ export default function Home() {
               <span className="more">Filoyu İncele →</span>
             </a>
 
-            <a className="hx-plate" href="/manlift">
+            <a className="hx-plate cat-manlift" href="/manlift">
               <span className="rivet-b1"></span>
               <span className="rivet-b2"></span>
-              <span className="code">VB-02 · EKLEMLİ &amp; TELESKOPİK</span>
+              <span className="code">VB-02 · DİKEY, EKLEMLİ &amp; TELESKOPİK</span>
               <span className="ic">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
                   <path d="M4 21c0-4 2-6 6-7" strokeLinecap="round" />
@@ -140,16 +140,16 @@ export default function Home() {
               <h3>Manlift</h3>
               <p>İnsan yükseltme platformları ile cephe, tavan ve iç mekân bakım-onarım işleri.</p>
               <div className="specs">
-                <div><b>Kapasite:</b> 2 – 4 kişi</div>
-                <div><b>Erişim:</b> 10 – 43 m</div>
+                <div><b>Platform:</b> 120 – 450 kg</div>
+                <div><b>Erişim:</b> 6 – 40 m</div>
               </div>
               <span className="more">Filoyu İncele →</span>
             </a>
 
-            <a className="hx-plate" href="/forklift">
+            <a className="hx-plate cat-forklift" href="/forklift">
               <span className="rivet-b1"></span>
               <span className="rivet-b2"></span>
-              <span className="code">VB-03 · DİZEL &amp; ELEKTRİKLİ</span>
+              <span className="code">VB-03 · DİZEL</span>
               <span className="ic">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
                   <path d="M4 3v14" strokeLinecap="round" />
@@ -161,15 +161,15 @@ export default function Home() {
                 </svg>
               </span>
               <h3>Forklift</h3>
-              <p>Depo, liman ve şantiye içi malzeme taşıma için forklift ve istif makinesi filosu.</p>
+              <p>Depo, liman ve şantiye içi malzeme taşıma için dizel forklift filosu.</p>
               <div className="specs">
-                <div><b>Kapasite:</b> 1,5 – 25 ton</div>
-                <div><b>Tip:</b> İstif &amp; Transpalet</div>
+                <div><b>Kapasite:</b> 3 – 7 ton</div>
+                <div><b>Kaldırma:</b> 3 – 6 m</div>
               </div>
               <span className="more">Filoyu İncele →</span>
             </a>
 
-            <a className="hx-plate" href="/platform">
+            <a className="hx-plate cat-platform" href="/platform">
               <span className="rivet-b1"></span>
               <span className="rivet-b2"></span>
               <span className="code">VB-04 · MAKASLI &amp; ÖRÜMCEK</span>

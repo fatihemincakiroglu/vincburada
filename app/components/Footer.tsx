@@ -26,6 +26,9 @@ export default function Footer() {
               <li>
                 <a href="/platform">Platform</a>
               </li>
+              <li>
+                <a href="/urunler">Tüm Ürünler</a>
+              </li>
             </ul>
           </div>
           <div>

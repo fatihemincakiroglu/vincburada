@@ -1,143 +1,11 @@
 import type { Metadata } from "next";
-import ProductCatalog, { Product } from "../components/ProductCatalog";
+import ProductCatalog from "../components/ProductCatalog";
+import { vincProducts } from "../data/products/vinc";
 
 export const metadata: Metadata = {
   title: "Vinç Kiralama — Vinç Burada",
   description: "Mobil, kule, paletli ve teleskopik vinç kiralama. Operatörlü, sigortalı ve 7/24 saha desteğiyle.",
 };
-
-const vincProducts: Product[] = [
-  {
-    id: "vb-m60",
-    name: "VB-M60",
-    tag: "Mobil Vinç",
-    image: "/gallery/gokdelen-yuksek-platform.jpg",
-    blurb: "Şehir içi ve orta ölçekli şantiye operasyonları için hızlı konuşlanan mobil vinç.",
-    specs: [
-      { label: "Kapasite", value: "60 ton" },
-      { label: "Bom Uzunluğu", value: "34 m" },
-      { label: "Maks. Yükseklik", value: "45 m" },
-      { label: "Konuşlanma", value: "~1.5 saat" },
-    ],
-  },
-  {
-    id: "vb-m120",
-    name: "VB-M120",
-    tag: "Mobil Vinç",
-    image: "/gallery/kongre-merkezi-gece.jpg",
-    blurb: "Ağır parça montajı ve büyük ölçekli kurulumlar için yüksek kapasiteli mobil vinç.",
-    specs: [
-      { label: "Kapasite", value: "120 ton" },
-      { label: "Bom Uzunluğu", value: "48 m" },
-      { label: "Maks. Yükseklik", value: "62 m" },
-      { label: "Konuşlanma", value: "~2 saat" },
-    ],
-  },
-  {
-    id: "vb-m200",
-    name: "VB-M200",
-    tag: "Mobil Vinç",
-    image: "/gallery/istanbul-skyline-vinc.jpg",
-    blurb: "Endüstriyel tesis ve enerji santrali projelerinde ağır ekipman kaldırma için filomuzun en güçlü mobil vinci.",
-    specs: [
-      { label: "Kapasite", value: "200 ton" },
-      { label: "Bom Uzunluğu", value: "55 m" },
-      { label: "Maks. Yükseklik", value: "70 m" },
-      { label: "Konuşlanma", value: "~3 saat" },
-    ],
-  },
-  {
-    id: "vb-k8t",
-    name: "VB-K8T",
-    tag: "Kule Vinç",
-    image: "/gallery/fatih-camii-minare.jpg",
-    blurb: "Uzun süreli yüksek katlı inşaat projelerinde sabit kurulum ve geniş çalışma yarıçapı.",
-    specs: [
-      { label: "Kapasite", value: "8 ton" },
-      { label: "Çalışma Yarıçapı", value: "60 m" },
-      { label: "Maks. Yükseklik", value: "160 m" },
-      { label: "Konuşlanma", value: "3–5 gün" },
-    ],
-  },
-  {
-    id: "vb-k12t",
-    name: "VB-K12T",
-    tag: "Kule Vinç",
-    image: "/gallery/su-kulesi-gece-vinc.jpg",
-    blurb: "Daha yüksek kapasite ve geniş radyus gerektiren büyük rezidans ve gökdelen projeleri için.",
-    specs: [
-      { label: "Kapasite", value: "12 ton" },
-      { label: "Çalışma Yarıçapı", value: "65 m" },
-      { label: "Maks. Yükseklik", value: "180 m" },
-      { label: "Konuşlanma", value: "4–6 gün" },
-    ],
-  },
-  {
-    id: "vb-p250",
-    name: "VB-P250",
-    tag: "Paletli Vinç",
-    image: "/gallery/tarihi-bina-cephe-platform.jpg",
-    blurb: "Zemini zayıf veya yumuşak sahalarda yüksek stabilite gerektiren ağır montaj işleri için.",
-    specs: [
-      { label: "Kapasite", value: "250 ton" },
-      { label: "Bom Uzunluğu", value: "66 m" },
-      { label: "Maks. Yükseklik", value: "78 m" },
-      { label: "Konuşlanma", value: "~6 saat" },
-    ],
-  },
-  {
-    id: "vb-p400",
-    name: "VB-P400",
-    tag: "Paletli Vinç",
-    image: "/gallery/anitkabir-vinc.jpg",
-    blurb: "Filomuzun en yüksek kapasiteli vinci; endüstriyel tesis kurulumu ve ağır ekipman taşımada tercih edilir.",
-    specs: [
-      { label: "Kapasite", value: "400 ton" },
-      { label: "Bom Uzunluğu", value: "78 m" },
-      { label: "Maks. Yükseklik", value: "96 m" },
-      { label: "Konuşlanma", value: "~8 saat" },
-    ],
-  },
-  {
-    id: "vb-t35",
-    name: "VB-T35",
-    tag: "Teleskopik Vinç",
-    image: "/gallery/cami-vinc-kabin.jpg",
-    blurb: "Ayarlanabilir bom uzunluğu sayesinde dar alanlarda ve değişken yükseklik ihtiyaçlarında esneklik sunar.",
-    specs: [
-      { label: "Kapasite", value: "35 ton" },
-      { label: "Bom Uzunluğu", value: "32 m" },
-      { label: "Maks. Yükseklik", value: "40 m" },
-      { label: "Konuşlanma", value: "~1 saat" },
-    ],
-  },
-  {
-    id: "vb-sc8",
-    name: "VB-SC8",
-    tag: "Örümcek Vinç",
-    image: "/gallery/cami-vinc-kabin.jpg",
-    blurb: "Daraltılabilir ayaklarıyla kapı ve merdivenden geçerek iç mekâna girebilen, kubbe ve avlu içi hassas kaldırmalar için mini vinç.",
-    specs: [
-      { label: "Kapasite", value: "8 ton" },
-      { label: "Bom Uzunluğu", value: "20 m" },
-      { label: "Maks. Yükseklik", value: "22 m" },
-      { label: "Konuşlanma", value: "~45 dk" },
-    ],
-  },
-  {
-    id: "vb-k20t",
-    name: "VB-K20T",
-    tag: "Kule Vinç",
-    image: "/gallery/su-kulesi-gece-vinc.jpg",
-    blurb: "Filomuzun en yüksek kule vinci; çok bloklu rezidans ve gökdelen projelerinde uzun süreli sabit kurulum için.",
-    specs: [
-      { label: "Kapasite", value: "20 ton" },
-      { label: "Çalışma Yarıçapı", value: "70 m" },
-      { label: "Maks. Yükseklik", value: "200 m" },
-      { label: "Konuşlanma", value: "5–7 gün" },
-    ],
-  },
-];
 
 export default function VincPage() {
   return (
@@ -289,7 +157,7 @@ export default function VincPage() {
             <h2>10 vinç modeli, tek tek incele</h2>
             <p>Mobilden paletliye, kuleden teleskopiğe kadar tüm vinç çeşitlerimizi karşılaştırarak doğru modeli seçin.</p>
           </div>
-          <ProductCatalog products={vincProducts} />
+          <div className="cat-vinc"><ProductCatalog products={vincProducts} /></div>
           <p className="table-note">* Fiyat, ekipman tipi, süre ve saha koşullarına göre değişir; size özel teklif için “Teklif Al” butonunu kullanın.</p>
         </div>
       </section>
