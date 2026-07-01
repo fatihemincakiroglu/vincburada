@@ -47,7 +47,7 @@ export default function Header() {
             </div>
             <div className="nav-cta">
               <span className="nav-phone">0532 303 90 89</span>
-              <a className="btn btn-primary" style={{ padding: "10px 20px", fontSize: "13px" }} href="/iletisim">
+              <a className="btn btn-gold" style={{ padding: "10px 20px", fontSize: "13px" }} href="/iletisim">
                 Teklif Al
               </a>
             </div>

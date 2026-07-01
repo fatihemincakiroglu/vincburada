@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Inter, JetBrains_Mono } from "next/font/google";
+import { Big_Shoulders, Inter, JetBrains_Mono } from "next/font/google";
 import "./vincburada.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
-const jakarta = Plus_Jakarta_Sans({
+const bigShoulders = Big_Shoulders({
   subsets: ["latin"],
-  weight: ["500", "600", "700", "800"],
+  weight: ["600", "700", "800", "900"],
   variable: "--font-jakarta",
 });
 
@@ -23,9 +23,9 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Vinç Burada — Vinç, Forklift, Manlift ve Platform Kiralama",
+  title: "Vinç Burada — Vinç, Manlift, Forklift, Platform ve İş Makinesi Kiralama",
   description:
-    "Vinç, forklift, manlift ve platform kiralama. Türkiye genelinde 7/24 saha hizmeti, sertifikalı operatörler ve tam sigorta kapsamı.",
+    "Vinç, manlift, forklift, platform, iş makinesi ve istif makinesi kiralama. Türkiye genelinde 7/24 saha hizmeti, sertifikalı operatörler ve tam sigorta kapsamı.",
 };
 
 export default function RootLayout({
@@ -34,7 +34,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="tr" className={`${jakarta.variable} ${inter.variable} ${jetbrains.variable}`}>
+    <html lang="tr" className={`${bigShoulders.variable} ${inter.variable} ${jetbrains.variable}`}>
       <body>
         <Header />
         {children}
