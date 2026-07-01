@@ -20,62 +20,6 @@ export default function Home() {
             kulesinden film setine kadar 15 yıldır her işi yukarı taşıyoruz.
           </p>
 
-          <div className="hero-search">
-            <div className="hero-search-bar">
-              <div className="hero-search-field">
-                <select defaultValue="">
-                  <option value="" disabled>
-                    Ne arıyorsunuz?
-                  </option>
-                  <option>Mobil Vinç</option>
-                  <option>Kule Vinç</option>
-                  <option>Paletli Vinç</option>
-                  <option>Teleskopik Vinç</option>
-                  <option>Dizel Forklift</option>
-                  <option>LPG Forklift</option>
-                  <option>Elektrikli Forklift</option>
-                  <option>Reach Truck</option>
-                  <option>Eklemli Manlift</option>
-                  <option>Teleskopik Manlift</option>
-                  <option>Makaslı Manlift</option>
-                  <option>Örümcek Manlift</option>
-                  <option>Teleskopik Platform</option>
-                  <option>Eklemli Platform</option>
-                  <option>İkiz Kollu Platform</option>
-                  <option>Kompakt Platform</option>
-                </select>
-                <svg className="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </div>
-              <div className="hero-search-field">
-                <select defaultValue="">
-                  <option value="" disabled>
-                    Kategori seçin
-                  </option>
-                  <option>Vinç</option>
-                  <option>Forklift</option>
-                  <option>Manlift</option>
-                  <option>Platform</option>
-                </select>
-                <svg className="chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </div>
-              <div className="hero-search-field dates">
-                <input type="date" defaultValue="2026-06-30" />
-                <span>–</span>
-                <input type="date" defaultValue="2026-06-30" />
-              </div>
-              <button type="button" className="hero-search-btn">
-                Ara
-              </button>
-            </div>
-            <p className="hero-search-note">
-              Veya <a href="#hizmetler">tüm hizmetlerimizi</a> ve ürün kataloğumuzu inceleyin.
-            </p>
-          </div>
-
           <div className="hero-ctas">
             <a className="btn btn-gold" href="/iletisim">
               Hemen Teklif Al →
@@ -100,6 +44,232 @@ export default function Home() {
             <div>
               <b>24/7</b>
               <span>Acil Müdahale</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ============ FLOATING SEARCH BAR ============ */}
+      <div className="wrap">
+        <div className="search-float">
+          <div className="search-float-bar">
+            <div className="search-float-field">
+              <label>Ne Taşıyacaksınız?</label>
+              <select defaultValue="">
+                <option value="" disabled>Lütfen seçiniz</option>
+                <option>İnsan</option>
+                <option>Malzeme</option>
+              </select>
+              <svg className="chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </div>
+            <div className="search-float-field">
+              <label>Ekipman</label>
+              <select defaultValue="">
+                <option value="" disabled>Kategori seçin</option>
+                <option>Vinç</option>
+                <option>Forklift</option>
+                <option>Manlift</option>
+                <option>Platform</option>
+              </select>
+              <svg className="chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </div>
+            <div className="search-float-field">
+              <label>Güç Kaynağı</label>
+              <select defaultValue="">
+                <option value="" disabled>Enerji türü seçiniz</option>
+                <option>Akülü</option>
+                <option>Dizel</option>
+                <option>Çift Enerjili</option>
+              </select>
+              <svg className="chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </div>
+            <div className="search-float-field">
+              <label>Yükseklik (Min)</label>
+              <input type="text" placeholder="Metre" />
+            </div>
+            <div className="search-float-field">
+              <label>Yükseklik (Max)</label>
+              <input type="text" placeholder="Metre" />
+            </div>
+            <button type="button" className="search-float-btn">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <circle cx="11" cy="11" r="7" />
+                <path d="M21 21l-4.35-4.35" strokeLinecap="round" />
+              </svg>
+              Bul
+            </button>
+          </div>
+          <p className="search-float-note">
+            Veya <a href="#hizmetler">tüm hizmetlerimizi</a> ve ürün kataloğumuzu inceleyin.
+          </p>
+        </div>
+      </div>
+
+      {/* ============ ICON STRIP ============ */}
+      <section style={{ paddingTop: "72px" }}>
+        <div className="wrap">
+          <div className="section-head">
+            <span className="eyebrow">Filomuz</span>
+            <h2>8 farklı kategori, 1.500&apos;den fazla ekipman</h2>
+            <p>Vinç, forklift, manlift ve platform ailelerinin tüm alt tiplerini tek çatı altında, aynı gün sevkiyat garantisiyle sunuyoruz.</p>
+          </div>
+          <div className="icon-strip">
+            <a className="icon-strip-item" href="/vinc">
+              <span className="ic">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+                  <path d="M4 21V9" strokeLinecap="round" />
+                  <path d="M4 9l14-5" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M18 4v9" strokeLinecap="round" />
+                  <path d="M18 13l3 3" strokeLinecap="round" />
+                  <path d="M2 21h6" strokeLinecap="round" />
+                </svg>
+              </span>
+              <span>Mobil Vinç</span>
+            </a>
+            <a className="icon-strip-item" href="/vinc">
+              <span className="ic">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+                  <path d="M6 21V6" strokeLinecap="round" />
+                  <path d="M6 6h13" strokeLinecap="round" />
+                  <path d="M15 6v4l4-1" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M3 21h10" strokeLinecap="round" />
+                </svg>
+              </span>
+              <span>Kule Vinç</span>
+            </a>
+            <a className="icon-strip-item" href="/forklift">
+              <span className="ic">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+                  <path d="M4 3v14" strokeLinecap="round" />
+                  <path d="M4 8h5v9H4z" strokeLinejoin="round" />
+                  <path d="M9 10h7l3-3" strokeLinecap="round" strokeLinejoin="round" />
+                  <circle cx="7" cy="19" r="1.6" />
+                  <circle cx="16" cy="19" r="1.6" />
+                  <path d="M9 17h9v2H9z" strokeLinejoin="round" />
+                </svg>
+              </span>
+              <span>Dizel Forklift</span>
+            </a>
+            <a className="icon-strip-item" href="/forklift">
+              <span className="ic">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+                  <path d="M4 3v14" strokeLinecap="round" />
+                  <path d="M4 8h5v9H4z" strokeLinejoin="round" />
+                  <path d="M9 10h7l3-3" strokeLinecap="round" strokeLinejoin="round" />
+                  <circle cx="7" cy="19" r="1.6" />
+                  <circle cx="16" cy="19" r="1.6" />
+                  <path d="M13.5 3.5L11 8h3l-2.5 4.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </span>
+              <span>Elektrikli Forklift</span>
+            </a>
+            <a className="icon-strip-item" href="/manlift">
+              <span className="ic">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+                  <path d="M4 21c0-4 2-6 6-7" strokeLinecap="round" />
+                  <path d="M10 14c3-1 5-3 6-6" strokeLinecap="round" />
+                  <rect x="14" y="3" width="6" height="4" rx="1" />
+                  <path d="M3 21h8" strokeLinecap="round" />
+                </svg>
+              </span>
+              <span>Eklemli Manlift</span>
+            </a>
+            <a className="icon-strip-item" href="/manlift">
+              <span className="ic">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+                  <path d="M6 21V5" strokeLinecap="round" />
+                  <path d="M6 8l11-4" strokeLinecap="round" strokeLinejoin="round" />
+                  <rect x="16" y="1.5" width="5" height="4" rx="1" />
+                  <path d="M2 21h9" strokeLinecap="round" />
+                </svg>
+              </span>
+              <span>Teleskopik Manlift</span>
+            </a>
+            <a className="icon-strip-item" href="/platform">
+              <span className="ic">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+                  <path d="M4 20h16" strokeLinecap="round" />
+                  <path d="M6 20V9l5 5 5-5v11" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M4 9h16" strokeLinecap="round" />
+                </svg>
+              </span>
+              <span>Makaslı Platform</span>
+            </a>
+            <a className="icon-strip-item" href="/platform">
+              <span className="ic">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
+                  <rect x="7" y="15" width="10" height="4" rx="1" />
+                  <path d="M9 15l-5-8" strokeLinecap="round" />
+                  <path d="M15 15l5-8" strokeLinecap="round" />
+                  <path d="M9 15l-3 6" strokeLinecap="round" />
+                  <path d="M15 15l3 6" strokeLinecap="round" />
+                </svg>
+              </span>
+              <span>Örümcek Platform</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ============ SECTOR SOLUTIONS ============ */}
+      <section className="section-alt">
+        <div className="wrap">
+          <div className="section-head">
+            <span className="eyebrow">Sektörel Çözümler</span>
+            <h2>Vinç Burada&apos;dan sektörlere özel kiralama hizmetleri</h2>
+            <p>Farklı sektörlerin saha koşullarına, erişim kısıtlarına ve güvenlik gereksinimlerine göre özelleştirilmiş ekipman ve operasyon planları sunuyoruz.</p>
+          </div>
+          <div className="sector-grid">
+            <div className="sector-card">
+              <div className="img">
+                <img src="/gallery/cami-vinc-kabin.jpg" alt="Dini ve tarihi yapılarda vinç kullanımı" />
+              </div>
+              <div className="body">
+                <h3>Dini ve Tarihi Yapılar İçin Çözümlerimiz</h3>
+                <p>Cami, minare ve tarihi bina restorasyonlarında özel izin süreçlerine uygun, hassas kaldırma ve erişim ekipmanı sağlıyoruz.</p>
+                <a className="more" href="/vinc">
+                  Detaylı Bilgi
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M7 17L17 7M9 7h8v8" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div className="sector-card">
+              <div className="img">
+                <img src="/gallery/express-platform-kamyon.jpg" alt="Liman ve lojistik sahalarında platform kullanımı" />
+              </div>
+              <div className="body">
+                <h3>Liman ve Lojistik Sahalarına Özel Çözümler</h3>
+                <p>Yoğun trafik ve ağır yük hareketliliği olan liman, depo ve lojistik sahalarında güvenli, sertifikalı operatörlü hizmet veriyoruz.</p>
+                <a className="more" href="/forklift">
+                  Detaylı Bilgi
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M7 17L17 7M9 7h8v8" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div className="sector-card">
+              <div className="img">
+                <img src="/gallery/gokdelen-yuksek-platform.jpg" alt="AVM ve gökdelen cephe operasyonları" />
+              </div>
+              <div className="body">
+                <h3>AVM ve Gökdelenlere Özel Çözümlerimiz</h3>
+                <p>İstanbul&apos;un yüksek katlı yapılarında cephe montajı, bakım ve onarım işlerinde yüksek erişimli platform filomuzla hizmet veriyoruz.</p>
+                <a className="more" href="/platform">
+                  Detaylı Bilgi
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M7 17L17 7M9 7h8v8" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                </a>
+              </div>
             </div>
           </div>
         </div>
