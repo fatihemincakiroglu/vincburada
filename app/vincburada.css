@@ -122,6 +122,8 @@ header{position:sticky;top:0;z-index:60;padding-top:16px;}
 .navlinks a.active{color:var(--gold-deep);}
 .nav-cta{display:flex;align-items:center;gap:14px;}
 .nav-phone{font-family:var(--mono);font-size:13.5px;color:var(--ink-soft);}
+.logo-img{height:36px;width:auto;display:block;}
+footer .logo-img{height:40px;}
 @media (max-width:980px){.navlinks{display:none;} .nav-phone{display:none;}}
 
 /* ===== HERO ===== */

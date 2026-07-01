@@ -35,7 +35,7 @@ export default function Header() {
         <div className="nav-shell">
           <nav className="nav-inner">
             <a href="/" className="logo">
-              <span className="mark"></span>Vinç Burada
+              <img src="/brand/logo.png" alt="Vinç Burada" className="logo-img" />
             </a>
             <div className="navlinks">
               <a href="/vinc">Vinç</a>

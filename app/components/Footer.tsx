@@ -5,7 +5,7 @@ export default function Footer() {
         <div className="foot-grid">
           <div>
             <div className="logo" style={{ marginBottom: "14px" }}>
-              <span className="mark"></span>Vinç Burada
+              <img src="/brand/logo.png" alt="Vinç Burada" className="logo-img" />
             </div>
             <p style={{ fontSize: "13.5px", lineHeight: "1.6", maxWidth: "280px", color: "var(--steel)" }}>
               Türkiye genelinde vinç, forklift, manlift ve platform kiralama; saha mühendisliği ve sigortalı yük taşıma hizmeti.
