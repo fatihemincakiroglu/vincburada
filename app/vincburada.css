@@ -699,3 +699,45 @@ footer{padding:80px 0 32px;border-top:1px solid var(--line);background:var(--bg-
 .finder-select-option:hover{background:var(--gold-pale);}
 .finder-select-option.active{background:var(--gold);color:var(--ink);font-weight:700;}
 @media (max-width:900px){.finder-select-panel{left:0;right:0;min-width:0;}}
+
+/* ===== FLOATING WHATSAPP + PHONE BUTTONS ===== */
+.fab-stack{
+  position:fixed;right:22px;bottom:22px;z-index:200;
+  display:flex;flex-direction:column;gap:14px;
+  padding-bottom:env(safe-area-inset-bottom);
+}
+.fab{
+  width:56px;height:56px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 10px 26px -8px rgba(16,20,26,.35);
+  position:relative;transition:transform .2s cubic-bezier(.2,.7,.2,1), box-shadow .2s ease;
+}
+.fab:hover{transform:translateY(-3px) scale(1.05);box-shadow:0 14px 32px -8px rgba(16,20,26,.45);}
+.fab svg{width:26px;height:26px;}
+.fab-whatsapp{background:#25D366;color:#fff;}
+.fab-whatsapp::before{
+  content:"";position:absolute;inset:0;border-radius:50%;background:#25D366;
+  animation:fabPulse 2.4s ease-out infinite;z-index:-1;
+}
+.fab-phone{background:var(--ink);color:var(--gold-soft);}
+@keyframes fabPulse{
+  0%{transform:scale(1);opacity:.55;}
+  70%{transform:scale(1.9);opacity:0;}
+  100%{opacity:0;}
+}
+.fab-tip{
+  position:absolute;right:calc(100% + 12px);top:50%;transform:translateY(-50%) translateX(6px);
+  background:var(--ink);color:#fff;font-family:var(--body);font-size:12.5px;font-weight:600;
+  padding:8px 14px;border-radius:6px;white-space:nowrap;
+  opacity:0;pointer-events:none;transition:opacity .18s ease, transform .18s ease;
+  box-shadow:var(--shadow-sm);
+}
+.fab:hover .fab-tip{opacity:1;transform:translateY(-50%) translateX(0);}
+@media (prefers-reduced-motion:reduce){.fab-whatsapp::before{animation:none;}}
+
+@media (max-width:640px){
+  .fab-stack{right:16px;bottom:16px;gap:12px;}
+  .fab{width:50px;height:50px;}
+  .fab svg{width:23px;height:23px;}
+  .fab-tip{display:none;}
+}

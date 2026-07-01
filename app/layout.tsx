@@ -3,6 +3,7 @@ import { Big_Shoulders, Inter, JetBrains_Mono } from "next/font/google";
 import "./vincburada.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import FloatingContact from "./components/FloatingContact";
 
 const bigShoulders = Big_Shoulders({
   subsets: ["latin"],
@@ -39,6 +40,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <FloatingContact />
       </body>
     </html>
   );
