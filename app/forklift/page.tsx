@@ -13,7 +13,6 @@ const forkliftProducts: Product[] = [
     tag: "Dizel Forklift",
     image: "/gallery/express-platform-kamyon.jpg",
     blurb: "Küçük ve orta ölçekli depo/şantiye işleri için ekonomik dizel forklift.",
-    price: "₺2.100 – 2.700 / gün",
     specs: [
       { label: "Kapasite", value: "1.6 ton" },
       { label: "Maks. Kaldırma", value: "4 m" },
@@ -26,7 +25,6 @@ const forkliftProducts: Product[] = [
     tag: "Dizel Forklift",
     image: "/gallery/cephe-montaj-yuksek.jpg",
     blurb: "Açık alan ve şantiye sahalarında yüksek tork gerektiren orta segment yük operasyonları için.",
-    price: "₺2.400 – 3.100 / gün",
     specs: [
       { label: "Kapasite", value: "2.5 ton" },
       { label: "Maks. Kaldırma", value: "4.5 m" },
@@ -39,7 +37,6 @@ const forkliftProducts: Product[] = [
     tag: "Dizel Forklift",
     image: "/gallery/cam-cephe-platform.jpg",
     blurb: "Ağır palet ve büyük hacimli yüklerde dayanıklılık öne çıkan güçlü dizel forklift.",
-    price: "₺3.600 – 4.500 / gün",
     specs: [
       { label: "Kapasite", value: "5 ton" },
       { label: "Maks. Kaldırma", value: "5 m" },
@@ -52,7 +49,6 @@ const forkliftProducts: Product[] = [
     tag: "Ağır Tip Dizel Forklift",
     image: "/gallery/cephe-giyim-platform.jpg",
     blurb: "Liman ve ağır sanayi sahalarında konteyner ve büyük ekipman taşıma için filomuzun en güçlü forklifti.",
-    price: "₺6.800 – 8.500 / gün",
     specs: [
       { label: "Kapasite", value: "10 ton" },
       { label: "Maks. Kaldırma", value: "6 m" },
@@ -65,7 +61,6 @@ const forkliftProducts: Product[] = [
     tag: "LPG Forklift",
     image: "/gallery/rezidans-cephe-vinc.jpg",
     blurb: "Hem kapalı hem açık alanda çalışabilen, dizele kıyasla daha düşük emisyonlu orta segment çözüm.",
-    price: "₺2.700 – 3.400 / gün",
     specs: [
       { label: "Kapasite", value: "2.5 ton" },
       { label: "Maks. Kaldırma", value: "4.5 m" },
@@ -78,7 +73,6 @@ const forkliftProducts: Product[] = [
     tag: "Elektrikli Forklift",
     image: "/gallery/rezidans-cephe-vinc-2.jpg",
     blurb: "Kapalı depo ve gıda/ilaç gibi emisyon hassasiyeti olan sahalarda sessiz ve temiz operasyon.",
-    price: "₺2.900 – 3.700 / gün",
     specs: [
       { label: "Kapasite", value: "2 ton" },
       { label: "Maks. Kaldırma", value: "4 m" },
@@ -91,7 +85,6 @@ const forkliftProducts: Product[] = [
     tag: "Elektrikli Forklift",
     image: "/gallery/platform-cam-bulutlar.jpg",
     blurb: "Daha yüksek kapasiteli elektrikli model; çok vardiyalı depo operasyonları için uzun batarya ömrü.",
-    price: "₺3.300 – 4.100 / gün",
     specs: [
       { label: "Kapasite", value: "3 ton" },
       { label: "Maks. Kaldırma", value: "4.5 m" },
@@ -104,10 +97,33 @@ const forkliftProducts: Product[] = [
     tag: "Reach Truck",
     image: "/gallery/zebra-desenli-platform.jpg",
     blurb: "Dar koridorlu yüksek raf depolarında hassas yerleştirme ve maksimum kaldırma yüksekliği.",
-    price: "₺4.200 – 5.300 / gün",
     specs: [
       { label: "Kapasite", value: "1.6 ton" },
       { label: "Maks. Kaldırma", value: "11 m" },
+      { label: "Yakıt", value: "Elektrik" },
+    ],
+  },
+  {
+    id: "vb-th30",
+    name: "VB-TH30",
+    tag: "Teleskopik Forklift",
+    image: "/gallery/tarihi-bina-cephe-platform.jpg",
+    blurb: "Şantiye sahasında düz zemin dışında da çalışabilen, yüksek ve uzak noktalara palet/malzeme ulaştıran teleskopik kollu forklift.",
+    specs: [
+      { label: "Kapasite", value: "3 ton" },
+      { label: "Maks. Kaldırma", value: "7 m" },
+      { label: "Yakıt", value: "Dizel" },
+    ],
+  },
+  {
+    id: "vb-tp20",
+    name: "VB-TP20",
+    tag: "Akülü Transpalet",
+    image: "/gallery/rezidans-cephe-vinc-2.jpg",
+    blurb: "Depo içi kısa mesafeli palet taşımada, dar koridorlarda sessiz ve manevra kolaylığı sağlayan akülü transpalet.",
+    specs: [
+      { label: "Kapasite", value: "2 ton" },
+      { label: "Maks. Kaldırma", value: "0.2 m" },
       { label: "Yakıt", value: "Elektrik" },
     ],
   },
@@ -221,11 +237,11 @@ export default function ForkliftPage() {
         <div className="wrap">
           <div className="section-head">
             <span className="eyebrow">Ürün Kataloğu</span>
-            <h2>8 forklift modeli, tek tek incele</h2>
+            <h2>10 forklift modeli, tek tek incele</h2>
             <p>Dizelden elektrikliye, standarttan reach truck&apos;a kadar tüm forklift çeşitlerimizi karşılaştırarak doğru modeli seçin.</p>
           </div>
           <ProductCatalog products={forkliftProducts} />
-          <p className="table-note">* Fiyatlar operatör dahil gösterge niteliğindedir; kesin teklif saha keşfi sonrası verilir.</p>
+          <p className="table-note">* Fiyat, ekipman tipi, süre ve saha koşullarına göre değişir; size özel teklif için “Teklif Al” butonunu kullanın.</p>
         </div>
       </section>
 

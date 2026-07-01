@@ -13,7 +13,6 @@ const vincProducts: Product[] = [
     tag: "Mobil Vinç",
     image: "/gallery/gokdelen-yuksek-platform.jpg",
     blurb: "Şehir içi ve orta ölçekli şantiye operasyonları için hızlı konuşlanan mobil vinç.",
-    price: "₺13.500 – 17.000 / gün",
     specs: [
       { label: "Kapasite", value: "60 ton" },
       { label: "Bom Uzunluğu", value: "34 m" },
@@ -27,7 +26,6 @@ const vincProducts: Product[] = [
     tag: "Mobil Vinç",
     image: "/gallery/kongre-merkezi-gece.jpg",
     blurb: "Ağır parça montajı ve büyük ölçekli kurulumlar için yüksek kapasiteli mobil vinç.",
-    price: "₺18.500 – 24.000 / gün",
     specs: [
       { label: "Kapasite", value: "120 ton" },
       { label: "Bom Uzunluğu", value: "48 m" },
@@ -41,7 +39,6 @@ const vincProducts: Product[] = [
     tag: "Mobil Vinç",
     image: "/gallery/istanbul-skyline-vinc.jpg",
     blurb: "Endüstriyel tesis ve enerji santrali projelerinde ağır ekipman kaldırma için filomuzun en güçlü mobil vinci.",
-    price: "₺26.000 – 33.000 / gün",
     specs: [
       { label: "Kapasite", value: "200 ton" },
       { label: "Bom Uzunluğu", value: "55 m" },
@@ -55,7 +52,6 @@ const vincProducts: Product[] = [
     tag: "Kule Vinç",
     image: "/gallery/fatih-camii-minare.jpg",
     blurb: "Uzun süreli yüksek katlı inşaat projelerinde sabit kurulum ve geniş çalışma yarıçapı.",
-    price: "₺9.200 – 13.000 / gün",
     specs: [
       { label: "Kapasite", value: "8 ton" },
       { label: "Çalışma Yarıçapı", value: "60 m" },
@@ -69,7 +65,6 @@ const vincProducts: Product[] = [
     tag: "Kule Vinç",
     image: "/gallery/su-kulesi-gece-vinc.jpg",
     blurb: "Daha yüksek kapasite ve geniş radyus gerektiren büyük rezidans ve gökdelen projeleri için.",
-    price: "₺11.500 – 15.000 / gün",
     specs: [
       { label: "Kapasite", value: "12 ton" },
       { label: "Çalışma Yarıçapı", value: "65 m" },
@@ -83,7 +78,6 @@ const vincProducts: Product[] = [
     tag: "Paletli Vinç",
     image: "/gallery/tarihi-bina-cephe-platform.jpg",
     blurb: "Zemini zayıf veya yumuşak sahalarda yüksek stabilite gerektiren ağır montaj işleri için.",
-    price: "₺32.000 – 41.500 / gün",
     specs: [
       { label: "Kapasite", value: "250 ton" },
       { label: "Bom Uzunluğu", value: "66 m" },
@@ -97,7 +91,6 @@ const vincProducts: Product[] = [
     tag: "Paletli Vinç",
     image: "/gallery/anitkabir-vinc.jpg",
     blurb: "Filomuzun en yüksek kapasiteli vinci; endüstriyel tesis kurulumu ve ağır ekipman taşımada tercih edilir.",
-    price: "₺46.000 – 58.000 / gün",
     specs: [
       { label: "Kapasite", value: "400 ton" },
       { label: "Bom Uzunluğu", value: "78 m" },
@@ -111,12 +104,37 @@ const vincProducts: Product[] = [
     tag: "Teleskopik Vinç",
     image: "/gallery/cami-vinc-kabin.jpg",
     blurb: "Ayarlanabilir bom uzunluğu sayesinde dar alanlarda ve değişken yükseklik ihtiyaçlarında esneklik sunar.",
-    price: "₺11.000 – 15.500 / gün",
     specs: [
       { label: "Kapasite", value: "35 ton" },
       { label: "Bom Uzunluğu", value: "32 m" },
       { label: "Maks. Yükseklik", value: "40 m" },
       { label: "Konuşlanma", value: "~1 saat" },
+    ],
+  },
+  {
+    id: "vb-sc8",
+    name: "VB-SC8",
+    tag: "Örümcek Vinç",
+    image: "/gallery/cami-vinc-kabin.jpg",
+    blurb: "Daraltılabilir ayaklarıyla kapı ve merdivenden geçerek iç mekâna girebilen, kubbe ve avlu içi hassas kaldırmalar için mini vinç.",
+    specs: [
+      { label: "Kapasite", value: "8 ton" },
+      { label: "Bom Uzunluğu", value: "20 m" },
+      { label: "Maks. Yükseklik", value: "22 m" },
+      { label: "Konuşlanma", value: "~45 dk" },
+    ],
+  },
+  {
+    id: "vb-k20t",
+    name: "VB-K20T",
+    tag: "Kule Vinç",
+    image: "/gallery/su-kulesi-gece-vinc.jpg",
+    blurb: "Filomuzun en yüksek kule vinci; çok bloklu rezidans ve gökdelen projelerinde uzun süreli sabit kurulum için.",
+    specs: [
+      { label: "Kapasite", value: "20 ton" },
+      { label: "Çalışma Yarıçapı", value: "70 m" },
+      { label: "Maks. Yükseklik", value: "200 m" },
+      { label: "Konuşlanma", value: "5–7 gün" },
     ],
   },
 ];
@@ -268,11 +286,11 @@ export default function VincPage() {
         <div className="wrap">
           <div className="section-head">
             <span className="eyebrow">Ürün Kataloğu</span>
-            <h2>8 vinç modeli, tek tek incele</h2>
+            <h2>10 vinç modeli, tek tek incele</h2>
             <p>Mobilden paletliye, kuleden teleskopiğe kadar tüm vinç çeşitlerimizi karşılaştırarak doğru modeli seçin.</p>
           </div>
           <ProductCatalog products={vincProducts} />
-          <p className="table-note">* Fiyatlar operatör, yakıt ve sahaya nakliye dahil gösterge niteliğindedir; kesin teklif saha keşfi sonrası verilir.</p>
+          <p className="table-note">* Fiyat, ekipman tipi, süre ve saha koşullarına göre değişir; size özel teklif için “Teklif Al” butonunu kullanın.</p>
         </div>
       </section>
 

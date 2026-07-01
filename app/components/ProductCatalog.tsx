@@ -9,7 +9,6 @@ export type Product = {
   tag: string;
   image: string;
   blurb: string;
-  price: string;
   specs: Spec[];
 };
 
@@ -45,7 +44,9 @@ export default function ProductCatalog({ products }: { products: Product[] }) {
                   ))}
                 </div>
                 <div className="product-foot">
-                  <span className="product-price">{p.price}</span>
+                  <a className="product-price" href="/iletisim">
+                    Teklif Al →
+                  </a>
                   <button type="button" className={`compare-toggle${isSelected ? " active" : ""}`} onClick={() => toggle(p.id)}>
                     {isSelected ? "✓ Seçildi" : "+ Karşılaştır"}
                   </button>
@@ -85,10 +86,10 @@ export default function ProductCatalog({ products }: { products: Product[] }) {
                   </tr>
                 ))}
                 <tr>
-                  <td className="model">Günlük Bedel</td>
+                  <td className="model">Fiyat</td>
                   {selectedProducts.map((p) => (
                     <td key={p.id} className="tag-cell">
-                      {p.price}
+                      <a href="/iletisim">Teklif Al →</a>
                     </td>
                   ))}
                 </tr>

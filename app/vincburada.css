@@ -294,7 +294,8 @@ footer{padding:80px 0 32px;border-top:1px solid var(--line);background:var(--bg-
 .product-chips{display:flex;flex-direction:column;gap:5px;font-family:var(--mono);font-size:11.5px;color:var(--ink-soft);}
 .product-chips b{color:var(--ink);font-family:var(--body);}
 .product-foot{display:flex;align-items:center;justify-content:space-between;margin-top:8px;padding-top:14px;border-top:1px solid var(--line);}
-.product-price{font-family:var(--display);font-size:14.5px;color:var(--ink);}
+.product-price{font-family:var(--display);font-weight:700;font-size:14px;color:var(--gold-deep);text-transform:uppercase;letter-spacing:.01em;transition:color .15s ease;}
+.product-price:hover{color:var(--ink);}
 .compare-toggle{
   font-family:var(--body);font-size:12px;font-weight:600;padding:8px 14px;border-radius:100px;
   border:1px solid var(--line-strong);background:transparent;cursor:pointer;color:var(--ink-soft);

@@ -147,7 +147,9 @@ export default function EquipmentFinder() {
                       </span>
                     </div>
                     <div className="product-foot">
-                      <span className="product-price">{p.price}</span>
+                      <a className="product-price" href="/iletisim">
+                        Teklif Al →
+                      </a>
                       <a className="btn btn-glass" style={{ padding: "8px 16px", fontSize: "12px" }} href={p.href}>
                         Detay →
                       </a>
