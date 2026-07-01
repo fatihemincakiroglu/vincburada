@@ -1,4 +1,5 @@
 import HeroMedia from "./components/HeroMedia";
+import EquipmentFinder from "./components/EquipmentFinder";
 
 export default function Home() {
   return (
@@ -85,66 +86,7 @@ export default function Home() {
 
       {/* ============ SAHA KONSOLU — equipment finder ============ */}
       <div className="wrap" style={{ marginTop: "-38px", position: "relative", zIndex: 5 }}>
-        <div className="search-float">
-          <div className="search-float-bar">
-            <div className="search-float-field">
-              <label>Ne Taşıyacaksınız?</label>
-              <select defaultValue="">
-                <option value="" disabled>Lütfen seçiniz</option>
-                <option>İnsan</option>
-                <option>Malzeme</option>
-              </select>
-              <svg className="chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </div>
-            <div className="search-float-field">
-              <label>Ekipman</label>
-              <select defaultValue="">
-                <option value="" disabled>Kategori seçin</option>
-                <option>Vinç</option>
-                <option>Manlift</option>
-                <option>Forklift</option>
-                <option>Platform</option>
-                <option>İş Makinesi</option>
-                <option>İstif Makinesi</option>
-              </select>
-              <svg className="chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </div>
-            <div className="search-float-field">
-              <label>Güç Kaynağı</label>
-              <select defaultValue="">
-                <option value="" disabled>Enerji türü seçiniz</option>
-                <option>Akülü</option>
-                <option>Dizel</option>
-                <option>Çift Enerjili</option>
-              </select>
-              <svg className="chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </div>
-            <div className="search-float-field">
-              <label>Yükseklik (Min)</label>
-              <input type="text" placeholder="Metre" />
-            </div>
-            <div className="search-float-field">
-              <label>Yükseklik (Max)</label>
-              <input type="text" placeholder="Metre" />
-            </div>
-            <button type="button" className="search-float-btn">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <circle cx="11" cy="11" r="7" />
-                <path d="M21 21l-4.35-4.35" strokeLinecap="round" />
-              </svg>
-              Bul
-            </button>
-          </div>
-          <p className="search-float-note">
-            Veya <a href="#filo">tüm filomuzu</a> aşağıda inceleyin.
-          </p>
-        </div>
+        <EquipmentFinder />
       </div>
 
       {/* ============ EQUIPMENT NAMEPLATES ============ */}

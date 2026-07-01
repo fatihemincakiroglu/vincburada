@@ -519,16 +519,16 @@ footer{padding:80px 0 32px;border-top:1px solid var(--line);background:var(--bg-
 }
 .search-float-field:last-of-type{border-right:none;}
 .search-float-field label{
-  display:block;font-family:var(--mono);font-size:10.5px;text-transform:uppercase;
-  letter-spacing:.08em;color:rgba(255,255,255,.45);margin-bottom:6px;
+  display:block;font-family:"Calibri","Segoe UI",sans-serif;font-size:11px;text-transform:uppercase;
+  letter-spacing:.04em;color:rgba(255,255,255,.5);margin-bottom:6px;
 }
 .search-float-field select,
 .search-float-field input{
   width:100%;border:none;outline:none;background:transparent;
-  font-family:var(--body);font-size:14.5px;font-weight:500;color:#fff;
+  font-family:"Calibri","Segoe UI",sans-serif;font-size:16px;font-weight:400;color:#fff;
   padding:0 20px 0 0;appearance:none;-webkit-appearance:none;cursor:pointer;
 }
-.search-float-field select option{color:var(--ink);}
+.search-float-field select option{color:var(--ink);font-family:"Calibri","Segoe UI",sans-serif;}
 .search-float-field input::placeholder{color:rgba(255,255,255,.35);}
 .search-float-field .chevron{position:absolute;right:20px;bottom:17px;pointer-events:none;color:rgba(255,255,255,.45);}
 .search-float-btn{
@@ -536,11 +536,11 @@ footer{padding:80px 0 32px;border-top:1px solid var(--line);background:var(--bg-
   background:var(--gold);color:var(--ink);
   padding:0 42px;
   display:flex;align-items:center;justify-content:center;gap:9px;
-  font-family:var(--display);font-weight:700;font-size:14px;letter-spacing:.05em;text-transform:uppercase;
+  font-family:"Calibri","Segoe UI",sans-serif;font-weight:700;font-size:15px;letter-spacing:.02em;text-transform:none;
   transition:background .2s ease;
 }
 .search-float-btn:hover{background:var(--gold-soft);}
-.search-float-note{margin-top:14px;font-size:13px;color:var(--steel);}
+.search-float-note{margin-top:14px;font-size:13px;color:var(--steel);font-family:"Calibri","Segoe UI",sans-serif;}
 .search-float-note a{color:var(--gold-deep);font-weight:600;}
 @media (max-width:900px){
   .search-float-bar{flex-direction:column;border-radius:6px;}
