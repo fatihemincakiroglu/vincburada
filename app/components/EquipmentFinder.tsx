@@ -2,6 +2,7 @@
 
 import { useState, FormEvent } from "react";
 import { finderProducts, FinderProduct, Category, Use, Power } from "../data/finder-products";
+import FinderSelect from "./FinderSelect";
 
 export default function EquipmentFinder() {
   const [use, setUse] = useState<Use | "">("");
@@ -38,44 +39,38 @@ export default function EquipmentFinder() {
     <>
       <form className="search-float" onSubmit={handleSearch}>
         <div className="search-float-bar">
-          <div className="search-float-field">
-            <label>Ne Taşıyacaksınız?</label>
-            <select value={use} onChange={(e) => setUse(e.target.value as Use | "")}>
-              <option value="">Farketmez</option>
-              <option value="İnsan">İnsan</option>
-              <option value="Malzeme">Malzeme</option>
-            </select>
-            <svg className="chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </div>
+          <FinderSelect
+            label="Ne Taşıyacaksınız?"
+            value={use}
+            onChange={(v) => setUse(v as Use | "")}
+            options={[
+              { value: "İnsan", label: "İnsan" },
+              { value: "Malzeme", label: "Malzeme" },
+            ]}
+          />
 
-          <div className="search-float-field">
-            <label>Ekipman</label>
-            <select value={category} onChange={(e) => setCategory(e.target.value as Category | "")}>
-              <option value="">Farketmez</option>
-              <option value="Vinç">Vinç</option>
-              <option value="Forklift">Forklift</option>
-              <option value="Manlift">Manlift</option>
-              <option value="Platform">Platform</option>
-            </select>
-            <svg className="chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </div>
+          <FinderSelect
+            label="Ekipman"
+            value={category}
+            onChange={(v) => setCategory(v as Category | "")}
+            options={[
+              { value: "Vinç", label: "Vinç" },
+              { value: "Forklift", label: "Forklift" },
+              { value: "Manlift", label: "Manlift" },
+              { value: "Platform", label: "Platform" },
+            ]}
+          />
 
-          <div className="search-float-field">
-            <label>Güç Kaynağı</label>
-            <select value={power} onChange={(e) => setPower(e.target.value as Power | "")}>
-              <option value="">Farketmez</option>
-              <option value="Akülü">Akülü</option>
-              <option value="Dizel">Dizel</option>
-              <option value="Çift Enerjili">Çift Enerjili</option>
-            </select>
-            <svg className="chevron" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </div>
+          <FinderSelect
+            label="Güç Kaynağı"
+            value={power}
+            onChange={(v) => setPower(v as Power | "")}
+            options={[
+              { value: "Akülü", label: "Akülü" },
+              { value: "Dizel", label: "Dizel" },
+              { value: "Çift Enerjili", label: "Çift Enerjili" },
+            ]}
+          />
 
           <div className="search-float-field">
             <label>Yükseklik (Min)</label>
