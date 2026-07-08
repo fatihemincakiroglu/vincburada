@@ -19,12 +19,6 @@ import heroImage from '@/images/hero-right.png'
 import ButtonPrimary from '@/shared/ButtonPrimary'
 import { Divider } from '@/shared/divider'
 import HeadingWithSub from '@/shared/Heading'
-import { Metadata } from 'next'
-
-export const metadata: Metadata = {
-  title: 'Home',
-  description: 'Home page of the Stay application',
-}
 
 async function Page() {
   const categories = await getStayCategories()

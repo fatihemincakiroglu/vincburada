@@ -12,11 +12,12 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: {
-    template: '%s - Chisfis',
-    default: 'Chisfis - Booking online React Next.js template',
+    template: '%s | Vinç Burada',
+    default: 'Kiralık Vinç Çeşitleri ve Vinç Kiralama | Vinç Burada',
   },
-  description: 'Booking online & rental online Next.js Template',
-  keywords: ['Chisfis', 'Booking online', 'Rental online', 'React Next.js template'],
+  description:
+    "İhtiyacınıza uygun kiralık vinç çeşitlerini Vinç Burada'da keşfedin. Güvenilir, uygun fiyatlı ve hızlı vinç kiralama hizmeti için hemen teklif alın.",
+  keywords: ['vinç kiralama', 'kiralık vinç', 'sepetli vinç', 'kule vinç', 'mobil vinç', 'Vinç Burada'],
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
