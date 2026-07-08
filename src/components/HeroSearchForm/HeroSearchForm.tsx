@@ -9,11 +9,18 @@ import { ManliftSearchForm } from './ManliftSearchForm'
 
 export const formTabs: {
   name: ListingType
+  label: string
   icon: IconSvgElement
   href: string
   formComponent: React.ComponentType<{ formStyle: 'default' | 'small' }>
 }[] = [
-  { name: 'Stays', icon: House03Icon, href: '/', formComponent: ManliftSearchForm },
+  {
+    name: 'Stays',
+    label: 'Tüm Kiralık Vinç Çeşitleri Burada',
+    icon: House03Icon,
+    href: '/',
+    formComponent: ManliftSearchForm,
+  },
 ]
 
 const HeroSearchForm = ({ className, initTab = 'Stays' }: { className?: string; initTab: ListingType }) => {
@@ -30,7 +37,7 @@ const HeroSearchForm = ({ className, initTab = 'Stays' }: { className?: string; 
                 className="group/tab flex shrink-0 cursor-pointer items-center text-sm font-medium text-neutral-500 hover:text-neutral-700 focus-visible:outline-hidden data-selected:text-neutral-950 lg:text-base dark:hover:text-neutral-400 dark:data-selected:text-neutral-100"
               >
                 <div className="me-1.5 hidden size-2.5 rounded-full bg-neutral-950 group-data-selected/tab:block xl:me-2 dark:bg-neutral-100" />
-                <span>{tab.name}</span>
+                <span>{tab.label}</span>
               </Headless.Tab>
             )
           })}

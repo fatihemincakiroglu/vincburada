@@ -31,12 +31,9 @@ export const ManliftSearchForm = ({ className, formStyle = 'default' }: Props) =
 
   return (
     <div className={clsx('flex w-full flex-col gap-3 sm:flex-row sm:items-stretch', className)}>
-      <a
-        href="/manlift-asistan"
-        className="flex shrink-0 items-center justify-center rounded-2xl bg-orange-500 px-6 py-4 text-center text-sm font-bold text-white shadow-lg hover:bg-orange-600 sm:w-44"
-      >
-        MANLİFT KİRALAMA ASİSTANI
-      </a>
+      <div className="flex shrink-0 items-center justify-center rounded-2xl bg-orange-500 px-6 py-4 text-center text-sm font-bold text-white shadow-lg sm:w-44">
+        ARADIĞIN VİNÇ BURADA
+      </div>
 
       <Form
         className={clsx(
