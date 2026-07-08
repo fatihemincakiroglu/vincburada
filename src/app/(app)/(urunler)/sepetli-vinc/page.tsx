@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import ProductPageLayout from '../_components/ProductPageLayout'
+import heroImage from '@/images/vinc/hero-sepetli.webp'
 
 export const metadata: Metadata = {
   title: 'Sepetli Vinç Kiralama',
@@ -9,6 +10,7 @@ export const metadata: Metadata = {
 const Page = () => {
   return (
     <ProductPageLayout
+      heroImage={heroImage}
       title="Sepetli Vinç"
       subHeading="Yüksekte çalışma gerektiren projeleriniz için güvenli sepetli vinç kiralama."
     />

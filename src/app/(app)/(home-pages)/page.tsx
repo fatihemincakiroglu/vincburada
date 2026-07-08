@@ -15,7 +15,7 @@ import SectionVideos from '@/components/SectionVideos'
 import { getAuthors } from '@/data/authors'
 import { getStayCategories } from '@/data/categories'
 import { getStayListings } from '@/data/listings'
-import heroImage from '@/images/hero-right.png'
+import heroImage from '@/images/vinc/hero-home.webp'
 import ButtonPrimary from '@/shared/ButtonPrimary'
 import { Divider } from '@/shared/divider'
 import HeadingWithSub from '@/shared/Heading'
@@ -40,7 +40,7 @@ async function Page() {
         <HeroSectionWithSearchForm1
           heading="Vinç, sepetli vinç, kule vinç"
           image={heroImage}
-          imageAlt="hero"
+          imageAlt="Vinç Burada kiralık vinç filosu iş başında"
           searchForm={<HeroSearchForm initTab="Stays" />}
           description={
             <>
