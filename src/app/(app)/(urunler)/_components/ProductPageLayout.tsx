@@ -21,7 +21,7 @@ const ProductPageLayout = ({ title, subHeading, children }: Props) => {
           <h1 className="text-4xl font-semibold sm:text-5xl">{title}</h1>
           <p className="mt-6 text-base text-neutral-500 sm:text-lg dark:text-neutral-400">{subHeading}</p>
           <div className="mt-8 flex justify-center gap-x-4">
-            <ButtonPrimary href="/contact">Teklif Al</ButtonPrimary>
+            <ButtonPrimary href="/iletisim">Teklif Al</ButtonPrimary>
           </div>
         </div>
 
@@ -40,7 +40,7 @@ const ProductPageLayout = ({ title, subHeading, children }: Props) => {
           <HeadingWithSub isCenter subheading="Aklınızdaki soruları yanıtlamaktan memnuniyet duyarız">
             İhtiyacınıza uygun teklif için hemen iletişime geçin
           </HeadingWithSub>
-          <ButtonPrimary href="/contact" className="mt-8">
+          <ButtonPrimary href="/iletisim" className="mt-8">
             İletişime Geç
           </ButtonPrimary>
         </div>

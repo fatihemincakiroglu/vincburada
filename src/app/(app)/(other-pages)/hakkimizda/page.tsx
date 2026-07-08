@@ -9,9 +9,9 @@ import SectionHero from './SectionHero'
 import SectionStatistic from './SectionStatistic'
 
 export const metadata: Metadata = {
-  title: 'About Us',
+  title: 'Hakkımızda - Güvenilir Vinç Kiralama Firması',
   description:
-    'The about us page provides an overview of our mission, values, and the team behind our company. It highlights our commitment to excellence and innovation in our industry.',
+    "Vinç Burada; vinç, sepetli vinç, kule vinç, mobil vinç ve manlift kiralama alanında güvenilir, hızlı ve uygun fiyatlı hizmet sunar. Bizi yakından tanıyın.",
 }
 
 const PageAbout = () => {
@@ -23,8 +23,8 @@ const PageAbout = () => {
       <div className="container flex flex-col gap-y-16 py-16 lg:gap-y-28 lg:py-28">
         <SectionHero
           rightImg={rightImg}
-          heading="👋 About Us."
-          subHeading="We're impartial and independent, and every day we create distinctive, world-class programmes and content which inform, educate and entertain millions of people in the around the world."
+          heading="👋 Hakkımızda"
+          subHeading="Vinç Burada olarak vinç, sepetli vinç, kule vinç, mobil vinç ve manlift kiralama ihtiyaçlarınızda güvenilir, hızlı ve uygun fiyatlı çözümler sunuyoruz. Deneyimli ekibimiz ve bakımlı ekipman filomuzla projelerinizin her aşamasında yanınızdayız."
         />
 
         <SectionFounder />

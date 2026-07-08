@@ -7,24 +7,28 @@ import SocialsList from '@/shared/SocialsList'
 import Textarea from '@/shared/Textarea'
 import { Metadata } from 'next'
 
-const info = [
+const info: { title: string; description: string; href?: string }[] = [
   {
-    title: '🗺 ADRES',
-    description: 'Organize Sanayi Bölgesi, İstanbul, Türkiye',
+    title: '📞 TELEFON',
+    description: '0532 303 90 89',
+    href: 'tel:05323039089',
   },
   {
-    title: '💌 E-POSTA',
-    description: 'info@vincburada.com',
+    title: '🌐 WEB',
+    description: 'vincburada.com.tr',
   },
   {
-    title: '☎ TELEFON',
-    description: '0850 123 45 67',
+    title: '📍 ADRES',
+    description:
+      'İkitelli OSB, Giyim Sanatkarları İş ve Ticaret Merkezi D:4.Ada A Blok Kat:1 D:112, 34490 Başakşehir/İstanbul',
+    href: 'https://maps.app.goo.gl/JXCzUwRJANU6cKvZ9',
   },
 ]
 
 export const metadata: Metadata = {
-  title: 'İletişim',
-  description: 'Vinç, forklift ve manlift kiralama için bizimle iletişime geçin',
+  title: 'İletişim - Vinç Kiralama Teklifi Alın',
+  description:
+    'Vinç kiralama için Vinç Burada ile iletişime geçin. Telefon: 0532 303 90 89. İkitelli OSB, Başakşehir/İstanbul. Hemen arayın, hızlı teklif alın.',
 }
 
 const PageContact = () => {
@@ -42,7 +46,18 @@ const PageContact = () => {
               {info.map((item, index) => (
                 <div key={index}>
                   <h3 className="text-sm font-semibold tracking-wider uppercase dark:text-neutral-200">{item.title}</h3>
-                  <span className="mt-2 block text-neutral-500 dark:text-neutral-400">{item.description}</span>
+                  {item.href ? (
+                    <a
+                      href={item.href}
+                      target={item.href.startsWith('http') ? '_blank' : undefined}
+                      rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                      className="mt-2 block text-neutral-500 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-200"
+                    >
+                      {item.description}
+                    </a>
+                  ) : (
+                    <span className="mt-2 block text-neutral-500 dark:text-neutral-400">{item.description}</span>
+                  )}
                 </div>
               ))}
               <div>

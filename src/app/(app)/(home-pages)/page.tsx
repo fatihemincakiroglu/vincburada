@@ -20,6 +20,14 @@ import ButtonPrimary from '@/shared/ButtonPrimary'
 import { Divider } from '@/shared/divider'
 import HeadingWithSub from '@/shared/Heading'
 
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: { absolute: 'Kiralık Vinç Çeşitleri ve Vinç Kiralama | Vinç Burada' },
+  description:
+    "İhtiyacınıza uygun kiralık vinç çeşitlerini Vinç Burada'da keşfedin. Güvenilir, uygun fiyatlı ve hızlı vinç kiralama hizmeti için hemen teklif alın.",
+}
+
 async function Page() {
   const categories = await getStayCategories()
   const stayListings = await getStayListings()

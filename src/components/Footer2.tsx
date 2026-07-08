@@ -20,8 +20,11 @@ const navigation: {
     { name: 'Hiyap Vinç', href: '/hiyap-vinc' },
   ],
   company: [
-    { name: 'Hakkımızda', href: '/about' },
-    { name: 'İletişim', href: '/contact' },
+    { name: 'Hakkımızda', href: '/hakkimizda' },
+    { name: 'Referanslar', href: '/referanslar' },
+    { name: 'Blog', href: '/blog' },
+    { name: 'SSS', href: '/sss' },
+    { name: 'İletişim', href: '/iletisim' },
   ],
   social: [
     {
@@ -94,7 +97,7 @@ export default function Footer2() {
               ))}
             </div>
           </div>
-          <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
+          <div className="mt-16 grid grid-cols-2 gap-8 sm:grid-cols-3 xl:col-span-2 xl:mt-0">
             <div>
               <h3 className="text-sm/6 font-semibold text-gray-900 dark:text-neutral-300">Ürünlerimiz</h3>
               <ul role="list" className="mt-6 space-y-4">
@@ -117,6 +120,30 @@ export default function Footer2() {
                     </a>
                   </li>
                 ))}
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-sm/6 font-semibold text-gray-900 dark:text-neutral-300">İletişim</h3>
+              <ul role="list" className="mt-6 space-y-4">
+                <li>
+                  <a href="tel:05323039089" className="text-sm/6 text-gray-600 hover:text-gray-900 dark:text-neutral-400">
+                    📞 0532 303 90 89
+                  </a>
+                </li>
+                <li>
+                  <span className="text-sm/6 text-gray-600 dark:text-neutral-400">🌐 vincburada.com.tr</span>
+                </li>
+                <li>
+                  <a
+                    href="https://maps.app.goo.gl/JXCzUwRJANU6cKvZ9"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm/6 text-gray-600 hover:text-gray-900 dark:text-neutral-400"
+                  >
+                    📍 İkitelli OSB, Giyim Sanatkarları İş ve Ticaret Merkezi D:4.Ada A Blok Kat:1 D:112, 34490
+                    Başakşehir/İstanbul
+                  </a>
+                </li>
               </ul>
             </div>
           </div>

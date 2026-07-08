@@ -127,7 +127,7 @@ const DropdownMenu = ({ menuItem }: { menuItem: TNavigationItem }) => {
 export interface Props {
   menu: TNavigationItem[]
   className?: string
-  featuredCategory: TCategory
+  featuredCategory?: TCategory
 }
 const Navigation: FC<Props> = ({ menu, className, featuredCategory }) => {
   return (
@@ -137,7 +137,7 @@ const Navigation: FC<Props> = ({ menu, className, featuredCategory }) => {
           return <DropdownMenu key={menuItem.id} menuItem={menuItem} />
         }
         if (menuItem.type === 'mega-menu') {
-          return <MegaMenu category={featuredCategory} key={menuItem.id} menuItem={menuItem} />
+          return featuredCategory ? <MegaMenu category={featuredCategory} key={menuItem.id} menuItem={menuItem} /> : null
         }
         return (
           <li key={menuItem.id} className="relative menu-item">
