@@ -9,22 +9,22 @@ import { Metadata } from 'next'
 
 const info = [
   {
-    title: '🗺 ADDRESS',
-    description: 'Photo booth tattooed prism, portland taiyaki hoodie neutra typewriter',
+    title: '🗺 ADRES',
+    description: 'Organize Sanayi Bölgesi, İstanbul, Türkiye',
   },
   {
-    title: '💌 EMAIL',
-    description: 'example@example.com',
+    title: '💌 E-POSTA',
+    description: 'info@vincburada.com',
   },
   {
-    title: '☎ PHONE',
-    description: '000-123-456-7890',
+    title: '☎ TELEFON',
+    description: '0850 123 45 67',
   },
 ]
 
 export const metadata: Metadata = {
-  title: 'Contact Us',
-  description: 'Explore contact us page',
+  title: 'İletişim',
+  description: 'Vinç, forklift ve manlift kiralama için bizimle iletişime geçin',
 }
 
 const PageContact = () => {
@@ -33,8 +33,12 @@ const PageContact = () => {
       <div className="container mx-auto max-w-7xl">
         <div className="grid shrink-0 grid-cols-1 gap-x-5 gap-y-12 sm:grid-cols-2">
           <div>
-            <h1 className="max-w-2xl text-4xl font-semibold sm:text-5xl">Contact</h1>
-            <div className="mt-10 flex max-w-sm flex-col gap-y-8 sm:mt-20">
+            <h1 className="max-w-2xl text-4xl font-semibold sm:text-5xl">İletişim</h1>
+            <p className="mt-6 max-w-sm text-neutral-500 dark:text-neutral-400">
+              Vinç, forklift ve manlift kiralama ihtiyaçlarınız için bize ulaşın, size en uygun ekipmanı ve teklifi
+              en kısa sürede sunalım.
+            </p>
+            <div className="mt-10 flex max-w-sm flex-col gap-y-8 sm:mt-14">
               {info.map((item, index) => (
                 <div key={index}>
                   <h3 className="text-sm font-semibold tracking-wider uppercase dark:text-neutral-200">{item.title}</h3>
@@ -42,26 +46,30 @@ const PageContact = () => {
                 </div>
               ))}
               <div>
-                <h3 className="text-sm font-semibold tracking-wider uppercase dark:text-neutral-200">🌏 SOCIALS</h3>
+                <h3 className="text-sm font-semibold tracking-wider uppercase dark:text-neutral-200">🌏 SOSYAL MEDYA</h3>
                 <SocialsList className="mt-2" />
               </div>
             </div>
           </div>
           <form className="grid grid-cols-1 gap-6" action="#" method="post">
             <Field className="block">
-              <Label>Full name</Label>
-              <Input placeholder="Example Doe" type="text" className="mt-1" />
+              <Label>Ad Soyad</Label>
+              <Input placeholder="Adınız Soyadınız" type="text" className="mt-1" />
             </Field>
             <Field className="block">
-              <Label>Email address</Label>
-              <Input type="email" placeholder="example@example.com" className="mt-1" />
+              <Label>E-posta adresi</Label>
+              <Input type="email" placeholder="ornek@eposta.com" className="mt-1" />
             </Field>
             <Field className="block">
-              <Label>Message</Label>
-              <Textarea className="mt-1" rows={6} />
+              <Label>Telefon</Label>
+              <Input type="tel" placeholder="05xx xxx xx xx" className="mt-1" />
+            </Field>
+            <Field className="block">
+              <Label>Mesajınız</Label>
+              <Textarea className="mt-1" rows={6} placeholder="Kiralamak istediğiniz ekipmanı ve süresini belirtebilirsiniz." />
             </Field>
             <div>
-              <ButtonPrimary type="submit">Send Message</ButtonPrimary>
+              <ButtonPrimary type="submit">Mesaj Gönder</ButtonPrimary>
             </div>
           </form>
         </div>

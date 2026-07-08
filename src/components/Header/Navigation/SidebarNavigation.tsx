@@ -1,7 +1,6 @@
 'use client'
 
-import { getCurrencies, getLanguages, TNavigationItem } from '@/data/navigation'
-import ButtonPrimary from '@/shared/ButtonPrimary'
+import { TNavigationItem } from '@/data/navigation'
 import { Divider } from '@/shared/divider'
 import { Link } from '@/shared/link'
 import SocialsList from '@/shared/SocialsList'
@@ -13,15 +12,12 @@ import clsx from 'clsx'
 import Form from 'next/form'
 import { useRouter } from 'next/navigation'
 import React, { useEffect } from 'react'
-import CurrLangDropdown from '../CurrLangDropdown'
 
 interface Props {
   data: TNavigationItem[]
-  currencies: Awaited<ReturnType<typeof getCurrencies>>
-  languages: Awaited<ReturnType<typeof getLanguages>>
 }
 
-const SidebarNavigation: React.FC<Props> = ({ data, currencies, languages }) => {
+const SidebarNavigation: React.FC<Props> = ({ data }) => {
   const handleClose = useClose()
   const router = useRouter()
 
@@ -128,28 +124,6 @@ const SidebarNavigation: React.FC<Props> = ({ data, currencies, languages }) => 
       <div className="mt-5">{renderSearchForm()}</div>
       <ul className="flex flex-col gap-y-1 px-2 py-6">{data?.map(_renderItem)}</ul>
       <Divider className="mb-6" />
-
-      {/* FOR OUR DEMO */}
-
-      <div className="flex items-center justify-between gap-x-2.5 py-6">
-        <ButtonPrimary
-          href="https://themeforest.net/item/chisfis-online-booking-nextjs-template/43399526"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Buy this template
-        </ButtonPrimary>
-
-        <CurrLangDropdown
-          currencies={currencies}
-          languages={languages}
-          panelAnchor={{
-            to: 'top end',
-            gap: 12,
-          }}
-          panelClassName="z-10 w-72 p-4!"
-        />
-      </div>
     </div>
   )
 }

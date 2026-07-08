@@ -23,18 +23,27 @@ import { FC, useContext } from 'react'
 const DEMO_DATA = [
   {
     id: 1,
-    clientName: 'Tiana Abie',
-    content: 'Great quality products, affordable prices, fast and friendly delivery. I very recommend.',
+    clientName: 'Mehmet Yıldız — Yıldız İnşaat',
+    content:
+      'Şantiyemize kiraladığımız manlift tam zamanında geldi, operatör de çok profesyoneldi. Yükseklik çalışmalarımızı sorunsuz tamamladık, kesinlikle tavsiye ederim.',
   },
   {
     id: 2,
-    clientName: 'Lennie Swiffan',
-    content: 'Great quality products, affordable prices, fast and friendly delivery. I very recommend.',
+    clientName: 'Ayşe Demir — Demir Lojistik',
+    content:
+      'Forklift kiralama sürecinde hem fiyatlar hem de hizmet kalitesi beklentimizin üzerindeydi. Ekipman bakımlı ve arızasızdı, tekrar çalışacağız.',
   },
   {
     id: 3,
-    clientName: 'Berta Emili',
-    content: 'Great quality products, affordable prices, fast and friendly delivery. I very recommend.',
+    clientName: 'Hasan Kaya — Kaya Yapı A.Ş.',
+    content:
+      'Acil ihtiyacımız olan vinci aynı gün içinde sahaya ulaştırdılar. Kiralama süreci hızlı ve şeffaftı, teşekkürler.',
+  },
+  {
+    id: 4,
+    clientName: 'Fatma Şahin — Şahin Elektrik',
+    content:
+      'Platform (scissor lift) kiraladık, hem akülü hem dizel seçeneği sunmaları işimizi çok kolaylaştırdı. Destek ekibi her an ulaşılabilirdi.',
   },
 ]
 
@@ -51,8 +60,8 @@ const SectionClientSay: FC<SectionClientSayProps> = ({
     slidesToScroll: 1,
     loop: true,
   },
-  heading = 'Good news from far away 🥇',
-  subHeading = "Let's see what people think of Chisfis",
+  heading = 'Müşterilerimiz Ne Diyor? 🏗️',
+  subHeading = 'Vinç, forklift ve manlift kiralayan müşterilerimizin deneyimleri',
 }) => {
   const theme = useContext(ThemeContext)
 

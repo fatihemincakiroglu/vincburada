@@ -22,27 +22,31 @@ const DEMO_DATA: SectionHowItWorkProps['data'] = [
   {
     id: 1,
     img: HIW1img,
-    title: 'Book & relax',
-    desc: 'Let each trip be an inspirational journey, each room a peaceful space',
+    title: 'İhtiyacını Seç',
+    desc: 'Vinç, forklift veya manlift arasından ihtiyacınıza uygun ekipmanı ve kapasiteyi belirleyin',
   },
   {
     id: 2,
     img: HIW2img,
-    title: 'Smart checklist',
-    desc: 'Let each trip be an inspirational journey, each room a peaceful space',
+    title: 'Teklif Al & Onayla',
+    desc: 'Kiralama süresi ve şantiye konumuna göre size özel fiyat teklifini anında alın ve onaylayın',
   },
   {
     id: 3,
     img: HIW3img,
-    title: 'Save more',
-    desc: 'Let each trip be an inspirational journey, each room a peaceful space',
+    title: 'Sahaya Teslim',
+    desc: 'Operatörlü veya operatörsüz ekipmanınız, belirlediğiniz tarihte şantiyenize teslim edilsin',
   },
 ]
 
-const SectionHowItWork: FC<SectionHowItWorkProps> = ({ className = '', data = DEMO_DATA, title = 'How it work' }) => {
+const SectionHowItWork: FC<SectionHowItWorkProps> = ({
+  className = '',
+  data = DEMO_DATA,
+  title = 'Nasıl Çalışır',
+}) => {
   return (
     <div className={`nc-SectionHowItWork ${className}`} data-nc-id="SectionHowItWork">
-      <Heading isCenter subheading="Keep calm & travel on">
+      <Heading isCenter subheading="3 adımda ekipmanınız şantiyede">
         {title}
       </Heading>
       <div className="relative mt-20 grid gap-20 md:grid-cols-3">
