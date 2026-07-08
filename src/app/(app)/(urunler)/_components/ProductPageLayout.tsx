@@ -18,13 +18,14 @@ import { ReactNode } from 'react'
 interface Props {
   title: string
   subHeading: string
+  heroHeading?: string
   heroImage?: StaticImageData
   children?: ReactNode
 }
 
 const galleryImages = [galeri1, galeri2, galeri3, galeri4, galeri5, galeri6]
 
-const ProductPageLayout = ({ title, subHeading, heroImage, children }: Props) => {
+const ProductPageLayout = ({ title, subHeading, heroHeading, heroImage, children }: Props) => {
   return (
     <main className="relative overflow-hidden">
       <BgGlassmorphism />
@@ -32,7 +33,8 @@ const ProductPageLayout = ({ title, subHeading, heroImage, children }: Props) =>
       <div className="relative container mb-24 flex flex-col gap-y-24 lg:mb-28 lg:gap-y-32">
         {/* Ana sayfa ile birebir ayni hero tasarimi */}
         <HeroSectionWithSearchForm1
-          heading={`${title} Kiralama`}
+          heading={heroHeading ?? `${title} Kiralama`}
+          headingTag="h1"
           image={heroImage ?? defaultHero}
           imageAlt={`${title} kiralama - Vinç Burada saha fotoğrafı`}
           searchForm={<HeroSearchForm initTab="Stays" />}
@@ -50,7 +52,7 @@ const ProductPageLayout = ({ title, subHeading, heroImage, children }: Props) =>
 
         {/* Saha fotograflari galerisi */}
         <div>
-          <HeadingWithSub subheading="Ekipmanlarımız İstanbul'un dört bir yanındaki şantiyelerde görev başında.">
+          <HeadingWithSub level={2} subheading="Ekipmanlarımız İstanbul'un dört bir yanındaki şantiyelerde görev başında.">
             Sahadan Kareler
           </HeadingWithSub>
           <div className="mt-10 grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-3">
@@ -75,7 +77,7 @@ const ProductPageLayout = ({ title, subHeading, heroImage, children }: Props) =>
 
         <div className="relative py-10 text-center">
           <BackgroundSection />
-          <HeadingWithSub isCenter subheading="Aklınızdaki soruları yanıtlamaktan memnuniyet duyarız">
+          <HeadingWithSub level={2} isCenter subheading="Aklınızdaki soruları yanıtlamaktan memnuniyet duyarız">
             İhtiyacınıza uygun teklif için hemen iletişime geçin
           </HeadingWithSub>
           <ButtonPrimary href="/iletisim" className="mt-8">
