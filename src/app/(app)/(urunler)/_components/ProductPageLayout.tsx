@@ -1,5 +1,8 @@
 import BackgroundSection from '@/components/BackgroundSection'
 import BgGlassmorphism from '@/components/BgGlassmorphism'
+import HeroSectionWithSearchForm1 from '@/components/hero-sections/HeroSectionWithSearchForm1'
+import HeroSearchForm from '@/components/HeroSearchForm/HeroSearchForm'
+import heroImage from '@/images/hero-right.png'
 import ButtonPrimary from '@/shared/ButtonPrimary'
 import { Divider } from '@/shared/divider'
 import HeadingWithSub from '@/shared/Heading'
@@ -13,19 +16,25 @@ interface Props {
 
 const ProductPageLayout = ({ title, subHeading, children }: Props) => {
   return (
-    <div className="relative overflow-hidden">
+    <main className="relative overflow-hidden">
       <BgGlassmorphism />
 
-      <div className="container flex flex-col gap-y-16 py-16 lg:gap-y-20 lg:py-24">
-        <div className="mx-auto max-w-3xl text-center">
-          <h1 className="text-4xl font-semibold sm:text-5xl">{title}</h1>
-          <p className="mt-6 text-base text-neutral-500 sm:text-lg dark:text-neutral-400">{subHeading}</p>
-          <div className="mt-8 flex justify-center gap-x-4">
-            <ButtonPrimary href="/iletisim">Teklif Al</ButtonPrimary>
-          </div>
-        </div>
-
-        <Divider />
+      <div className="relative container mb-24 flex flex-col gap-y-24 lg:mb-28 lg:gap-y-32">
+        {/* Ana sayfa ile birebir ayni hero tasarimi */}
+        <HeroSectionWithSearchForm1
+          heading={`${title} Kiralama`}
+          image={heroImage}
+          imageAlt={`${title} kiralama`}
+          searchForm={<HeroSearchForm initTab="Stays" />}
+          description={
+            <>
+              <p className="max-w-xl text-base text-neutral-500 sm:text-xl dark:text-neutral-400">{subHeading}</p>
+              <ButtonPrimary href={'/iletisim'} className="sm:text-base/normal">
+                Hemen Teklif Al
+              </ButtonPrimary>
+            </>
+          }
+        />
 
         <div className="mx-auto w-full max-w-4xl">
           {children ?? (
@@ -34,6 +43,8 @@ const ProductPageLayout = ({ title, subHeading, children }: Props) => {
             </div>
           )}
         </div>
+
+        <Divider />
 
         <div className="relative py-10 text-center">
           <BackgroundSection />
@@ -45,7 +56,7 @@ const ProductPageLayout = ({ title, subHeading, children }: Props) => {
           </ButtonPrimary>
         </div>
       </div>
-    </div>
+    </main>
   )
 }
 
