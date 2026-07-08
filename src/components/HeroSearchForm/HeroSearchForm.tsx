@@ -1,21 +1,11 @@
 import { Link } from '@/shared/link'
 import { ListingType } from '@/type'
 import * as Headless from '@headlessui/react'
-import {
-  Airplane02Icon,
-  Car05Icon,
-  HotAirBalloonFreeIcons,
-  House03Icon,
-  RealEstate02Icon,
-} from '@hugeicons/core-free-icons'
+import { House03Icon } from '@hugeicons/core-free-icons'
 import { IconSvgElement } from '@hugeicons/react'
 import clsx from 'clsx'
 import { Fragment } from 'react'
-import { ExperiencesSearchForm } from './ExperiencesSearchForm'
-import { FlightSearchForm } from './FlightSearchForm'
-import { RealEstateHeroSearchForm } from './RealEstateHeroSearchForm'
-import { RentalCarSearchForm } from './RentalCarSearchForm'
-import { StaySearchForm } from './StaySearchForm'
+import { ManliftSearchForm } from './ManliftSearchForm'
 
 export const formTabs: {
   name: ListingType
@@ -23,11 +13,7 @@ export const formTabs: {
   href: string
   formComponent: React.ComponentType<{ formStyle: 'default' | 'small' }>
 }[] = [
-  { name: 'Stays', icon: House03Icon, href: '/', formComponent: StaySearchForm },
-  { name: 'Cars', icon: Car05Icon, href: '/car', formComponent: RentalCarSearchForm },
-  { name: 'Experiences', icon: HotAirBalloonFreeIcons, href: '/experience', formComponent: ExperiencesSearchForm },
-  { name: 'RealEstates', icon: RealEstate02Icon, href: '/real-estate', formComponent: RealEstateHeroSearchForm },
-  { name: 'Flights', icon: Airplane02Icon, href: '/flight-categories/all', formComponent: FlightSearchForm },
+  { name: 'Stays', icon: House03Icon, href: '/', formComponent: ManliftSearchForm },
 ]
 
 const HeroSearchForm = ({ className, initTab = 'Stays' }: { className?: string; initTab: ListingType }) => {
