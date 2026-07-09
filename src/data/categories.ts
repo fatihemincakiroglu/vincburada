@@ -1,3 +1,9 @@
+import vincElektrikliImage from '@/images/vinc/hero-elektrikli.webp'
+import vincHiyapImage from '@/images/vinc/hero-hiyap.webp'
+import vincKuleImage from '@/images/vinc/hero-kule.webp'
+import vincMobilImage from '@/images/vinc/hero-mobil.webp'
+import vincSepetliImage from '@/images/vinc/hero-sepetli.webp'
+import vincImage from '@/images/vinc/hero-vinc.webp'
 import stayCategoryCoverImage from '@/images/hero-right-2.png'
 import carCategoryCoverImage from '@/images/hero-right-car.png'
 import experienceCategoryCoverImage from '@/images/hero-right-experience.png'
@@ -680,10 +686,77 @@ export async function getFlightCategoryByHandle(handle?: string) {
   return categories.find((category) => category.handle === handle)
 }
 
+// Vinç categories --------
+export async function getVincCategories() {
+  return [
+    {
+      id: 'vinc-cat://1',
+      name: 'Vinç',
+      handle: 'vinc',
+      href: '/vinc',
+      count: 0,
+      thumbnail: vincImage.src,
+      description: 'Genel amaçlı vinç kiralama',
+    },
+    {
+      id: 'vinc-cat://2',
+      name: 'Sepetli Vinç',
+      handle: 'sepetli-vinc',
+      href: '/sepetli-vinc',
+      count: 0,
+      thumbnail: vincSepetliImage.src,
+      description: 'Yüksekte güvenli çalışma',
+    },
+    {
+      id: 'vinc-cat://3',
+      name: 'Kule Vinç',
+      handle: 'kule-vinc',
+      href: '/kule-vinc',
+      count: 0,
+      thumbnail: vincKuleImage.src,
+      description: 'Şantiye ve inşaat projeleri',
+    },
+    {
+      id: 'vinc-cat://4',
+      name: 'Elektrikli Vinç',
+      handle: 'elektrikli-vinc',
+      href: '/elektrikli-vinc',
+      count: 0,
+      thumbnail: vincElektrikliImage.src,
+      description: 'Sessiz ve çevreci çözümler',
+    },
+    {
+      id: 'vinc-cat://5',
+      name: 'Mobil Vinç',
+      handle: 'mobil-vinc',
+      href: '/mobil-vinc',
+      count: 0,
+      thumbnail: vincMobilImage.src,
+      description: 'Her sahaya hızlı ulaşım',
+    },
+    {
+      id: 'vinc-cat://6',
+      name: 'Hiyap Vinç',
+      handle: 'hiyap-vinc',
+      href: '/hiyap-vinc',
+      count: 0,
+      thumbnail: vincHiyapImage.src,
+      description: 'Taşıma ve kaldırma bir arada',
+    },
+  ]
+}
+
 // types
+export type TVincCategory = Awaited<ReturnType<typeof getVincCategories>>[number]
 export type TStayCategory = Awaited<ReturnType<typeof getStayCategories>>[number]
 export type TExperienceCategory = Awaited<ReturnType<typeof getExperienceCategories>>[number]
 export type TCarCategory = Awaited<ReturnType<typeof getCarCategories>>[number]
 export type TRealEstateCategory = Awaited<ReturnType<typeof getRealEstateCategories>>[number]
 export type TFlightCategory = Awaited<ReturnType<typeof getFlightCategories>>[number]
-export type TCategory = TStayCategory | TExperienceCategory | TCarCategory | TRealEstateCategory | TFlightCategory
+export type TCategory =
+  | TStayCategory
+  | TExperienceCategory
+  | TCarCategory
+  | TRealEstateCategory
+  | TFlightCategory
+  | TVincCategory

@@ -13,7 +13,7 @@ import SectionSliderNewCategories from '@/components/SectionSliderNewCategories'
 import SectionSubscribe2 from '@/components/SectionSubscribe2'
 import SectionVideos from '@/components/SectionVideos'
 import { getAuthors } from '@/data/authors'
-import { getStayCategories } from '@/data/categories'
+import { getStayCategories, getVincCategories } from '@/data/categories'
 import { getStayListings } from '@/data/listings'
 import heroImage from '@/images/vinc/hero-home.webp'
 import ButtonPrimary from '@/shared/ButtonPrimary'
@@ -30,6 +30,7 @@ export const metadata: Metadata = {
 
 async function Page() {
   const categories = await getStayCategories()
+  const vincCategories = await getVincCategories()
   const stayListings = await getStayListings()
   const authors = await getAuthors()
 
@@ -55,10 +56,10 @@ async function Page() {
         />
 
         <div>
-          <HeadingWithSub subheading="Explore the best places to stay in the world.">
-            Let&apos;s go on an adventure
+          <HeadingWithSub subheading="İhtiyacınıza uygun kiralık vinç çeşitlerini keşfedin.">
+            Vinç Çeşitlerimiz
           </HeadingWithSub>
-          <SectionSliderNewCategories categoryCardType="card3" categories={categories.slice(0, 7)} />
+          <SectionSliderNewCategories categoryCardType="card3" categories={vincCategories} />
         </div>
 
         <SectionOurFeatures className="py-14" />
