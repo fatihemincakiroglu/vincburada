@@ -23,6 +23,7 @@ const Page = async ({ searchParams }: { searchParams: Promise<Record<string, str
     Number.isFinite(hMin) && params.height_min ? Math.max(0, hMin) : 0,
     Number.isFinite(hMax) && params.height_max ? Math.min(80, hMax) : 80,
   ]
+  const initialQuery = params.q ?? ''
 
   return (
     <main className="relative overflow-hidden">
@@ -33,7 +34,12 @@ const Page = async ({ searchParams }: { searchParams: Promise<Record<string, str
         </HeadingWithSub>
 
         <div className="mt-10 lg:mt-14">
-          <SepetliVincFilterGrid listings={listings} initialGucler={initialGucler} initialYukseklik={initialYukseklik} />
+          <SepetliVincFilterGrid
+            listings={listings}
+            initialGucler={initialGucler}
+            initialYukseklik={initialYukseklik}
+            initialQuery={initialQuery}
+          />
         </div>
       </div>
     </main>

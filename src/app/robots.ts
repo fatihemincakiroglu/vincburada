@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: ['/account', '/account-billing', '/account-password', '/account-savelists', '/checkout', '/pay-done', '/add-listing'],
+      disallow: [],
     },
     sitemap: 'https://vincburada.com.tr/sitemap.xml',
   }

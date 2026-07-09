@@ -62,11 +62,14 @@ const SepetliVincFilterGrid = ({
   listings,
   initialGucler = [],
   initialYukseklik = [YUKSEKLIK_MIN, YUKSEKLIK_MAX],
+  initialQuery = '',
 }: {
   listings: TSepetliVinc[]
   initialGucler?: string[]
   initialYukseklik?: [number, number]
+  initialQuery?: string
 }) => {
+  const [sorgu, setSorgu] = useState(initialQuery)
   const [kategori, setKategori] = useState<string | null>(null)
   const [markalar, setMarkalar] = useState<string[]>([])
   const [gucler, setGucler] = useState<string[]>(initialGucler)
@@ -81,7 +84,9 @@ const SepetliVincFilterGrid = ({
   }
 
   const filtreliListe = useMemo(() => {
+    const q = sorgu.trim().toLocaleLowerCase('tr')
     return listings.filter((l) => {
+      if (q && !`${l.marka} ${l.model} ${l.title} ${l.kategori}`.toLocaleLowerCase('tr').includes(q)) return false
       if (kategori && l.kategori !== kategori) return false
       if (markalar.length && !markalar.includes(l.marka)) return false
       if (gucler.length && !l.gucKaynaklari.some((g) => gucler.includes(g))) return false
@@ -90,9 +95,10 @@ const SepetliVincFilterGrid = ({
       if (l.calismaYuksekligi < yukseklik[0] || l.calismaYuksekligi > yukseklik[1]) return false
       return true
     })
-  }, [listings, kategori, markalar, gucler, zeminler, ortam, yukseklik])
+  }, [listings, sorgu, kategori, markalar, gucler, zeminler, ortam, yukseklik])
 
   const filtreAktif =
+    sorgu.trim() !== '' ||
     kategori !== null ||
     markalar.length > 0 ||
     gucler.length > 0 ||
@@ -102,6 +108,7 @@ const SepetliVincFilterGrid = ({
     yukseklik[1] !== YUKSEKLIK_MAX
 
   const filtreleriTemizle = () => {
+    setSorgu('')
     setKategori(null)
     setMarkalar([])
     setGucler([])
@@ -127,6 +134,18 @@ const SepetliVincFilterGrid = ({
         </div>
 
         <div className="mt-6 flex flex-col gap-y-7">
+          {/* Metin araması */}
+          <div>
+            <input
+              type="search"
+              value={sorgu}
+              onChange={(e) => setSorgu(e.target.value)}
+              placeholder="Model / marka ara..."
+              aria-label="Model veya marka ara"
+              className="w-full rounded-xl border border-neutral-300 bg-transparent px-4 py-2.5 text-sm focus:border-neutral-500 focus:ring-0 dark:border-neutral-600 dark:text-neutral-100"
+            />
+          </div>
+
           {/* Ana Kategori */}
           <div>
             <p className="text-sm font-semibold">Ana Kategori</p>

@@ -103,9 +103,9 @@ const SidebarNavigation: React.FC<Props> = ({ data }) => {
             name="search"
             autoFocus
             autoComplete="off"
-            aria-label="Search for articles"
+            aria-label="Model veya marka ara"
             data-autofocus
-            placeholder="Type and press enter"
+            placeholder="Model / marka ara..."
             className="w-full border-none bg-transparent focus:ring-0 focus:outline-hidden sm:text-sm"
           />
         </div>
@@ -116,7 +116,7 @@ const SidebarNavigation: React.FC<Props> = ({ data }) => {
 
   return (
     <div>
-      <span>Discover the most outstanding articles on all topics of life. Write your stories and share them</span>
+      <span>Kiralık vinç çeşitleri, modeller ve fiyat teklifi için bize ulaşın: 0532 303 90 89</span>
 
       <div className="mt-4 flex items-center justify-between">
         <SocialsList itemClass="w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center rounded-full text-xl" />

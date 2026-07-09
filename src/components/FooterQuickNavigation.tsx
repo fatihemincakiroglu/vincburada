@@ -1,6 +1,6 @@
 'use client'
 
-import { Bars3Icon, HeartIcon, MagnifyingGlassIcon, UserCircleIcon } from '@heroicons/react/24/outline'
+import { Bars3Icon, MagnifyingGlassIcon, PhoneIcon, Squares2X2Icon } from '@heroicons/react/24/outline'
 import clsx from 'clsx'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -10,22 +10,22 @@ import { useAside } from './aside'
 
 const FOOTER_QUICK_NAV = [
   {
-    name: 'Explore',
+    name: 'Keşfet',
     link: '/',
     icon: MagnifyingGlassIcon,
   },
   {
-    name: 'Wishlists',
+    name: 'Modeller',
     link: '/sepetli-vinc/modeller',
-    icon: HeartIcon,
+    icon: Squares2X2Icon,
   },
   {
-    name: 'Account',
+    name: 'Teklif Al',
     link: '/iletisim',
-    icon: UserCircleIcon,
+    icon: PhoneIcon,
   },
   {
-    name: 'Menu',
+    name: 'Menü',
     icon: Bars3Icon,
   },
 ]
@@ -102,7 +102,7 @@ const FooterQuickNavigation = () => {
               href={item.link}
               tabIndex={0}
               role="menuitem"
-              aria-label={`Navigate to ${item.name}`}
+              aria-label={`${item.name} sayfasına git`}
               className={clsx(
                 '-mx-2 flex flex-col items-center justify-between px-2 text-neutral-500 dark:text-neutral-300',
                 isActive && 'text-red-600'
@@ -116,13 +116,13 @@ const FooterQuickNavigation = () => {
               key={item.name}
               role="menuitem"
               tabIndex={0}
-              aria-label={`Open menu`}
+              aria-label={'Menüyü aç'}
               className={clsx(
                 '-mx-2 flex cursor-pointer flex-col items-center justify-between px-2 text-neutral-500 dark:text-neutral-300',
                 isActive && 'text-red-600'
               )}
               onClick={() => {
-                if (item.name === 'Menu') {
+                if (item.name === 'Menü') {
                   openAside('sidebar-navigation')
                 }
               }}
