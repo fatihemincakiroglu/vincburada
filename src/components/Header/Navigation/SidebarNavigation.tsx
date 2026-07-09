@@ -23,7 +23,7 @@ const SidebarNavigation: React.FC<Props> = ({ data }) => {
 
   // Prefetch the next step to improve performance
   useEffect(() => {
-    router.prefetch('/stay-categories/all')
+    router.prefetch('/sepetli-vinc/modeller')
   }, [router])
 
   // Handle form submission
@@ -35,7 +35,7 @@ const SidebarNavigation: React.FC<Props> = ({ data }) => {
     // Close the popover
     handleClose()
     // Redirect to the search page
-    router.push('/stay-categories/all' + (searchQuery ? `?q=${encodeURIComponent(searchQuery)}` : ''))
+    router.push('/sepetli-vinc/modeller' + (searchQuery ? `?q=${encodeURIComponent(searchQuery)}` : ''))
   }
 
   const _renderMenuChild = (

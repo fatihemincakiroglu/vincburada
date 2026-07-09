@@ -16,12 +16,12 @@ const FOOTER_QUICK_NAV = [
   },
   {
     name: 'Wishlists',
-    link: '/account-savelists',
+    link: '/sepetli-vinc/modeller',
     icon: HeartIcon,
   },
   {
     name: 'Account',
-    link: '/authors/john-doe',
+    link: '/iletisim',
     icon: UserCircleIcon,
   },
   {

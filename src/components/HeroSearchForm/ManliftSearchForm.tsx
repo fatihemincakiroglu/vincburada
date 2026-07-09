@@ -97,7 +97,7 @@ export const ManliftSearchForm = ({ className, formStyle = 'default' }: Props) =
     if (heightMin) params.set('height_min', heightMin)
     if (heightMax) params.set('height_max', heightMax)
 
-    router.push(`/stay-categories/all?${params.toString()}`)
+    router.push(`/sepetli-vinc/modeller?${params.toString()}`)
   }
 
   const inputClass =

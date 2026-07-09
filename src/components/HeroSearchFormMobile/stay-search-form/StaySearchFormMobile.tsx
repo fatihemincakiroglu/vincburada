@@ -37,7 +37,7 @@ const StaySearchFormMobile = () => {
 
     // example: add location to the URL
     const location = formDataEntries['location'] as string
-    let url = '/stay-categories/all'
+    let url = '/sepetli-vinc/modeller'
     if (location) {
       url = url + `?location=${encodeURIComponent(location)}`
     }

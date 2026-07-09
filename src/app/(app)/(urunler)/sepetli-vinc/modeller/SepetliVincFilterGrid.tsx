@@ -58,13 +58,21 @@ const CheckboxGrup = ({
   </div>
 )
 
-const SepetliVincFilterGrid = ({ listings }: { listings: TSepetliVinc[] }) => {
+const SepetliVincFilterGrid = ({
+  listings,
+  initialGucler = [],
+  initialYukseklik = [YUKSEKLIK_MIN, YUKSEKLIK_MAX],
+}: {
+  listings: TSepetliVinc[]
+  initialGucler?: string[]
+  initialYukseklik?: [number, number]
+}) => {
   const [kategori, setKategori] = useState<string | null>(null)
   const [markalar, setMarkalar] = useState<string[]>([])
-  const [gucler, setGucler] = useState<string[]>([])
+  const [gucler, setGucler] = useState<string[]>(initialGucler)
   const [zeminler, setZeminler] = useState<string[]>([])
   const [ortam, setOrtam] = useState<string | null>(null)
-  const [yukseklik, setYukseklik] = useState<[number, number]>([YUKSEKLIK_MIN, YUKSEKLIK_MAX])
+  const [yukseklik, setYukseklik] = useState<[number, number]>(initialYukseklik)
 
   const tumMarkalar = useMemo(() => Array.from(new Set(listings.map((l) => l.marka))).sort(), [listings])
 
