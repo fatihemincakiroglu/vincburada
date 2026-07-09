@@ -1,4 +1,4 @@
-import rightImgPng from '@/images/our-features.png'
+import rightImgPng from '@/images/vinc/galeri-25.webp'
 import { Badge } from '@/shared/Badge'
 import { Heading } from '@/shared/Heading'
 import clsx from 'clsx'
@@ -23,25 +23,28 @@ const SectionOurFeatures: FC<Props> = ({
   className,
   rightImg = rightImgPng,
   type = 'type1',
-  subHeading = 'Benefits',
-  heading = 'Happening cities',
+  subHeading = 'Avantajlarımız',
+  heading = 'Neden Vinç Burada?',
   listItems = [
     {
-      badge: 'Advertising',
-      title: 'Cost-effective advertising',
-      description: 'With a free listing, you can advertise your rental with no upfront costs',
+      badge: 'Hız',
+      title: 'Aynı gün teklif, hızlı kurulum',
+      description:
+        'İhtiyacınızı iletin, aynı gün içinde net teklifinizi alın. Geniş filomuz sayesinde vinciniz en kısa sürede sahanızda olur.',
     },
     {
-      badge: 'Exposure',
+      badge: 'Güvenlik',
       badgeColor: 'green',
-      title: 'Reach millions with Chisfis',
-      description: 'Millions of people are searching for unique places to stay around the world',
+      title: 'Sertifikalı operatör ve bakımlı ekipman',
+      description:
+        'Tüm vinçlerimiz düzenli periyodik bakımdan geçer, operatörlerimiz sertifikalı ve deneyimlidir. İşiniz güvenle tamamlanır.',
     },
     {
-      badge: 'Secure',
+      badge: 'Fiyat',
       badgeColor: 'red',
-      title: 'Secure and simple',
-      description: 'A Holiday Lettings listing gives you a secure and easy way to take bookings and payments online',
+      title: 'Şeffaf ve uygun fiyatlandırma',
+      description:
+        'Sürpriz maliyet yok: teklifte gördüğünüz fiyat, ödeyeceğiniz fiyattır. Saatlik, günlük ve proje bazlı esnek kiralama seçenekleri sunuyoruz.',
     },
   ],
 }) => {
@@ -54,7 +57,13 @@ const SectionOurFeatures: FC<Props> = ({
       )}
     >
       <div className="grow">
-        <Image src={rightImg} alt="Features" sizes="(max-width: 1024px) 100vw, 50vw" priority />
+        <Image
+          src={rightImg}
+          alt="Vinç Burada kiralık vinç sahada çalışırken"
+          sizes="(max-width: 1024px) 100vw, 50vw"
+          className="rounded-3xl object-cover"
+          priority
+        />
       </div>
       <div className={`mt-10 max-w-2xl shrink-0 lg:mt-0 lg:w-2/5 ${type === 'type1' ? 'lg:ps-16' : 'lg:pe-16'}`}>
         <span className="text-sm tracking-widest text-gray-400 uppercase">{subHeading}</span>
