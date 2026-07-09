@@ -1,4 +1,5 @@
 import heroImage from '@/images/vinc/hero-sepetli.webp'
+import ButtonPrimary from '@/shared/ButtonPrimary'
 import { Metadata } from 'next'
 import ProductPageLayout from '../_components/ProductPageLayout'
 
@@ -123,6 +124,22 @@ const Page = () => {
         subHeading="12-70 metre arası çalışma yüksekliği, sertifikalı operatör ve aynı gün teslimat ile İstanbul genelinde sepetli vinç kiralama."
       >
         <article className="flex flex-col gap-y-14">
+          {/* Model listesi CTA */}
+          <section className="flex flex-col items-start gap-y-4 rounded-3xl bg-neutral-50 p-8 sm:flex-row sm:items-center sm:justify-between sm:gap-x-8 dark:bg-neutral-800">
+            <div>
+              <h2 className="text-xl font-semibold text-neutral-900 dark:text-neutral-100">
+                Kiralık Sepetli Vinç Modellerimiz
+              </h2>
+              <p className="mt-2 text-base/7 text-neutral-600 dark:text-neutral-400">
+                JLG, Genie, Haulotte, Palfinger ve Manitou modellerini çalışma yüksekliği, kapasite, güç kaynağı ve
+                zemin tipine göre filtreleyerek inceleyin.
+              </p>
+            </div>
+            <ButtonPrimary href="/sepetli-vinc/modeller" className="shrink-0">
+              Modelleri Filtrele
+            </ButtonPrimary>
+          </section>
+
           {/* 1 */}
           <section>
             <h2 className={h2Class}>Sepetli Vinç Nedir?</h2>

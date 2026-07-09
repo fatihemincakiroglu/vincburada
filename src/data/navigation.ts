@@ -13,6 +13,7 @@ export async function getNavigation(): Promise<TNavigationItem[]> {
       children: [
         { id: '2-1', href: '/vinc', name: 'Vinç' },
         { id: '2-2', href: '/sepetli-vinc', name: 'Sepetli Vinç' },
+        { id: '2-2-1', href: '/sepetli-vinc/modeller', name: 'Sepetli Vinç Modelleri' },
         { id: '2-3', href: '/kule-vinc', name: 'Kule Vinç' },
         { id: '2-4', href: '/elektrikli-vinc', name: 'Elektrikli Vinç' },
         { id: '2-5', href: '/mobil-vinc', name: 'Mobil Vinç' },
