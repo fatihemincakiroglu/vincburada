@@ -4,6 +4,7 @@ import HeroSearchForm from '@/components/HeroSearchForm/HeroSearchForm'
 import SectionClientSay from '@/components/SectionClientSay'
 import SectionHowItWork from '@/components/SectionHowItWork'
 import SectionOurFeatures from '@/components/SectionOurFeatures'
+import SectionUrunVitrini from '@/components/SectionUrunVitrini'
 import SectionSliderNewCategories from '@/components/SectionSliderNewCategories'
 import { getVincCategories } from '@/data/categories'
 import heroImage from '@/images/vinc/hero-home.webp'
@@ -49,6 +50,8 @@ async function Page() {
           </HeadingWithSub>
           <SectionSliderNewCategories categoryCardType="card3" categories={vincCategories} />
         </div>
+
+        <SectionUrunVitrini />
 
         <SectionOurFeatures className="py-14" />
         <Divider />
