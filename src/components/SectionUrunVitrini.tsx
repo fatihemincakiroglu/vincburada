@@ -30,9 +30,9 @@ type TRay = {
 
 const SpecMini = ({ deger, birim, etiket }: { deger: string; birim: string; etiket: string }) => (
   <div>
-    <p className="text-2xl font-light text-white sm:text-3xl">
+    <p className="text-2xl font-light text-neutral-900 sm:text-3xl dark:text-white">
       {deger}
-      <span className="ms-0.5 text-base font-normal text-amber-400">{birim}</span>
+      <span className="ms-0.5 text-base font-normal text-amber-600 dark:text-amber-400">{birim}</span>
     </p>
     <p className="mt-1 text-[11px] font-medium tracking-widest text-neutral-400 uppercase">{etiket}</p>
   </div>
@@ -44,20 +44,20 @@ const PlakaKarti = ({ plaka }: { plaka: TPlaka }) => {
   return (
     <Link
       href={plaka.href}
-      className="group flex w-60 shrink-0 snap-start flex-col rounded-2xl bg-neutral-900 p-5 ring-1 ring-white/10 transition duration-300 hover:ring-amber-400/60"
+      className="group flex w-60 shrink-0 snap-start flex-col rounded-2xl bg-white p-5 shadow-sm ring-1 ring-neutral-200 transition duration-300 hover:shadow-md hover:ring-amber-500/60 dark:bg-neutral-900 dark:ring-white/10 dark:hover:ring-amber-400/60"
     >
       <div className="flex items-start justify-between gap-x-2">
-        <p className="text-[10px] font-semibold tracking-[0.2em] text-amber-400 uppercase">{plaka.marka}</p>
-        <span className="shrink-0 rounded-full bg-white/5 px-2 py-0.5 text-[10px] font-medium text-neutral-400">
+        <p className="text-[10px] font-semibold tracking-[0.2em] text-amber-600 uppercase dark:text-amber-400">{plaka.marka}</p>
+        <span className="shrink-0 rounded-full bg-neutral-100 px-2 py-0.5 text-[10px] font-medium text-neutral-500 dark:bg-white/5 dark:text-neutral-400">
           {plaka.tip}
         </span>
       </div>
-      <h4 className="mt-1.5 text-sm font-semibold text-white">{plaka.model}</h4>
-      <p className="mt-4 text-3xl font-light text-white">
+      <h4 className="mt-1.5 text-sm font-semibold text-neutral-900 dark:text-white">{plaka.model}</h4>
+      <p className="mt-4 text-3xl font-light text-neutral-900 dark:text-white">
         {sayi}
-        <span className="ms-1 text-base text-amber-400">{birim}</span>
+        <span className="ms-1 text-base text-amber-600 dark:text-amber-400">{birim}</span>
       </p>
-      {plaka.ikincil ? <p className="mt-1 text-xs text-neutral-500">{plaka.ikincil}</p> : null}
+      {plaka.ikincil ? <p className="mt-1 text-xs text-neutral-400 dark:text-neutral-500">{plaka.ikincil}</p> : null}
     </Link>
   )
 }
@@ -106,14 +106,14 @@ const SectionUrunVitrini = async () => {
   const toplam = sepetli.length + raylar.slice(1).reduce((acc, r) => acc + r.plakalar.length, 0)
 
   return (
-    <section className="relative overflow-hidden rounded-[2.5rem] bg-neutral-950 px-6 py-14 sm:px-10 lg:px-14 lg:py-20">
+    <section className="relative overflow-hidden rounded-[2.5rem] bg-neutral-50 px-6 py-14 ring-1 ring-neutral-200 sm:px-10 lg:px-14 lg:py-20 dark:bg-neutral-950 dark:ring-white/10">
       {/* teknik zemin dokusu */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-[0.04]"
+        className="pointer-events-none absolute inset-0 opacity-[0.05] dark:opacity-[0.04] dark:invert"
         style={{
           backgroundImage:
-            'linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)',
+            'linear-gradient(to right, #171717 1px, transparent 1px), linear-gradient(to bottom, #171717 1px, transparent 1px)',
           backgroundSize: '56px 56px',
         }}
       />
@@ -122,12 +122,12 @@ const SectionUrunVitrini = async () => {
         {/* Başlık */}
         <div className="flex flex-col gap-y-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="flex items-center gap-x-3 text-xs font-semibold tracking-[0.25em] text-amber-400 uppercase">
-              <span className="h-px w-8 bg-amber-400" aria-hidden />
+            <p className="flex items-center gap-x-3 text-xs font-semibold tracking-[0.25em] text-amber-600 uppercase dark:text-amber-400">
+              <span className="h-px w-8 bg-amber-600 dark:bg-amber-400" aria-hidden />
               Filomuz
             </p>
-            <h2 className="mt-3 text-3xl font-semibold text-white sm:text-4xl">Ürünlerimiz</h2>
-            <p className="mt-3 max-w-xl text-neutral-400">
+            <h2 className="mt-3 text-3xl font-semibold text-neutral-900 sm:text-4xl dark:text-white">Ürünlerimiz</h2>
+            <p className="mt-3 max-w-xl text-neutral-500 dark:text-neutral-400">
               {toplam} model, 5 kategori — sepetliden kule vince, her iş için doğru ekipman.
             </p>
           </div>
@@ -136,7 +136,7 @@ const SectionUrunVitrini = async () => {
         {/* Amiral gemisi */}
         <Link
           href={`/sepetli-vinc/${amiral.handle}`}
-          className="group relative mt-10 flex flex-col overflow-hidden rounded-3xl ring-1 ring-white/10 transition duration-300 hover:ring-amber-400/60 lg:flex-row"
+          className="group relative mt-10 flex flex-col overflow-hidden rounded-3xl bg-white shadow-sm ring-1 ring-neutral-200 transition duration-300 hover:shadow-md hover:ring-amber-500/60 lg:flex-row dark:bg-neutral-950 dark:ring-white/10 dark:hover:ring-amber-400/60"
         >
           <div className="relative aspect-16/9 lg:aspect-auto lg:w-3/5">
             <Image
@@ -146,17 +146,17 @@ const SectionUrunVitrini = async () => {
               sizes="(max-width: 1024px) 100vw, 60vw"
               className="object-cover transition-transform duration-500 group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-neutral-950/70 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:to-neutral-950" />
+            <div className="absolute inset-0 bg-gradient-to-t from-white/70 to-transparent lg:bg-gradient-to-r lg:from-transparent lg:to-white dark:from-neutral-950/70 dark:lg:from-transparent dark:lg:to-neutral-950" />
           </div>
-          <div className="flex flex-col justify-center bg-neutral-950 p-7 sm:p-10 lg:w-2/5">
-            <p className="text-[11px] font-semibold tracking-[0.25em] text-amber-400 uppercase">
+          <div className="flex flex-col justify-center bg-white p-7 sm:p-10 lg:w-2/5 dark:bg-neutral-950">
+            <p className="text-[11px] font-semibold tracking-[0.25em] text-amber-600 uppercase dark:text-amber-400">
               Filonun amiral gemisi
             </p>
-            <h3 className="mt-3 text-2xl font-semibold text-white sm:text-3xl">
+            <h3 className="mt-3 text-2xl font-semibold text-neutral-900 sm:text-3xl dark:text-white">
               {amiral.marka} {amiral.model}
             </h3>
-            <p className="mt-3 text-sm/6 text-neutral-400">{amiral.description}</p>
-            <div className="mt-8 flex gap-x-10 border-t border-white/10 pt-6">
+            <p className="mt-3 text-sm/6 text-neutral-500 dark:text-neutral-400">{amiral.description}</p>
+            <div className="mt-8 flex gap-x-10 border-t border-neutral-200 pt-6 dark:border-white/10">
               <SpecMini deger={trSayi(amiral.calismaYuksekligi)} birim="m" etiket="Yükseklik" />
               {amiral.yatayErisim ? <SpecMini deger={trSayi(amiral.yatayErisim)} birim="m" etiket="Erişim" /> : null}
               {amiral.kapasiteKg ? <SpecMini deger={trSayi(amiral.kapasiteKg)} birim="kg" etiket="Kapasite" /> : null}
@@ -169,7 +169,7 @@ const SectionUrunVitrini = async () => {
           {raylar.map((ray) => (
             <div key={ray.href}>
               <div className="flex items-baseline justify-between gap-x-4">
-                <h3 className="text-lg font-semibold text-white">
+                <h3 className="text-lg font-semibold text-neutral-900 dark:text-white">
                   {ray.baslik}
                   <span className="ms-2 text-sm font-normal text-neutral-500">
                     {ray.baslik === 'Sepetli Vinç' ? ray.plakalar.length + 1 : ray.plakalar.length} model
@@ -177,7 +177,7 @@ const SectionUrunVitrini = async () => {
                 </h3>
                 <Link
                   href={`${ray.href}#modeller`}
-                  className="shrink-0 text-sm font-medium text-neutral-300 underline-offset-4 hover:text-amber-400 hover:underline"
+                  className="shrink-0 text-sm font-medium text-neutral-600 underline-offset-4 hover:text-amber-600 hover:underline dark:text-neutral-300 dark:hover:text-amber-400"
                 >
                   Tümünü gör →
                 </Link>

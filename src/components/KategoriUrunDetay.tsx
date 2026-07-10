@@ -1,4 +1,5 @@
 import { getKategoriUrunListesi, TKategoriUrun, TKategoriUrunListesi } from '@/data/kategori-urunleri'
+import { markaSlug } from '@/data/markalar'
 import { Badge } from '@/shared/Badge'
 import ButtonPrimary from '@/shared/ButtonPrimary'
 import ButtonSecondary from '@/shared/ButtonSecondary'
@@ -60,7 +61,9 @@ const KategoriUrunDetay = async ({
         <div className="w-full lg:w-3/5 xl:w-2/3">
           <div className="flex flex-wrap items-center gap-2">
             <Badge color="blue">{urun.tip}</Badge>
-            <Badge color="zinc">{urun.marka}</Badge>
+            <Link href={`/markalar/${markaSlug(urun.marka)}`}>
+              <Badge color="zinc">{urun.marka} →</Badge>
+            </Link>
             <Badge color="green">{urun.mensei}</Badge>
           </div>
 
@@ -76,7 +79,11 @@ const KategoriUrunDetay = async ({
           <h2 className="text-xl font-semibold">Teknik Özellikler</h2>
           <DescriptionList className="mt-4">
             <DescriptionTerm>Marka</DescriptionTerm>
-            <DescriptionDetails>{urun.marka}</DescriptionDetails>
+            <DescriptionDetails>
+              <Link href={`/markalar/${markaSlug(urun.marka)}`} className="underline underline-offset-4 hover:text-amber-600">
+                {urun.marka}
+              </Link>
+            </DescriptionDetails>
 
             <DescriptionTerm>Model</DescriptionTerm>
             <DescriptionDetails>{urun.model}</DescriptionDetails>

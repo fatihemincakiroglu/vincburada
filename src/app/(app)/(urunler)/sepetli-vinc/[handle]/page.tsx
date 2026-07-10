@@ -1,3 +1,4 @@
+import { markaSlug } from '@/data/markalar'
 import { getSepetliVincByHandle, getSepetliVincListings, getSepetliVincMarkaByAd } from '@/data/sepetli-vinc-listings'
 import { Badge } from '@/shared/Badge'
 import ButtonPrimary from '@/shared/ButtonPrimary'
@@ -67,7 +68,9 @@ const Page = async ({ params }: { params: Promise<{ handle: string }> }) => {
         <div className="w-full lg:w-3/5 xl:w-2/3">
           <div className="flex flex-wrap items-center gap-2">
             <Badge color="blue">{urun.kategori}</Badge>
-            <Badge color="zinc">{urun.marka}</Badge>
+            <Link href={`/markalar/${markaSlug(urun.marka)}`}>
+              <Badge color="zinc">{urun.marka} →</Badge>
+            </Link>
             {urun.sertifikalar.map((s) => (
               <Badge key={s} color="green">
                 {s}
@@ -85,7 +88,11 @@ const Page = async ({ params }: { params: Promise<{ handle: string }> }) => {
           <h2 className="text-xl font-semibold">Teknik Özellikler</h2>
           <DescriptionList className="mt-4">
             <DescriptionTerm>Marka</DescriptionTerm>
-            <DescriptionDetails>{urun.marka}</DescriptionDetails>
+            <DescriptionDetails>
+              <Link href={`/markalar/${markaSlug(urun.marka)}`} className="underline underline-offset-4 hover:text-amber-600">
+                {urun.marka}
+              </Link>
+            </DescriptionDetails>
 
             <DescriptionTerm>Model</DescriptionTerm>
             <DescriptionDetails>{urun.model}</DescriptionDetails>
@@ -129,7 +136,15 @@ const Page = async ({ params }: { params: Promise<{ handle: string }> }) => {
           {marka ? (
             <>
               <Divider className="my-8" />
-              <h2 className="text-xl font-semibold">{marka.marka} Hakkında</h2>
+              <div className="flex items-baseline justify-between gap-x-4">
+                <h2 className="text-xl font-semibold">{marka.marka} Hakkında</h2>
+                <Link
+                  href={`/markalar/${markaSlug(marka.marka)}`}
+                  className="text-sm font-medium text-neutral-600 underline-offset-4 hover:text-amber-600 hover:underline dark:text-neutral-300"
+                >
+                  Tüm {marka.marka} modelleri →
+                </Link>
+              </div>
               <DescriptionList className="mt-4">
                 <DescriptionTerm>Menşei</DescriptionTerm>
                 <DescriptionDetails>{marka.mensei}</DescriptionDetails>

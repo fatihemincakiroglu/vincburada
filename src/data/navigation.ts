@@ -1,4 +1,8 @@
+import { getMarkalar } from '@/data/markalar'
+
 export async function getNavigation(): Promise<TNavigationItem[]> {
+  const markalar = await getMarkalar()
+
   return [
     {
       id: '1',
@@ -18,6 +22,17 @@ export async function getNavigation(): Promise<TNavigationItem[]> {
         { id: '2-5', href: '/mobil-vinc', name: 'Mobil Vinç' },
         { id: '2-6', href: '/hiyap-vinc', name: 'Hiyap Vinç' },
       ],
+    },
+    {
+      id: '8',
+      href: '/markalar',
+      name: 'Markalar',
+      type: 'dropdown',
+      children: markalar.map((m) => ({
+        id: `8-${m.handle}`,
+        href: `/markalar/${m.handle}`,
+        name: m.marka,
+      })),
     },
     {
       id: '3',

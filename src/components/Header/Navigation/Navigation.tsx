@@ -82,7 +82,7 @@ const DropdownMenu = ({ menuItem }: { menuItem: TNavigationItem }) => {
         {renderMenuLink(menuItem)}
         {menuItem.children?.length && (
           <div className="absolute top-0 left-full z-10 sub-menu w-56 pl-2">
-            <ul className="relative grid space-y-1 rounded-lg bg-white py-4 text-sm shadow-lg ring-1 ring-black/5 dark:bg-neutral-900 dark:ring-white/10">
+            <ul className="hidden-scrollbar relative grid max-h-[70vh] space-y-1 overflow-y-auto rounded-lg bg-white py-4 text-sm shadow-lg ring-1 ring-black/5 dark:bg-neutral-900 dark:ring-white/10">
               {menuItem.children.map((child) => {
                 if (child.type === 'dropdown' && child.children?.length) {
                   return renderDropdown(child)
@@ -106,7 +106,7 @@ const DropdownMenu = ({ menuItem }: { menuItem: TNavigationItem }) => {
 
       {menuItem.children?.length && menuItem.type === 'dropdown' ? (
         <div className="absolute top-full left-0 z-10 sub-menu w-56">
-          <ul className="relative grid space-y-1 rounded-lg bg-white py-4 text-sm shadow-lg ring-1 ring-black/5 dark:bg-neutral-900 dark:ring-white/10">
+          <ul className="hidden-scrollbar relative grid max-h-[70vh] space-y-1 overflow-y-auto rounded-lg bg-white py-4 text-sm shadow-lg ring-1 ring-black/5 dark:bg-neutral-900 dark:ring-white/10">
             {menuItem.children?.map((childItem) => {
               if (childItem.type === 'dropdown' && childItem.children?.length) {
                 return renderDropdown(childItem)
