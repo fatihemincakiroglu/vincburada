@@ -34,7 +34,7 @@ export default function GallerySlider({
   ratioClass = 'aspect-w-4 aspect-h-3',
   imageClass,
   galleryClass,
-  href = '/sepetli-vinc/modeller',
+  href = '/sepetli-vinc',
   navigation = true,
 }: GallerySliderProps) {
   const theme = useContext(ThemeContext)

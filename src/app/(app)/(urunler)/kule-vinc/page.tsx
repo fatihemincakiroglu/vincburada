@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import KategoriUrunBolumu from '@/components/KategoriUrunBolumu'
 import ProductPageLayout from '../_components/ProductPageLayout'
 import heroImage from '@/images/vinc/hero-kule.webp'
 
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
 const Page = () => {
   return (
     <ProductPageLayout
+      wideChildren={<KategoriUrunBolumu handle="kule-vinc" kategoriAdi="Kule Vinç" />}
       heroImage={heroImage}
       title="Kule Vinç"
       subHeading="Büyük ölçekli inşaat projeleriniz için kule vinç kiralama çözümleri."

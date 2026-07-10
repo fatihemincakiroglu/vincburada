@@ -40,7 +40,7 @@ const ManliftSearchFormMobile = () => {
     if (heightMin) params.set('height_min', heightMin)
     if (heightMax) params.set('height_max', heightMax)
 
-    router.push(`/sepetli-vinc/modeller?${params.toString()}`)
+    router.push(`/sepetli-vinc?${params.toString()}#modeller`)
   }
 
   const heightValue =

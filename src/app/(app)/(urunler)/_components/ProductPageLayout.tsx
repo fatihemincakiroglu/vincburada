@@ -21,11 +21,12 @@ interface Props {
   heroHeading?: string
   heroImage?: StaticImageData
   children?: ReactNode
+  wideChildren?: ReactNode
 }
 
 const galleryImages = [galeri1, galeri2, galeri3, galeri4, galeri5, galeri6]
 
-const ProductPageLayout = ({ title, subHeading, heroHeading, heroImage, children }: Props) => {
+const ProductPageLayout = ({ title, subHeading, heroHeading, heroImage, children, wideChildren }: Props) => {
   return (
     <main className="relative overflow-hidden">
       <BgGlassmorphism />
@@ -47,6 +48,8 @@ const ProductPageLayout = ({ title, subHeading, heroHeading, heroImage, children
             </>
           }
         />
+
+        {wideChildren ? <div className="w-full">{wideChildren}</div> : null}
 
         {children ? <div className="mx-auto w-full max-w-4xl">{children}</div> : null}
 

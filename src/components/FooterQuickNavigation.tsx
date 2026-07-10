@@ -16,7 +16,7 @@ const FOOTER_QUICK_NAV = [
   },
   {
     name: 'Modeller',
-    link: '/sepetli-vinc/modeller',
+    link: '/sepetli-vinc#modeller',
     icon: Squares2X2Icon,
   },
   {

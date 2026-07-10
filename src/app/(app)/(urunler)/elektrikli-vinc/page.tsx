@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import KategoriUrunBolumu from '@/components/KategoriUrunBolumu'
 import ProductPageLayout from '../_components/ProductPageLayout'
 import heroImage from '@/images/vinc/hero-elektrikli.webp'
 
@@ -10,6 +11,7 @@ export const metadata: Metadata = {
 const Page = () => {
   return (
     <ProductPageLayout
+      wideChildren={<KategoriUrunBolumu handle="elektrikli-vinc" kategoriAdi="Elektrikli Vinç" />}
       heroImage={heroImage}
       title="Elektrikli Vinç"
       subHeading="Kapalı alan ve düşük emisyon gerektiren işleriniz için elektrikli vinç kiralama."

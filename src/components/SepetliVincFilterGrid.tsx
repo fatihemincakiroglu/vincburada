@@ -13,7 +13,7 @@ import {
 import clsx from 'clsx'
 import Slider from 'rc-slider'
 import Image from 'next/image'
-import Link from 'next/link'
+import { useSearchParams } from 'next/navigation'
 import { useMemo, useState } from 'react'
 
 const YUKSEKLIK_MIN = 0
@@ -58,17 +58,21 @@ const CheckboxGrup = ({
   </div>
 )
 
-const SepetliVincFilterGrid = ({
-  listings,
-  initialGucler = [],
-  initialYukseklik = [YUKSEKLIK_MIN, YUKSEKLIK_MAX],
-  initialQuery = '',
-}: {
-  listings: TSepetliVinc[]
-  initialGucler?: string[]
-  initialYukseklik?: [number, number]
-  initialQuery?: string
-}) => {
+const gucMap: Record<string, string> = { akulu: 'Elektrikli', dizel: 'Dizel', cift_enerjili: 'Hibrit' }
+
+const SepetliVincFilterGrid = ({ listings }: { listings: TSepetliVinc[] }) => {
+  // Arama formlarından gelen URL parametrelerini başlangıç filtresi olarak uygula
+  const searchParams = useSearchParams()
+  const pGuc = searchParams.get('power_source')
+  const initialGucler = pGuc && gucMap[pGuc] ? [gucMap[pGuc]] : []
+  const hMin = Number(searchParams.get('height_min'))
+  const hMax = Number(searchParams.get('height_max'))
+  const initialYukseklik: [number, number] = [
+    Number.isFinite(hMin) && searchParams.get('height_min') ? Math.max(YUKSEKLIK_MIN, hMin) : YUKSEKLIK_MIN,
+    Number.isFinite(hMax) && searchParams.get('height_max') ? Math.min(YUKSEKLIK_MAX, hMax) : YUKSEKLIK_MAX,
+  ]
+  const initialQuery = searchParams.get('q') ?? ''
+
   const [sorgu, setSorgu] = useState(initialQuery)
   const [kategori, setKategori] = useState<string | null>(null)
   const [markalar, setMarkalar] = useState<string[]>([])
@@ -273,18 +277,23 @@ const SepetliVincFilterGrid = ({
                     <Badge color={kategoriBadgeRengi[urun.kategori] ?? 'zinc'}>{urun.kategori}</Badge>
                     <span className="text-xs text-neutral-500 dark:text-neutral-400">{urun.marka}</span>
                   </div>
-                  <h3 className="mt-2 text-base font-semibold">
-                    <Link href={`/sepetli-vinc/modeller/${urun.handle}`} className="absolute inset-0"></Link>
-                    {urun.title}
-                  </h3>
+                  <h3 className="mt-2 text-base font-semibold">{urun.title}</h3>
                   <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-sm text-neutral-600 dark:text-neutral-300">
                     <span>↑ {urun.calismaYuksekligi} m</span>
                     {urun.yatayErisim ? <span>→ {urun.yatayErisim} m</span> : null}
                     {urun.kapasiteKg ? <span>⚖ {urun.kapasiteKg} kg</span> : null}
                   </div>
-                  <p className="mt-2 text-xs text-neutral-500 dark:text-neutral-400">
+                  <p className="mt-2 grow text-xs text-neutral-500 dark:text-neutral-400">
                     {urun.gucKaynagiGosterim} · {urun.zeminGosterim}
                   </p>
+                  <a
+                    href={`https://wa.me/905323039089?text=${encodeURIComponent(`Merhaba, ${urun.marka} ${urun.model} kiralama için teklif almak istiyorum.`)}`}
+                    target="_blank"
+                    rel="noopener"
+                    className="mt-4 inline-flex items-center justify-center rounded-full border border-neutral-900 px-4 py-2 text-sm font-medium text-neutral-900 transition group-hover:bg-neutral-900 group-hover:text-white dark:border-white dark:text-white dark:group-hover:bg-white dark:group-hover:text-neutral-900"
+                  >
+                    Bu Model İçin Teklif Al
+                  </a>
                 </div>
               </div>
             ))}
