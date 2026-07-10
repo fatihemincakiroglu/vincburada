@@ -3,6 +3,7 @@
 import { TKategoriUrun } from '@/data/kategori-urunleri'
 import ButtonThird from '@/shared/ButtonThird'
 import clsx from 'clsx'
+import Link from 'next/link'
 import { useMemo, useState } from 'react'
 
 const WHATSAPP = 'https://wa.me/905323039089'
@@ -15,7 +16,15 @@ const chipClass = (aktif: boolean) =>
       : 'border-neutral-300 text-neutral-700 hover:border-neutral-500 dark:border-neutral-600 dark:text-neutral-300'
   )
 
-const KategoriUrunGrid = ({ urunler, kategoriAdi }: { urunler: TKategoriUrun[]; kategoriAdi: string }) => {
+const KategoriUrunGrid = ({
+  urunler,
+  kategoriAdi,
+  kategoriHandle,
+}: {
+  urunler: TKategoriUrun[]
+  kategoriAdi: string
+  kategoriHandle: string
+}) => {
   const [sorgu, setSorgu] = useState('')
   const [markalar, setMarkalar] = useState<string[]>([])
   const [tip, setTip] = useState<string | null>(null)
@@ -114,7 +123,11 @@ const KategoriUrunGrid = ({ urunler, kategoriAdi }: { urunler: TKategoriUrun[]; 
                   <p className="text-[11px] font-semibold tracking-[0.2em] text-amber-600 uppercase dark:text-amber-400">
                     {u.marka}
                   </p>
-                  <h3 className="mt-1 font-semibold text-neutral-900 dark:text-neutral-100">{u.model}</h3>
+                  <h3 className="mt-1 font-semibold text-neutral-900 dark:text-neutral-100">
+                    <Link href={`/${kategoriHandle}/${u.handle}`} className="hover:underline">
+                      {u.model}
+                    </Link>
+                  </h3>
                 </div>
                 <span className="shrink-0 rounded-full bg-neutral-100 px-2.5 py-1 text-[11px] font-medium text-neutral-600 dark:bg-neutral-800 dark:text-neutral-300">
                   {u.tip}
@@ -134,14 +147,22 @@ const KategoriUrunGrid = ({ urunler, kategoriAdi }: { urunler: TKategoriUrun[]; 
                 {u.not} · {u.mensei}
               </p>
 
-              <a
-                href={`${WHATSAPP}?text=${encodeURIComponent(`Merhaba, ${u.marka} ${u.model} (${kategoriAdi}) kiralama için teklif almak istiyorum.`)}`}
-                target="_blank"
-                rel="noopener"
-                className="mt-4 inline-flex items-center justify-center rounded-full border border-neutral-900 px-4 py-2 text-sm font-medium text-neutral-900 transition group-hover:bg-neutral-900 group-hover:text-white dark:border-white dark:text-white dark:group-hover:bg-white dark:group-hover:text-neutral-900"
-              >
-                Bu Model İçin Teklif Al
-              </a>
+              <div className="mt-4 flex items-center gap-2">
+                <Link
+                  href={`/${kategoriHandle}/${u.handle}`}
+                  className="inline-flex flex-1 items-center justify-center rounded-full border border-neutral-300 px-4 py-2 text-sm font-medium text-neutral-700 transition hover:border-neutral-500 dark:border-neutral-600 dark:text-neutral-300"
+                >
+                  İncele
+                </Link>
+                <a
+                  href={`${WHATSAPP}?text=${encodeURIComponent(`Merhaba, ${u.marka} ${u.model} (${kategoriAdi}) kiralama için teklif almak istiyorum.`)}`}
+                  target="_blank"
+                  rel="noopener"
+                  className="inline-flex flex-1 items-center justify-center rounded-full border border-neutral-900 px-4 py-2 text-sm font-medium text-neutral-900 transition hover:bg-neutral-900 hover:text-white dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-neutral-900"
+                >
+                  Teklif Al
+                </a>
+              </div>
             </div>
           ))}
         </div>

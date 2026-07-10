@@ -10,7 +10,7 @@ const nextConfig = {
       },
       {
         source: '/sepetli-vinc/modeller/:handle',
-        destination: '/sepetli-vinc',
+        destination: '/sepetli-vinc/:handle',
         permanent: true,
       },
     ]

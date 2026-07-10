@@ -13,6 +13,7 @@ import {
 import clsx from 'clsx'
 import Slider from 'rc-slider'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
 import { useMemo, useState } from 'react'
 
@@ -263,7 +264,7 @@ const SepetliVincFilterGrid = ({ listings }: { listings: TSepetliVinc[] }) => {
                 key={urun.id}
                 className="group relative flex flex-col overflow-hidden rounded-3xl border border-neutral-200 transition-shadow hover:shadow-lg dark:border-neutral-700"
               >
-                <div className="relative aspect-4/3 w-full overflow-hidden">
+                <Link href={`/sepetli-vinc/${urun.handle}`} className="relative block aspect-4/3 w-full overflow-hidden">
                   <Image
                     src={urun.featuredImage}
                     alt={urun.title}
@@ -271,13 +272,17 @@ const SepetliVincFilterGrid = ({ listings }: { listings: TSepetliVinc[] }) => {
                     sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw"
                     className="object-cover transition-transform duration-300 group-hover:scale-105"
                   />
-                </div>
+                </Link>
                 <div className="flex grow flex-col p-5">
                   <div className="flex items-center gap-2">
                     <Badge color={kategoriBadgeRengi[urun.kategori] ?? 'zinc'}>{urun.kategori}</Badge>
                     <span className="text-xs text-neutral-500 dark:text-neutral-400">{urun.marka}</span>
                   </div>
-                  <h3 className="mt-2 text-base font-semibold">{urun.title}</h3>
+                  <h3 className="mt-2 text-base font-semibold">
+                    <Link href={`/sepetli-vinc/${urun.handle}`} className="hover:underline">
+                      {urun.title}
+                    </Link>
+                  </h3>
                   <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-sm text-neutral-600 dark:text-neutral-300">
                     <span>↑ {urun.calismaYuksekligi} m</span>
                     {urun.yatayErisim ? <span>→ {urun.yatayErisim} m</span> : null}

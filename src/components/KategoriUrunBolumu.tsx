@@ -12,7 +12,7 @@ const KategoriUrunBolumu = async ({ handle, kategoriAdi }: { handle: string; kat
         {liste.baslik}
       </HeadingWithSub>
       <div className="mt-8">
-        <KategoriUrunGrid urunler={liste.urunler} kategoriAdi={kategoriAdi} />
+        <KategoriUrunGrid urunler={liste.urunler} kategoriAdi={kategoriAdi} kategoriHandle={handle} />
       </div>
       <p className="mt-6 text-xs text-neutral-400 dark:text-neutral-500">{liste.dipnot}</p>
     </section>

@@ -1,8 +1,24 @@
+import galeri1 from '@/images/vinc/galeri-1.webp'
+import galeri10 from '@/images/vinc/galeri-10.webp'
+import galeri2 from '@/images/vinc/galeri-2.webp'
+import galeri23 from '@/images/vinc/galeri-23.webp'
+import galeri25 from '@/images/vinc/galeri-25.webp'
+import galeri28 from '@/images/vinc/galeri-28.webp'
+import galeri5 from '@/images/vinc/galeri-5.webp'
+import galeri56 from '@/images/vinc/galeri-56.webp'
+import galeri6 from '@/images/vinc/galeri-6.webp'
+import galeri8 from '@/images/vinc/galeri-8.webp'
+import galeri9 from '@/images/vinc/galeri-9.webp'
+import galeriWa from '@/images/vinc/galeri-wa.webp'
+import { StaticImageData } from 'next/image'
+
 // ---------------------------------------------------------------------------
 // KATEGORİ ÜRÜN LİSTELERİ
 // Kaynak: sepetli_vinc_filtre_taksonomisi (1).xlsx
 // Not: Model ve teknik değerler, üretici genel katalog verilerine dayanan
 // yaklaşık referans bilgilerdir.
+// Görseller şimdilik genel galeri fotoğraflarından atanmıştır; model bazlı
+// fotoğraflar hazır olduğunda gorselSec ataması güncellenebilir.
 // ---------------------------------------------------------------------------
 
 export type TKategoriUrun = {
@@ -13,7 +29,12 @@ export type TKategoriUrun = {
   tip: string
   specs: { etiket: string; deger: string }[]
   not: string
+  handle: string
+  featuredImage: StaticImageData
+  galleryImgs: StaticImageData[]
 }
+
+type TKategoriUrunHam = Omit<TKategoriUrun, 'handle' | 'featuredImage' | 'galleryImgs'>
 
 export type TKategoriUrunListesi = {
   handle: string
@@ -23,12 +44,50 @@ export type TKategoriUrunListesi = {
   urunler: TKategoriUrun[]
 }
 
+const tumGorseller = [
+  galeri1,
+  galeri2,
+  galeri5,
+  galeri6,
+  galeri8,
+  galeri9,
+  galeri10,
+  galeri23,
+  galeri25,
+  galeri28,
+  galeri56,
+  galeriWa,
+]
+
+const trSlug = (metin: string) =>
+  metin
+    .toLocaleLowerCase('tr')
+    .replace(/ç/g, 'c')
+    .replace(/ğ/g, 'g')
+    .replace(/ı/g, 'i')
+    .replace(/ö/g, 'o')
+    .replace(/ş/g, 's')
+    .replace(/ü/g, 'u')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+
+const zenginlestir = (urunler: TKategoriUrunHam[]): TKategoriUrun[] =>
+  urunler.map((u, i) => {
+    const n = tumGorseller.length
+    return {
+      ...u,
+      handle: trSlug(`${u.marka} ${u.model}`),
+      featuredImage: tumGorseller[i % n],
+      galleryImgs: [tumGorseller[i % n], tumGorseller[(i + 1) % n], tumGorseller[(i + 2) % n], tumGorseller[(i + 3) % n]],
+    }
+  })
+
 const DIPNOT =
   'Model ve teknik değerler, üretici genel katalog verilerine dayanan yaklaşık referans bilgilerdir; kiralama öncesi güncel teknik döküman ile teyit edilir.'
 
 // KULE VİNÇ ------------------------------------------------------------------
 
-const kuleVincUrunleri: TKategoriUrun[] = [
+const kuleVincUrunleri: TKategoriUrunHam[] = [
   {
     id: 'kule://1',
     marka: 'Potain',
@@ -184,7 +243,7 @@ const kuleVincUrunleri: TKategoriUrun[] = [
 
 // ELEKTRİKLİ VİNÇ -------------------------------------------------------------
 
-const elektrikliVincUrunleri: TKategoriUrun[] = [
+const elektrikliVincUrunleri: TKategoriUrunHam[] = [
   {
     id: 'elektrikli://1',
     marka: 'Demag (Konecranes)',
@@ -343,7 +402,7 @@ const elektrikliVincUrunleri: TKategoriUrun[] = [
 
 // MOBİL VİNÇ ------------------------------------------------------------------
 
-const mobilVincUrunleri: TKategoriUrun[] = [
+const mobilVincUrunleri: TKategoriUrunHam[] = [
   {
     id: 'mobil://1',
     marka: 'Liebherr',
@@ -494,7 +553,7 @@ const mobilVincUrunleri: TKategoriUrun[] = [
 
 // HİYAP VİNÇ ------------------------------------------------------------------
 
-const hiyapVincUrunleri: TKategoriUrun[] = [
+const hiyapVincUrunleri: TKategoriUrunHam[] = [
   {
     id: 'hiyap://1',
     marka: 'HIAB',
@@ -649,28 +708,28 @@ const listeler: Record<string, TKategoriUrunListesi> = {
     baslik: 'Kule Vinç Modelleri',
     aciklama: 'Flat-top, luffing ve hızlı kurulum tipi kule vinç modellerini marka ve tipe göre filtreleyin.',
     dipnot: DIPNOT,
-    urunler: kuleVincUrunleri,
+    urunler: zenginlestir(kuleVincUrunleri),
   },
   'elektrikli-vinc': {
     handle: 'elektrikli-vinc',
     baslik: 'Elektrikli Vinç Modelleri',
     aciklama: 'Zincirli ve halatlı elektrikli vinç modellerini marka ve tipe göre filtreleyin.',
     dipnot: DIPNOT,
-    urunler: elektrikliVincUrunleri,
+    urunler: zenginlestir(elektrikliVincUrunleri),
   },
   'mobil-vinc': {
     handle: 'mobil-vinc',
     baslik: 'Mobil Vinç Modelleri',
     aciklama: 'Tüm arazi, arazi tipi, kamyon üstü ve paletli mobil vinç modellerini filtreleyin.',
     dipnot: DIPNOT,
-    urunler: mobilVincUrunleri,
+    urunler: zenginlestir(mobilVincUrunleri),
   },
   'hiyap-vinc': {
     handle: 'hiyap-vinc',
     baslik: 'Hiyap Vinç Modelleri',
     aciklama: 'Kamyon ve kamyonet üstü katlanır bomlu (hiyap) vinç modellerini filtreleyin.',
     dipnot: DIPNOT,
-    urunler: hiyapVincUrunleri,
+    urunler: zenginlestir(hiyapVincUrunleri),
   },
 }
 
@@ -680,4 +739,11 @@ export async function getKategoriUrunListesi(handle: string): Promise<TKategoriU
 
 export async function getTumKategoriListeleri(): Promise<TKategoriUrunListesi[]> {
   return Object.values(listeler)
+}
+
+export async function getKategoriUrunByHandle(
+  kategoriHandle: string,
+  urunHandle: string
+): Promise<TKategoriUrun | undefined> {
+  return listeler[kategoriHandle]?.urunler.find((u) => u.handle === urunHandle)
 }

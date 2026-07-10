@@ -1,8 +1,10 @@
+import { getTumKategoriListeleri } from '@/data/kategori-urunleri'
+import { getSepetliVincListings } from '@/data/sepetli-vinc-listings'
 import type { MetadataRoute } from 'next'
 
 const SITE_URL = 'https://vincburada.com.tr'
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const routes = [
     '',
     '/vinc',
@@ -18,7 +20,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/iletisim',
   ]
 
-  return routes.map((route) => ({
+  const sepetli = await getSepetliVincListings()
+  const sepetliRoutes = sepetli.map((u) => `/sepetli-vinc/${u.handle}`)
+
+  const kategoriListeleri = await getTumKategoriListeleri()
+  const kategoriRoutes = kategoriListeleri.flatMap((liste) =>
+    liste.urunler.map((u) => `/${liste.handle}/${u.handle}`)
+  )
+
+  return [...routes, ...sepetliRoutes, ...kategoriRoutes].map((route) => ({
     url: `${SITE_URL}${route}`,
     lastModified: new Date(),
     changeFrequency: route === '' ? ('weekly' as const) : ('monthly' as const),

@@ -14,6 +14,7 @@ const trSayi = (n: number) => n.toLocaleString('tr-TR')
 
 type TPlaka = {
   id: string
+  href: string
   marka: string
   model: string
   tip: string
@@ -37,12 +38,12 @@ const SpecMini = ({ deger, birim, etiket }: { deger: string; birim: string; etik
   </div>
 )
 
-const PlakaKarti = ({ plaka, href }: { plaka: TPlaka; href: string }) => {
+const PlakaKarti = ({ plaka }: { plaka: TPlaka }) => {
   const [sayi, ...birimParcalari] = plaka.birincil.split(' ')
   const birim = birimParcalari.join(' ')
   return (
     <Link
-      href={href}
+      href={plaka.href}
       className="group flex w-60 shrink-0 snap-start flex-col rounded-2xl bg-neutral-900 p-5 ring-1 ring-white/10 transition duration-300 hover:ring-amber-400/60"
     >
       <div className="flex items-start justify-between gap-x-2">
@@ -77,6 +78,7 @@ const SectionUrunVitrini = async () => {
       href: '/sepetli-vinc',
       plakalar: sepetliSirali.slice(1).map((u) => ({
         id: u.id,
+        href: `/sepetli-vinc/${u.handle}`,
         marka: u.marka,
         model: u.model,
         tip: u.kategori,
@@ -91,6 +93,7 @@ const SectionUrunVitrini = async () => {
         href: `/${liste.handle}`,
         plakalar: liste.urunler.map((u) => ({
           id: u.id,
+          href: `/${liste.handle}/${u.handle}`,
           marka: u.marka,
           model: u.model,
           tip: u.tip,
@@ -132,7 +135,7 @@ const SectionUrunVitrini = async () => {
 
         {/* Amiral gemisi */}
         <Link
-          href="/sepetli-vinc#modeller"
+          href={`/sepetli-vinc/${amiral.handle}`}
           className="group relative mt-10 flex flex-col overflow-hidden rounded-3xl ring-1 ring-white/10 transition duration-300 hover:ring-amber-400/60 lg:flex-row"
         >
           <div className="relative aspect-16/9 lg:aspect-auto lg:w-3/5">
@@ -181,7 +184,7 @@ const SectionUrunVitrini = async () => {
               </div>
               <div className="hidden-scrollbar -mx-1 mt-4 flex snap-x gap-4 overflow-x-auto px-1 pb-1">
                 {ray.plakalar.map((plaka) => (
-                  <PlakaKarti key={plaka.id} plaka={plaka} href={`${ray.href}#modeller`} />
+                  <PlakaKarti key={plaka.id} plaka={plaka} />
                 ))}
               </div>
             </div>
