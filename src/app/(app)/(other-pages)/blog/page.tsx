@@ -1,5 +1,4 @@
 import BgGlassmorphism from '@/components/BgGlassmorphism'
-import SectionAds from '@/components/blog/SectionAds'
 import SectionGridPosts from '@/components/blog/SectionGridPosts'
 import SectionMagazine5 from '@/components/blog/SectionMagazine5'
 import SectionOurFeatures from '@/components/SectionOurFeatures'
@@ -23,8 +22,7 @@ const BlogPage: React.FC = async () => {
         <div className="pt-12 pb-16 lg:pb-28">
           <SectionMagazine5 posts={blogPosts} />
         </div>
-        <SectionAds />
-        <SectionGridPosts posts={blogPosts} className="py-16 lg:py-28" />
+        <SectionGridPosts heading="Tüm Yazılar" posts={blogPosts} className="py-16 lg:py-28" />
         <SectionOurFeatures className="mt-16 pb-16 lg:pb-28" />
       </div>
     </div>

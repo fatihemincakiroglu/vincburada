@@ -10,6 +10,8 @@ import galeri6 from '@/images/vinc/galeri-6.webp'
 import galeri8 from '@/images/vinc/galeri-8.webp'
 import galeri9 from '@/images/vinc/galeri-9.webp'
 import galeriWa from '@/images/vinc/galeri-wa.webp'
+import palfingerP900Turbin from '@/images/vinc/palfinger/p900-turbin.webp'
+import palfingerP900Arac from '@/images/vinc/palfinger/p900-arac.webp'
 import { StaticImageData } from 'next/image'
 
 // ---------------------------------------------------------------------------
@@ -94,7 +96,7 @@ export async function getSepetliVincMarkalari() {
       marka: 'Palfinger',
       mensei: 'Avusturya',
       urunGrubu: 'Kamyon üstü katlanır bomlu vinç',
-      seriler: 'P 750, PK 720 TEC, PK 33002 EH, PK 24001 SLD5',
+      seriler: 'P 900, P 750, PK 720 TEC, PK 33002 EH, PK 24001 SLD5',
       not: 'Yüksek çalışma basıncı (365 bar), hibrit seçenekli',
     },
     {
@@ -385,6 +387,29 @@ export async function getSepetliVincListings() {
       description:
         'Palfinger P 750, 75 metre çalışma yüksekliği ve 5 kişilik sepet kapasitesiyle filomuzun en yüksek erişimli kamyon üstü platformudur. Yüksek bina cephesi ve endüstriyel bakımda ağır sınıfın tercihi.',
       ...gorselSec(8),
+    },
+    {
+      id: 'sepetli-vinc://15',
+      marka: 'Palfinger',
+      model: 'P 900',
+      handle: 'palfinger-p-900',
+      title: 'Palfinger P 900 Kamyon Üstü Platform',
+      anaKategoriGosterim: 'Kamyon Üstü Teleskopik Platform',
+      kategori: 'Kamyon Üstü' as TAnaKategori,
+      calismaYuksekligi: 90,
+      yatayErisim: 32.5,
+      kapasiteKg: 530,
+      gucKaynagiGosterim: 'Dizel',
+      gucKaynaklari: ['Dizel'] as TGucKaynagi[],
+      zeminGosterim: 'Kamyon üstü',
+      zeminTipleri: ['Kamyon Üstü'] as TZeminTipi[],
+      kullanimOrtami: 'Dış Mekan' as TKullanimOrtami,
+      sertifikalar: ['EN 280', 'CE'],
+      not: '90 m çalışma yüksekliği, rüzgar hızı 7 (15,5 m/s) çalışma imkanı',
+      description:
+        'Palfinger P 900, 90 metre çalışma yüksekliği ve 32,5 metre yatay erişimiyle segmentinin zirvesindeki kamyon üstü platformdur. 530 kg kapasiteli teleskopik sepeti, 180° sepet bomu dönüşü ve GPD (yerçekimi tahrikli iniş) sistemiyle rüzgar türbini bakımı, baca ve yüksek endüstriyel yapı çalışmalarının ekipmanıdır. Rüzgar hızı 7 (15,5 m/s) yükseltmesi sayesinde standart platformların çalışamadığı koşullarda dahi operasyona devam eder.',
+      featuredImage: palfingerP900Turbin,
+      galleryImgs: [palfingerP900Turbin, palfingerP900Arac, ...gorselSec(8).galleryImgs.slice(0, 2)],
     },
     {
       id: 'sepetli-vinc://10',

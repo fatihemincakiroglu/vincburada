@@ -289,7 +289,7 @@ const Page = () => {
             </p>
             <p className={pClass}>
               Güncel ve net fiyat için{' '}
-              <a href="tel:05323039089" className="font-semibold text-orange-600 hover:underline dark:text-orange-400">
+              <a href="tel:+905323039089" className="font-semibold text-orange-600 hover:underline dark:text-orange-400">
                 0532 303 90 89
               </a>{' '}
               numarasından bize ulaşın; aynı gün içinde ücretsiz teklifinizi hazırlayalım.

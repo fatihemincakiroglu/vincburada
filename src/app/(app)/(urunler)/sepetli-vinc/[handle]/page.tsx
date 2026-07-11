@@ -1,9 +1,8 @@
 import { markaSlug } from '@/data/markalar'
 import { getSepetliVincByHandle, getSepetliVincListings, getSepetliVincMarkaByAd } from '@/data/sepetli-vinc-listings'
 import { Badge } from '@/shared/Badge'
-import ButtonPrimary from '@/shared/ButtonPrimary'
-import ButtonSecondary from '@/shared/ButtonSecondary'
 import { DescriptionDetails, DescriptionList, DescriptionTerm } from '@/shared/description-list'
+import TeklifKutusu from '@/components/TeklifKutusu'
 import { Divider } from '@/shared/divider'
 import { Metadata } from 'next'
 import Image from 'next/image'
@@ -164,25 +163,7 @@ const Page = async ({ params }: { params: Promise<{ handle: string }> }) => {
 
         {/* SAĞ: teklif kutusu */}
         <div className="w-full lg:w-2/5 xl:w-1/3">
-          <div className="sticky top-28 rounded-3xl border border-neutral-200 p-6 shadow-sm dark:border-neutral-700">
-            <p className="text-lg font-semibold">Bu model için teklif alın</p>
-            <p className="mt-2 text-sm text-neutral-500 dark:text-neutral-400">
-              {urun.marka} {urun.model} güncel kiralama fiyatı ve müsaitlik bilgisi için bize ulaşın. Aynı gün içinde
-              dönüş yapıyoruz.
-            </p>
-            <div className="mt-6 flex flex-col gap-3">
-              <ButtonPrimary href={`https://wa.me/905323039089?text=${whatsappMesaj}`} target="_blank" rel="noopener">
-                WhatsApp ile Teklif Al
-              </ButtonPrimary>
-              <ButtonSecondary href="/iletisim">İletişim Formu</ButtonSecondary>
-            </div>
-            <p className="mt-4 text-center text-xs text-neutral-500 dark:text-neutral-400">
-              veya arayın:{' '}
-              <a href="tel:05323039089" className="font-medium underline">
-                0532 303 90 89
-              </a>
-            </p>
-          </div>
+          <TeklifKutusu urunAdi={`${urun.marka} ${urun.model}`} whatsappMesaj={whatsappMesaj} />
         </div>
       </div>
 

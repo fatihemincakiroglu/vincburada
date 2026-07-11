@@ -1,5 +1,6 @@
 import vincElektrikliImage from '@/images/vinc/hero-elektrikli.webp'
 import vincHiyapImage from '@/images/vinc/hero-hiyap.webp'
+import vincMiniImage from '@/images/vinc/jekko/hero-mini.webp'
 import vincKuleImage from '@/images/vinc/hero-kule.webp'
 import vincMobilImage from '@/images/vinc/hero-mobil.webp'
 import vincSepetliImage from '@/images/vinc/hero-sepetli.webp'
@@ -61,6 +62,15 @@ export async function getVincCategories() {
       count: 0,
       thumbnail: vincHiyapImage.src,
       description: 'Taşıma ve kaldırma bir arada',
+    },
+    {
+      id: 'vinc-cat://7',
+      name: 'Mini Vinç',
+      handle: 'mini-vinc',
+      href: '/mini-vinc',
+      count: 0,
+      thumbnail: vincMiniImage.src,
+      description: 'Dar alanda kompakt güç',
     },
   ]
 }

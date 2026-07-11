@@ -21,6 +21,7 @@ export async function getNavigation(): Promise<TNavigationItem[]> {
         { id: '2-4', href: '/elektrikli-vinc', name: 'Elektrikli Vinç' },
         { id: '2-5', href: '/mobil-vinc', name: 'Mobil Vinç' },
         { id: '2-6', href: '/hiyap-vinc', name: 'Hiyap Vinç' },
+        { id: '2-7', href: '/mini-vinc', name: 'Mini Vinç' },
       ],
     },
     {
@@ -48,11 +49,6 @@ export async function getNavigation(): Promise<TNavigationItem[]> {
       id: '5',
       href: '/blog',
       name: 'Blog',
-    },
-    {
-      id: '6',
-      href: '/sss',
-      name: 'SSS',
     },
     {
       id: '7',

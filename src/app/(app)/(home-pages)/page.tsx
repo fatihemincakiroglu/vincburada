@@ -5,6 +5,11 @@ import SectionClientSay from '@/components/SectionClientSay'
 import SectionHowItWork from '@/components/SectionHowItWork'
 import SectionOurFeatures from '@/components/SectionOurFeatures'
 import SectionUrunVitrini from '@/components/SectionUrunVitrini'
+import SectionKatalog from '@/components/SectionKatalog'
+import SectionBlogVitrini from '@/components/SectionBlogVitrini'
+import SectionSss from '@/components/SectionSss'
+import SectionTeklifCta from '@/components/SectionTeklifCta'
+import { getBlogPosts } from '@/data/data'
 import SectionSliderNewCategories from '@/components/SectionSliderNewCategories'
 import { getVincCategories } from '@/data/categories'
 import heroImage from '@/images/vinc/hero-home.webp'
@@ -22,6 +27,7 @@ export const metadata: Metadata = {
 
 async function Page() {
   const vincCategories = await getVincCategories()
+  const blogPosts = await getBlogPosts()
 
   return (
     <main className="relative overflow-hidden">
@@ -56,10 +62,18 @@ async function Page() {
         <SectionOurFeatures className="py-14" />
         <Divider />
         <SectionHowItWork />
-        <Divider />
-        <div className="relative py-16">
+
+        <SectionKatalog />
+
+        <div className="relative py-8">
           <SectionClientSay />
         </div>
+        <Divider />
+        <SectionBlogVitrini posts={blogPosts} />
+        <Divider />
+        <SectionSss />
+
+        <SectionTeklifCta />
       </div>
     </main>
   )

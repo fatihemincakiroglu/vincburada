@@ -10,6 +10,31 @@ import galeri6 from '@/images/vinc/galeri-6.webp'
 import galeri8 from '@/images/vinc/galeri-8.webp'
 import galeri9 from '@/images/vinc/galeri-9.webp'
 import galeriWa from '@/images/vinc/galeri-wa.webp'
+import zlZrt400 from '@/images/vinc/zoomlion/zrt400v452.webp'
+import zlZrt600 from '@/images/vinc/zoomlion/zrt600v552-1.webp'
+import zlZrt850 from '@/images/vinc/zoomlion/zrt850v552-1.webp'
+import zlZrt1100 from '@/images/vinc/zoomlion/zrt1100v552.webp'
+import zlZrt1300 from '@/images/vinc/zoomlion/zrt1300v552.webp'
+import zlZct600 from '@/images/vinc/zoomlion/zct600v552.webp'
+import zlZct1000 from '@/images/vinc/zoomlion/zct1000v552-1.webp'
+import zlZct1500 from '@/images/vinc/zoomlion/zct1500v653.webp'
+import zlZct3000 from '@/images/vinc/zoomlion/zct3000v853.webp'
+import zlZcc850 from '@/images/vinc/zoomlion/zcc850v-1e5.webp'
+import zlZcc1000 from '@/images/vinc/zoomlion/zcc1000v-1e5.webp'
+import zlZcc1500 from '@/images/vinc/zoomlion/zcc1500v-1e5.webp'
+import zlZcc2200 from '@/images/vinc/zoomlion/zcc2200ve5.webp'
+import zlZcc3500 from '@/images/vinc/zoomlion/zcc3500v-2e5.webp'
+import zlZcc4000 from '@/images/vinc/zoomlion/zcc4000ve5.webp'
+import zlZcc7200 from '@/images/vinc/zoomlion/zcc7200e5.webp'
+import zlZcc9800 from '@/images/vinc/zoomlion/zcc9800we5.webp'
+import zlZat1200 from '@/images/vinc/zoomlion/zat1200v753e.webp'
+import zlZat1600 from '@/images/vinc/zoomlion/zat1600v853e.webp'
+import zlWaKapak from '@/images/vinc/zoomlion/wa-kapak.webp'
+import zlWaSaha from '@/images/vinc/zoomlion/wa-saha.webp'
+import zlWaYakin from '@/images/vinc/zoomlion/wa-yakin.webp'
+import jkCdh3b from '@/images/vinc/jekko/spx1280-cdh3b.webp'
+import jkCl3 from '@/images/vinc/jekko/spx1280-cl3.webp'
+import jkYan from '@/images/vinc/jekko/spx1280-yan.webp'
 import { StaticImageData } from 'next/image'
 
 // ---------------------------------------------------------------------------
@@ -34,7 +59,9 @@ export type TKategoriUrun = {
   galleryImgs: StaticImageData[]
 }
 
-type TKategoriUrunHam = Omit<TKategoriUrun, 'handle' | 'featuredImage' | 'galleryImgs'>
+type TKategoriUrunHam = Omit<TKategoriUrun, 'handle' | 'featuredImage' | 'galleryImgs'> & {
+  ozelGorsel?: StaticImageData
+}
 
 export type TKategoriUrunListesi = {
   handle: string
@@ -72,13 +99,15 @@ const trSlug = (metin: string) =>
     .replace(/^-+|-+$/g, '')
 
 const zenginlestir = (urunler: TKategoriUrunHam[]): TKategoriUrun[] =>
-  urunler.map((u, i) => {
+  urunler.map(({ ozelGorsel, ...u }, i) => {
     const n = tumGorseller.length
     return {
       ...u,
       handle: trSlug(`${u.marka} ${u.model}`),
-      featuredImage: tumGorseller[i % n],
-      galleryImgs: [tumGorseller[i % n], tumGorseller[(i + 1) % n], tumGorseller[(i + 2) % n], tumGorseller[(i + 3) % n]],
+      featuredImage: ozelGorsel ?? tumGorseller[i % n],
+      galleryImgs: ozelGorsel
+        ? [ozelGorsel, tumGorseller[i % n], tumGorseller[(i + 1) % n], tumGorseller[(i + 2) % n]]
+        : [tumGorseller[i % n], tumGorseller[(i + 1) % n], tumGorseller[(i + 2) % n], tumGorseller[(i + 3) % n]],
     }
   })
 
@@ -238,6 +267,119 @@ const kuleVincUrunleri: TKategoriUrunHam[] = [
       { etiket: 'Bom Uzunluğu', deger: '55 m' },
     ],
     not: 'Kısıtlı alanlarda dönüş yarıçapı avantajı',
+  },
+  // ZOOMLION — WA Serisi Düz Tepe (Flat-Top) Kule Vinç Kataloğu (2023)
+  {
+    id: 'kule://13',
+    marka: 'Zoomlion',
+    model: 'WA5610-6F',
+    mensei: 'Çin',
+    tip: 'Flat-Top',
+    specs: [
+      { etiket: 'Maks. Kapasite', deger: '6 ton' },
+      { etiket: 'Maks. Bom', deger: '56 m' },
+      { etiket: 'Uç Yük', deger: '1,0 ton' },
+    ],
+    not: 'WA serisi; 30 yıl hizmet ömrüne göre tasarım, EN standartlarında test',
+    ozelGorsel: zlWaKapak,
+  },
+  {
+    id: 'kule://14',
+    marka: 'Zoomlion',
+    model: 'WA6013-6F/8F',
+    mensei: 'Çin',
+    tip: 'Flat-Top',
+    specs: [
+      { etiket: 'Maks. Kapasite', deger: '6 / 8 ton' },
+      { etiket: 'Maks. Bom', deger: '60 m' },
+      { etiket: 'Uç Yük', deger: '1,3 ton' },
+    ],
+    not: '1,6 m mast kesiti; temelli kurulumda 45 m serbest duruş yüksekliği',
+    ozelGorsel: zlWaSaha,
+  },
+  {
+    id: 'kule://15',
+    marka: 'Zoomlion',
+    model: 'WA6017-8E/10E',
+    mensei: 'Çin',
+    tip: 'Flat-Top',
+    specs: [
+      { etiket: 'Maks. Kapasite', deger: '8 / 10 ton' },
+      { etiket: 'Maks. Bom', deger: '60 m' },
+      { etiket: 'Uç Yük', deger: '1,7 ton' },
+    ],
+    not: '2,0 m mast kesiti ile 60 m serbest duruş yüksekliği',
+    ozelGorsel: zlWaYakin,
+  },
+  {
+    id: 'kule://16',
+    marka: 'Zoomlion',
+    model: 'WA6515-8E/10E',
+    mensei: 'Çin',
+    tip: 'Flat-Top',
+    specs: [
+      { etiket: 'Maks. Kapasite', deger: '8 / 10 ton' },
+      { etiket: 'Maks. Bom', deger: '65 m' },
+      { etiket: 'Uç Yük', deger: '1,5 ton' },
+    ],
+    not: 'Uzaktan kumanda sistemi ve kule vinç bağlantısı (telematik) desteği',
+    ozelGorsel: zlWaKapak,
+  },
+  {
+    id: 'kule://17',
+    marka: 'Zoomlion',
+    model: 'WA7015-10E',
+    mensei: 'Çin',
+    tip: 'Flat-Top',
+    specs: [
+      { etiket: 'Maks. Kapasite', deger: '10 ton' },
+      { etiket: 'Maks. Bom', deger: '70 m' },
+      { etiket: 'Uç Yük', deger: '1,5 ton' },
+    ],
+    not: 'Aşırı yük/çarpışma önleme ve tayfun karşıtı güvenlik donanımları',
+    ozelGorsel: zlWaSaha,
+  },
+  {
+    id: 'kule://18',
+    marka: 'Zoomlion',
+    model: 'WA7025-10E/12E',
+    mensei: 'Çin',
+    tip: 'Flat-Top',
+    specs: [
+      { etiket: 'Maks. Kapasite', deger: '10 / 12 ton' },
+      { etiket: 'Maks. Bom', deger: '70 m' },
+      { etiket: 'Uç Yük', deger: '2,5 ton' },
+    ],
+    not: 'İnvertör kontrolle 5 mm/s altı hassas yerleştirme hızı',
+    ozelGorsel: zlWaYakin,
+  },
+  {
+    id: 'kule://19',
+    marka: 'Zoomlion',
+    model: 'WA7527-16D/20D',
+    mensei: 'Çin',
+    tip: 'Flat-Top',
+    specs: [
+      { etiket: 'Maks. Kapasite', deger: '16 / 20 ton' },
+      { etiket: 'Maks. Bom', deger: '75 m' },
+      { etiket: 'Uç Yük', deger: '2,7 ton' },
+    ],
+    not: 'Ağır sınıf düz tepe; 2,5 x 1,6 m klimalı ergonomik kabin',
+    ozelGorsel: zlWaKapak,
+  },
+  {
+    id: 'kule://20',
+    marka: 'Zoomlion',
+    model: 'WA350-16T/20T',
+    mensei: 'Çin',
+    tip: 'Flat-Top',
+    specs: [
+      { etiket: 'Maks. Kapasite', deger: '16 / 20 ton' },
+      { etiket: 'Maks. Bom', deger: '80 m' },
+      { etiket: 'Uç Yük', deger: '2,2 ton' },
+    ],
+    not: 'Serinin amiral gemisi; 80 m bom ve 62 m serbest duruş yüksekliği',
+    ozelGorsel: zlWaSaha,
   },
 ]
 
@@ -549,9 +691,338 @@ const mobilVincUrunleri: TKategoriUrunHam[] = [
     ],
     not: 'Sabit sahalarda uzun süreli çalışma',
   },
+  // ZOOMLION — Genel Vinç Kataloğu (2024)
+  {
+    id: 'mobil://13',
+    marka: 'Zoomlion',
+    model: 'ZRT400V452',
+    mensei: 'Çin',
+    tip: 'Arazi Tipi',
+    specs: [
+      { etiket: 'Maks. Kapasite', deger: '40 ton' },
+      { etiket: 'Maks. Moment', deger: '1305 kN.m' },
+      { etiket: 'Bom Uzunluğu', deger: '33 m' },
+    ],
+    not: '2,69 m araç genişliği ve çoklu direksiyon moduyla dar arazilere uygun',
+    ozelGorsel: zlZrt400,
+  },
+  {
+    id: 'mobil://14',
+    marka: 'Zoomlion',
+    model: 'ZRT600V552.1',
+    mensei: 'Çin',
+    tip: 'Arazi Tipi',
+    specs: [
+      { etiket: 'Maks. Kapasite', deger: '60 ton' },
+      { etiket: 'Maks. Moment', deger: '2337 kN.m' },
+      { etiket: 'Bom Uzunluğu', deger: '45 m' },
+    ],
+    not: 'Tek kademeli H tipi destek ayaklar (7,5 x 7,4 m), Euro V emisyon uyumlu',
+    ozelGorsel: zlZrt600,
+  },
+  {
+    id: 'mobil://15',
+    marka: 'Zoomlion',
+    model: 'ZRT850V552.1',
+    mensei: 'Çin',
+    tip: 'Arazi Tipi',
+    specs: [
+      { etiket: 'Maks. Kapasite', deger: '85 ton' },
+      { etiket: 'Maks. Moment', deger: '2824 kN.m' },
+      { etiket: 'Bom Uzunluğu', deger: '47 m' },
+    ],
+    not: 'Dört tekerlekten çekiş ve çok modlu direksiyonla üstün arazi performansı',
+    ozelGorsel: zlZrt850,
+  },
+  {
+    id: 'mobil://16',
+    marka: 'Zoomlion',
+    model: 'ZRT1100V552',
+    mensei: 'Çin',
+    tip: 'Arazi Tipi',
+    specs: [
+      { etiket: 'Maks. Kapasite', deger: '110 ton' },
+      { etiket: 'Maks. Moment', deger: '3332 kN.m' },
+      { etiket: 'Bom Uzunluğu', deger: '49 m' },
+    ],
+    not: '8 x 8 m süper geniş destek ayak açıklığıyla yüksek stabilite',
+    ozelGorsel: zlZrt1100,
+  },
+  {
+    id: 'mobil://17',
+    marka: 'Zoomlion',
+    model: 'ZRT1300V552',
+    mensei: 'Çin',
+    tip: 'Arazi Tipi',
+    specs: [
+      { etiket: 'Maks. Kapasite', deger: '130 ton' },
+      { etiket: 'Maks. Moment', deger: '3760 kN.m' },
+      { etiket: 'Bom Uzunluğu', deger: '50 m' },
+    ],
+    not: 'Sınıfının en güçlü U-kesitli ana bomu ve yeni nesil veri paneli',
+    ozelGorsel: zlZrt1300,
+  },
+  {
+    id: 'mobil://18',
+    marka: 'Zoomlion',
+    model: 'ZCT600V552',
+    mensei: 'Çin',
+    tip: 'Paletli',
+    specs: [
+      { etiket: 'Sınıf', deger: '60 ton sınıfı' },
+      { etiket: 'Bom Uzunluğu', deger: '46 m' },
+      { etiket: 'Jib Uzunluğu', deger: '16 m' },
+    ],
+    not: 'Teleskopik bomlu paletli; 3,3 m taşıma genişliğiyle sökümsüz nakliye',
+    ozelGorsel: zlZct600,
+  },
+  {
+    id: 'mobil://19',
+    marka: 'Zoomlion',
+    model: 'ZCT1000V552.1',
+    mensei: 'Çin',
+    tip: 'Paletli',
+    specs: [
+      { etiket: 'Sınıf', deger: '100 ton sınıfı' },
+      { etiket: 'Bom Uzunluğu', deger: '47 m' },
+      { etiket: 'Jib Uzunluğu', deger: '14,2 m' },
+    ],
+    not: 'Teleskopik bomlu paletli; %45 tırmanma yeteneği, 3087 kN.m moment',
+    ozelGorsel: zlZct1000,
+  },
+  {
+    id: 'mobil://20',
+    marka: 'Zoomlion',
+    model: 'ZCT1500V653',
+    mensei: 'Çin',
+    tip: 'Paletli',
+    specs: [
+      { etiket: 'Sınıf', deger: '150 ton sınıfı' },
+      { etiket: 'Bom Uzunluğu', deger: '65 m' },
+      { etiket: 'Jib Uzunluğu', deger: '17,5 m' },
+    ],
+    not: 'Teleskopik bomlu paletli; rüzgar santrali montajının ideal yardımcı vinci',
+    ozelGorsel: zlZct1500,
+  },
+  {
+    id: 'mobil://21',
+    marka: 'Zoomlion',
+    model: 'ZCT3000V853',
+    mensei: 'Çin',
+    tip: 'Paletli',
+    specs: [
+      { etiket: 'Sınıf', deger: '300 ton sınıfı' },
+      { etiket: 'Bom Uzunluğu', deger: '90 m' },
+      { etiket: 'Jib Uzunluğu', deger: '20 / 28 / 37,5 m (ops.)' },
+    ],
+    not: 'Teleskopik bomlu paletli; kendi başına sökülüp monte edilebilir',
+    ozelGorsel: zlZct3000,
+  },
+  {
+    id: 'mobil://22',
+    marka: 'Zoomlion',
+    model: 'ZCC850V-1E5',
+    mensei: 'Çin',
+    tip: 'Paletli',
+    specs: [
+      { etiket: 'Sınıf', deger: '85 ton sınıfı' },
+      { etiket: 'Bom Uzunluğu', deger: '13 - 61 m' },
+      { etiket: 'Jib Uzunluğu', deger: '7 - 19 m' },
+    ],
+    not: 'Kafes bomlu paletli; uygun maliyet ve yüksek verimlilik',
+    ozelGorsel: zlZcc850,
+  },
+  {
+    id: 'mobil://23',
+    marka: 'Zoomlion',
+    model: 'ZCC1000V-1E5',
+    mensei: 'Çin',
+    tip: 'Paletli',
+    specs: [
+      { etiket: 'Sınıf', deger: '100 ton sınıfı' },
+      { etiket: 'Bom Uzunluğu', deger: '13 - 61 m' },
+      { etiket: 'Jib Uzunluğu', deger: '7 - 19 m' },
+    ],
+    not: 'Kafes bomlu paletli; 10,4 inç ekranlı yeni nesil operatör kabini',
+    ozelGorsel: zlZcc1000,
+  },
+  {
+    id: 'mobil://24',
+    marka: 'Zoomlion',
+    model: 'ZCC1500V-1E5',
+    mensei: 'Çin',
+    tip: 'Paletli',
+    specs: [
+      { etiket: 'Sınıf', deger: '150 ton sınıfı' },
+      { etiket: 'Bom Uzunluğu', deger: '16 - 76 m' },
+      { etiket: 'Jib Uzunluğu', deger: '13 - 31 m' },
+    ],
+    not: 'Kafes bomlu paletli; güçlü üretkenlik ve yüksek yatırım getirisi',
+    ozelGorsel: zlZcc1500,
+  },
+  {
+    id: 'mobil://25',
+    marka: 'Zoomlion',
+    model: 'ZCC2200VE5',
+    mensei: 'Çin',
+    tip: 'Paletli',
+    specs: [
+      { etiket: 'Sınıf', deger: '220 ton sınıfı' },
+      { etiket: 'Bom Uzunluğu', deger: '16 - 85 m' },
+      { etiket: 'Jib Uzunluğu', deger: '13 - 31 m' },
+    ],
+    not: 'Kafes bomlu paletli; 7 m altı dönüş yarıçapıyla şehir inşaatının kaldırma ustası',
+    ozelGorsel: zlZcc2200,
+  },
+  {
+    id: 'mobil://26',
+    marka: 'Zoomlion',
+    model: 'ZCC3500V-2E5',
+    mensei: 'Çin',
+    tip: 'Paletli',
+    specs: [
+      { etiket: 'Sınıf', deger: '350 ton sınıfı' },
+      { etiket: 'Bom Uzunluğu', deger: '24 - 84 m' },
+      { etiket: 'Kapalı Bom', deger: '24 - 60 m' },
+    ],
+    not: 'Kafes bomlu paletli; köprü, metro ve çelik yapı inşaatları için',
+    ozelGorsel: zlZcc3500,
+  },
+  {
+    id: 'mobil://27',
+    marka: 'Zoomlion',
+    model: 'ZCC4000VE5',
+    mensei: 'Çin',
+    tip: 'Paletli',
+    specs: [
+      { etiket: 'Sınıf', deger: '400 ton sınıfı' },
+      { etiket: 'Ağır Bom', deger: '24-84 m (superlift: 36-96 m)' },
+      { etiket: 'Hafif Bom', deger: '72-108 m (superlift: 72-126 m)' },
+    ],
+    not: 'Kafes bomlu paletli; 84 m bomda 11 m yarıçapta 157 ton kapasite',
+    ozelGorsel: zlZcc4000,
+  },
+  {
+    id: 'mobil://28',
+    marka: 'Zoomlion',
+    model: 'ZCC7200E5',
+    mensei: 'Çin',
+    tip: 'Paletli',
+    specs: [
+      { etiket: 'Sınıf', deger: '600 ton sınıfı' },
+      { etiket: 'Ağır Bom', deger: '24-84 / 36-120 m' },
+      { etiket: 'Rüzgar Konf.', deger: '114+8 m / 147+8 m' },
+    ],
+    not: 'Kafes bomlu paletli; rüzgar enerjisi ve süper kaldırma çalışma modu',
+    ozelGorsel: zlZcc7200,
+  },
+  {
+    id: 'mobil://29',
+    marka: 'Zoomlion',
+    model: 'ZCC9800WE5',
+    mensei: 'Çin',
+    tip: 'Paletli',
+    specs: [
+      { etiket: 'Maks. Moment', deger: '107.800 kN.m' },
+      { etiket: 'Ağır Bom', deger: '39 - 141 m' },
+      { etiket: 'Rüzgar Konf.', deger: '171+7 m' },
+    ],
+    not: 'Kafes bomlu paletli; 2,3-3 MW rüzgar türbini kaldırmanın kralı',
+    ozelGorsel: zlZcc9800,
+  },
+  {
+    id: 'mobil://30',
+    marka: 'Zoomlion',
+    model: 'ZAT1200V753E',
+    mensei: 'Çin',
+    tip: 'Tüm Arazi',
+    specs: [
+      { etiket: 'Maks. Kapasite', deger: '120 ton' },
+      { etiket: 'Maks. Moment', deger: '3140 kN.m' },
+      { etiket: 'Bom Uzunluğu', deger: '12,5 - 66 m' },
+    ],
+    not: 'Kompakt 4 dingilli AT; jib ile 94 m kaldırma yüksekliği, Euro V motor',
+    ozelGorsel: zlZat1200,
+  },
+  {
+    id: 'mobil://31',
+    marka: 'Zoomlion',
+    model: 'ZAT1600V853E',
+    mensei: 'Çin',
+    tip: 'Tüm Arazi',
+    specs: [
+      { etiket: 'Maks. Kapasite', deger: '160 ton' },
+      { etiket: 'Maks. Moment', deger: '5008 kN.m' },
+      { etiket: 'Bom Uzunluğu', deger: '14,1 - 85 m' },
+    ],
+    not: 'Maliyet-etkin 5 dingilli AT; jib ile 113 m kaldırma yüksekliği',
+    ozelGorsel: zlZat1600,
+  },
 ]
 
 // HİYAP VİNÇ ------------------------------------------------------------------
+
+// MİNİ VİNÇ (ÖRÜMCEK VİNÇ) -----------------------------------------------------
+
+const miniVincUrunleri: TKategoriUrunHam[] = [
+  // JEKKO — SPX1280 Teknik Döküman (REV3.0, 2025, EN 13000:2014)
+  {
+    id: 'mini://1',
+    marka: 'Jekko',
+    model: 'SPX1280 CDH-3B',
+    mensei: 'İtalya',
+    tip: 'Mini Paletli (Örümcek)',
+    specs: [
+      { etiket: 'Maks. Kapasite', deger: '8.000 kg' },
+      { etiket: 'Bom Uzunluğu', deger: '4,9 - 17,7 m' },
+      { etiket: 'Güç', deger: 'Dizel 18,5 kW (25 HP)' },
+    ],
+    not: '1,45 m kapalı genişlik ve 2,05 m yükseklikle kapılardan geçip 8 ton kaldırır; 360° dönüş',
+    ozelGorsel: jkCdh3b,
+  },
+  {
+    id: 'mini://2',
+    marka: 'Jekko',
+    model: 'SPX1280 CL-3',
+    mensei: 'İtalya',
+    tip: 'Mini Paletli (Örümcek)',
+    specs: [
+      { etiket: 'Maks. Kapasite', deger: '8.000 kg' },
+      { etiket: 'Bom Uzunluğu', deger: '4,9 - 17,7 m' },
+      { etiket: 'Güç', deger: 'Lityum 96V 400Ah, 20 kW' },
+    ],
+    not: 'Tam elektrikli, sıfır emisyon; iç mekan ve kapalı alan operasyonlarının ideali',
+    ozelGorsel: jkCl3,
+  },
+  {
+    id: 'mini://3',
+    marka: 'Jekko',
+    model: 'SPX1280 + JIB1502.3HX',
+    mensei: 'İtalya',
+    tip: 'Jib Konfigürasyonu',
+    specs: [
+      { etiket: 'Maks. Kanca Yüksekliği', deger: '26,7 m' },
+      { etiket: 'Maks. Yarıçap', deger: '20 m' },
+      { etiket: 'Jib Kapasitesi', deger: '1.500 kg' },
+    ],
+    not: 'Hidrolik eklemli jib (-15°/+60°); cam cephe ve çatı üstü negatif açılı montajlar için',
+    ozelGorsel: jkYan,
+  },
+  {
+    id: 'mini://4',
+    marka: 'Jekko',
+    model: 'SPX1280 + JIB500GR',
+    mensei: 'İtalya',
+    tip: 'Jib Konfigürasyonu',
+    specs: [
+      { etiket: 'Maks. Kanca Yüksekliği', deger: '21,2 m' },
+      { etiket: 'Maks. Yarıçap', deger: '18,1 m' },
+      { etiket: 'Manipülatör Kapasitesi', deger: '500 kg' },
+    ],
+    not: 'Cam ve boru tutucu (grabber) manipülatörlü konfigürasyon; 360° döner kafa ile hassas cam montajı',
+    ozelGorsel: jkYan,
+  },
+]
 
 const hiyapVincUrunleri: TKategoriUrunHam[] = [
   {
@@ -716,6 +1187,13 @@ const listeler: Record<string, TKategoriUrunListesi> = {
     aciklama: 'Zincirli ve halatlı elektrikli vinç modellerini marka ve tipe göre filtreleyin.',
     dipnot: DIPNOT,
     urunler: zenginlestir(elektrikliVincUrunleri),
+  },
+  'mini-vinc': {
+    handle: 'mini-vinc',
+    baslik: 'Mini Vinç Modelleri',
+    aciklama: 'Dar alanlara giren paletli mini örümcek vinç modellerini ve jib konfigürasyonlarını filtreleyin.',
+    dipnot: DIPNOT,
+    urunler: zenginlestir(miniVincUrunleri),
   },
   'mobil-vinc': {
     handle: 'mobil-vinc',

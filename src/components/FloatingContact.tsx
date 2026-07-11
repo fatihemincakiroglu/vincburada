@@ -1,5 +1,5 @@
 const PHONE_DISPLAY = '0532 303 90 89'
-const PHONE_TEL = '05323039089'
+const PHONE_TEL = '+905323039089'
 const WHATSAPP = 'https://wa.me/905323039089'
 
 const FloatingContact = () => {

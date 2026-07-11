@@ -1,17 +1,11 @@
-import SectionSubscribe2 from '@/components/SectionSubscribe2'
-import ButtonPrimary from '@/shared/ButtonPrimary'
-import { Divider } from '@/shared/divider'
-import { Field, Label } from '@/shared/fieldset'
-import Input from '@/shared/Input'
-import SocialsList from '@/shared/SocialsList'
-import Textarea from '@/shared/Textarea'
 import { Metadata } from 'next'
+import ContactForm from './ContactForm'
 
 const info: { title: string; description: string; href?: string }[] = [
   {
     title: '📞 TELEFON',
     description: '0532 303 90 89',
-    href: 'tel:05323039089',
+    href: 'tel:+905323039089',
   },
   {
     title: '🌐 WEB',
@@ -61,39 +55,41 @@ const PageContact = () => {
                 </div>
               ))}
               <div>
-                <h3 className="text-sm font-semibold tracking-wider uppercase dark:text-neutral-200">🌏 SOSYAL MEDYA</h3>
-                <SocialsList className="mt-2" />
+                <h3 className="text-sm font-semibold tracking-wider uppercase dark:text-neutral-200">💬 WHATSAPP</h3>
+                <a
+                  href="https://wa.me/905323039089"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-2 block text-neutral-500 hover:text-neutral-800 dark:text-neutral-400 dark:hover:text-neutral-200"
+                >
+                  0532 303 90 89
+                </a>
               </div>
             </div>
           </div>
-          <form className="grid grid-cols-1 gap-6" action="#" method="post">
-            <Field className="block">
-              <Label>Ad Soyad</Label>
-              <Input placeholder="Adınız Soyadınız" type="text" className="mt-1" />
-            </Field>
-            <Field className="block">
-              <Label>E-posta adresi</Label>
-              <Input type="email" placeholder="ornek@eposta.com" className="mt-1" />
-            </Field>
-            <Field className="block">
-              <Label>Telefon</Label>
-              <Input type="tel" placeholder="05xx xxx xx xx" className="mt-1" />
-            </Field>
-            <Field className="block">
-              <Label>Mesajınız</Label>
-              <Textarea className="mt-1" rows={6} placeholder="Kiralamak istediğiniz ekipmanı ve süresini belirtebilirsiniz." />
-            </Field>
-            <div>
-              <ButtonPrimary type="submit">Mesaj Gönder</ButtonPrimary>
-            </div>
-          </form>
+          <ContactForm />
         </div>
-      </div>
 
-      {/* OTHER SECTIONS */}
-      <div className="container mt-20 lg:mt-32">
-        <Divider />
-        <SectionSubscribe2 className="mt-20 lg:mt-32" />
+        {/* KONUM */}
+        <div className="mt-20 sm:mt-24">
+          <h2 className="text-2xl font-semibold sm:text-3xl">Konumumuz</h2>
+          <p className="mt-3 max-w-xl text-neutral-500 dark:text-neutral-400">
+            İkitelli OSB, Başakşehir merkezli konumumuzla İstanbul&apos;un her noktasına hızla ulaşıyoruz.
+          </p>
+          <div className="mt-8 overflow-hidden rounded-3xl border border-neutral-200 shadow-sm dark:border-neutral-700">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3007.933587747738!2d28.803315476427326!3d41.070444315593925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cabb2bea89e70b%3A0x57c3faea048af5db!2sExpress%20Vin%C3%A7%20Hizmetleri%20ve%20Nak.%20Ltd.%20%C5%9Eti!5e0!3m2!1str!2str!4v1783721094996!5m2!1str!2str"
+              width="100%"
+              height="450"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="strict-origin-when-cross-origin"
+              title="Vinç Burada konumu - Google Haritalar"
+              className="block"
+            />
+          </div>
+        </div>
       </div>
     </div>
   )

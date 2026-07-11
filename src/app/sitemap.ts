@@ -1,3 +1,4 @@
+import { getBlogPosts } from '@/data/data'
 import { getTumKategoriListeleri } from '@/data/kategori-urunleri'
 import { getMarkalar } from '@/data/markalar'
 import { getSepetliVincListings } from '@/data/sepetli-vinc-listings'
@@ -14,6 +15,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/elektrikli-vinc',
     '/mobil-vinc',
     '/hiyap-vinc',
+    '/mini-vinc',
     '/markalar',
     '/hakkimizda',
     '/referanslar',
@@ -33,7 +35,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const markalar = await getMarkalar()
   const markaRoutes = markalar.map((m) => `/markalar/${m.handle}`)
 
-  return [...routes, ...sepetliRoutes, ...kategoriRoutes, ...markaRoutes].map((route) => ({
+  const blogPosts = await getBlogPosts()
+  const blogRoutes = blogPosts.map((p) => `/blog/${p.handle}`)
+
+  return [...routes, ...sepetliRoutes, ...kategoriRoutes, ...markaRoutes, ...blogRoutes].map((route) => ({
     url: `${SITE_URL}${route}`,
     lastModified: new Date(),
     changeFrequency: route === '' ? ('weekly' as const) : ('monthly' as const),
