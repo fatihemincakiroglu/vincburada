@@ -32,8 +32,6 @@ import zlZat1600 from '@/images/vinc/zoomlion/zat1600v853e.webp'
 import zlWaKapak from '@/images/vinc/zoomlion/wa-kapak.webp'
 import zlWaSaha from '@/images/vinc/zoomlion/wa-saha.webp'
 import zlWaYakin from '@/images/vinc/zoomlion/wa-yakin.webp'
-import jkCdh3b from '@/images/vinc/jekko/spx1280-cdh3b.webp'
-import jkCl3 from '@/images/vinc/jekko/spx1280-cl3.webp'
 import jkYan from '@/images/vinc/jekko/spx1280-yan.webp'
 import { StaticImageData } from 'next/image'
 
@@ -965,61 +963,25 @@ const mobilVincUrunleri: TKategoriUrunHam[] = [
 // MİNİ VİNÇ (ÖRÜMCEK VİNÇ) -----------------------------------------------------
 
 const miniVincUrunleri: TKategoriUrunHam[] = [
-  // JEKKO — SPX1280 Teknik Döküman (REV3.0, 2025, EN 13000:2014)
+  // JEKKO — SPX1280 Teknik Döküman (REV3.0, 14.03.2025, EN 13000:2014)
   {
     id: 'mini://1',
     marka: 'Jekko',
-    model: 'SPX1280 CDH-3B',
+    model: 'SPX1280',
     mensei: 'İtalya',
-    tip: 'Mini Paletli (Örümcek)',
+    tip: 'Mini Paletli (Örümcek) Vinç',
     specs: [
       { etiket: 'Maks. Kapasite', deger: '8.000 kg' },
       { etiket: 'Bom Uzunluğu', deger: '4,9 - 17,7 m' },
-      { etiket: 'Güç', deger: 'Dizel 18,5 kW (25 HP)' },
+      { etiket: 'Maks. Kanca Yüksekliği', deger: '26,7 m (jib ile)' },
+      { etiket: 'Maks. Yarıçap', deger: '20 m (jib ile)' },
+      { etiket: 'Güç Seçeneği', deger: 'Dizel 18,5 kW / Lityum 96V (CL-3)' },
+      { etiket: 'Kapalı Genişlik', deger: '1,45 m' },
+      { etiket: 'Yükseklik', deger: '2,05 m' },
+      { etiket: 'Dönüş', deger: '360°' },
+      { etiket: 'Vinç Ağırlığı', deger: '7.100 - 7.900 kg' },
     ],
-    not: '1,45 m kapalı genişlik ve 2,05 m yükseklikle kapılardan geçip 8 ton kaldırır; 360° dönüş',
-    ozelGorsel: jkCdh3b,
-  },
-  {
-    id: 'mini://2',
-    marka: 'Jekko',
-    model: 'SPX1280 CL-3',
-    mensei: 'İtalya',
-    tip: 'Mini Paletli (Örümcek)',
-    specs: [
-      { etiket: 'Maks. Kapasite', deger: '8.000 kg' },
-      { etiket: 'Bom Uzunluğu', deger: '4,9 - 17,7 m' },
-      { etiket: 'Güç', deger: 'Lityum 96V 400Ah, 20 kW' },
-    ],
-    not: 'Tam elektrikli, sıfır emisyon; iç mekan ve kapalı alan operasyonlarının ideali',
-    ozelGorsel: jkCl3,
-  },
-  {
-    id: 'mini://3',
-    marka: 'Jekko',
-    model: 'SPX1280 + JIB1502.3HX',
-    mensei: 'İtalya',
-    tip: 'Jib Konfigürasyonu',
-    specs: [
-      { etiket: 'Maks. Kanca Yüksekliği', deger: '26,7 m' },
-      { etiket: 'Maks. Yarıçap', deger: '20 m' },
-      { etiket: 'Jib Kapasitesi', deger: '1.500 kg' },
-    ],
-    not: 'Hidrolik eklemli jib (-15°/+60°); cam cephe ve çatı üstü negatif açılı montajlar için',
-    ozelGorsel: jkYan,
-  },
-  {
-    id: 'mini://4',
-    marka: 'Jekko',
-    model: 'SPX1280 + JIB500GR',
-    mensei: 'İtalya',
-    tip: 'Jib Konfigürasyonu',
-    specs: [
-      { etiket: 'Maks. Kanca Yüksekliği', deger: '21,2 m' },
-      { etiket: 'Maks. Yarıçap', deger: '18,1 m' },
-      { etiket: 'Manipülatör Kapasitesi', deger: '500 kg' },
-    ],
-    not: 'Cam ve boru tutucu (grabber) manipülatörlü konfigürasyon; 360° döner kafa ile hassas cam montajı',
+    not: '1,45 m kapalı genişlik ve 2,05 m yükseklikle kapılardan geçen, 8 ton kaldıran çok yönlü mini paletli vinç. Dizel (CDH-3B) ve tam elektrikli sıfır-emisyon (CL-3) motorizasyon seçenekleriyle sunulur; JIB1502.3HX, JIB3502GX, JIB1502.1FL ve JIB500GR jib konfigürasyonlarıyla 26,7 m kanca yüksekliğine ve grabber ile hassas cam/boru montajına ulaşır. EN 13000:2014 standardına göre hesaplanmış yük tabloları.',
     ozelGorsel: jkYan,
   },
 ]
