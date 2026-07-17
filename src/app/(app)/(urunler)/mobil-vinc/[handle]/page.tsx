@@ -19,11 +19,10 @@ export async function generateMetadata({ params }: { params: Promise<{ handle: s
     return { title: 'Model bulunamadı' }
   }
 
+  const urunAdi = `${urun.marka} ${urun.model}`
   return {
-    title: `${urun.marka} ${urun.model} Kiralama | ${KATEGORI_ADI}`,
-    description: `${urun.marka} ${urun.model} ${KATEGORI_ADI.toLocaleLowerCase('tr')} kiralama: ${urun.specs
-      .map((s) => `${s.etiket} ${s.deger}`)
-      .join(', ')}. ${urun.not}.`,
+    title: { absolute: `${urunAdi} - Vinç Burada` },
+    description: `${urunAdi} modeli ve daha fazla vinç çeşitleri için hemen tıklayın. 0532 303 90 89 numarasını arayarak detaylı bilgi alın.`,
   }
 }
 

@@ -24,8 +24,8 @@ export async function generateMetadata({ params }: { params: Promise<{ handle: s
   }
 
   return {
-    title: `${urun.title} Kiralama`,
-    description: urun.description,
+    title: { absolute: `${urun.title} - Vinç Burada` },
+    description: `${urun.title} modeli ve daha fazla vinç çeşitleri için hemen tıklayın. 0532 303 90 89 numarasını arayarak detaylı bilgi alın.`,
   }
 }
 
