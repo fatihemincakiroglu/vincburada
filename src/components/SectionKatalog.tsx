@@ -6,9 +6,9 @@ interface Props {
   className?: string
 }
 
-// PDF hazır olduğunda: dosyayı /public/vincburada-katalog.pdf olarak ekleyin ve
-// aşağıdaki KATALOG_URL değerini '/vincburada-katalog.pdf' yapın.
-const KATALOG_URL = 'https://wa.me/905323039089?text=' + encodeURIComponent('Merhaba, dijital kataloğunuzu almak istiyorum.')
+// Katalog PDF'i /public/vincburada-katalog-2026.pdf konumundadır ve
+// site içindeki /katalog sayfasında gömülü olarak görüntülenir.
+const KATALOG_URL = '/katalog'
 
 const SectionKatalog: FC<Props> = ({ className = '' }) => {
   return (
@@ -35,15 +35,13 @@ const SectionKatalog: FC<Props> = ({ className = '' }) => {
             <h2 className="mt-4 text-3xl font-semibold text-white sm:text-4xl">Dijital Katalog</h2>
             <p className="mt-4 text-base/7 text-neutral-300">
               Filomuzdaki tüm vinç, manlift ve forklift modellerinin kapasite ve teknik özelliklerini tek dosyada
-              inceleyin. Kataloğumuzu hemen talep edin, dakikalar içinde gönderelim.
+              inceleyin. Kataloğu doğrudan sitede görüntüleyin veya PDF olarak indirin.
             </p>
             <a
               href={KATALOG_URL}
-              target="_blank"
-              rel="noopener noreferrer"
               className="mt-8 inline-flex items-center gap-2.5 rounded-full bg-orange-600 px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-orange-600/25 transition hover:bg-orange-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-500"
             >
-              Kataloğu Talep Et
+              Kataloğu İncele
               <svg viewBox="0 0 20 20" fill="currentColor" className="size-4" aria-hidden="true">
                 <path d="M3 10a.75.75 0 0 1 .75-.75h10.6L10.7 5.8a.75.75 0 1 1 1.1-1.02l4.9 4.7a.75.75 0 0 1 0 1.04l-4.9 4.7a.75.75 0 1 1-1.1-1.02l3.65-3.45H3.75A.75.75 0 0 1 3 10Z" />
               </svg>

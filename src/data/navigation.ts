@@ -46,6 +46,11 @@ export async function getNavigation(): Promise<TNavigationItem[]> {
       name: 'Referanslar',
     },
     {
+      id: '6',
+      href: '/katalog',
+      name: 'Katalog',
+    },
+    {
       id: '5',
       href: '/blog',
       name: 'Blog',
