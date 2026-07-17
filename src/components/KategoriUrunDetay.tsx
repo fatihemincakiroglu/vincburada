@@ -3,6 +3,7 @@ import { markaSlug } from '@/data/markalar'
 import { Badge } from '@/shared/Badge'
 import { DescriptionDetails, DescriptionList, DescriptionTerm } from '@/shared/description-list'
 import TeklifKutusu from '@/components/TeklifKutusu'
+import UrunHero from '@/components/UrunHero'
 import { Divider } from '@/shared/divider'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -30,30 +31,16 @@ const KategoriUrunDetay = async ({
 
   return (
     <main className="container pt-8 pb-24 lg:pt-12 lg:pb-28">
-      {/* GALERİ */}
-      <div className="grid grid-cols-1 gap-2 overflow-hidden rounded-3xl sm:grid-cols-4 sm:grid-rows-2">
-        <div className="relative col-span-2 row-span-2 aspect-4/3 sm:aspect-auto">
-          <Image
-            src={urun.featuredImage}
-            alt={`${urun.marka} ${urun.model}`}
-            fill
-            priority
-            sizes="(max-width: 640px) 100vw, 50vw"
-            className="object-cover"
-          />
-        </div>
-        {urun.galleryImgs.slice(1, 4).map((img, i) => (
-          <div key={i} className={`relative hidden aspect-4/3 sm:block ${i === 2 ? 'col-span-2' : ''}`}>
-            <Image
-              src={img}
-              alt={`${urun.marka} ${urun.model} fotoğraf ${i + 2}`}
-              fill
-              sizes="25vw"
-              className="object-cover"
-            />
-          </div>
-        ))}
-      </div>
+      {/* ÜRÜN HERO: tek görsel + teknik panel */}
+      <UrunHero
+        marka={urun.marka}
+        model={urun.model}
+        etiket={urun.tip}
+        image={urun.featuredImage}
+        imageAlt={`${urun.marka} ${urun.model}`}
+        specs={urun.specs}
+        whatsappUrl={`https://wa.me/905323039089?text=${whatsappMesaj}`}
+      />
 
       <div className="mt-10 flex flex-col gap-10 lg:mt-14 lg:flex-row lg:gap-14">
         {/* SOL: içerik */}
