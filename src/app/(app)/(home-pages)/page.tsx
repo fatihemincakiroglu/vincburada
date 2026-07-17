@@ -10,7 +10,7 @@ import SectionBlogVitrini from '@/components/SectionBlogVitrini'
 import SectionSss from '@/components/SectionSss'
 import SectionTeklifCta from '@/components/SectionTeklifCta'
 import { getBlogPosts } from '@/data/data'
-import SectionSliderNewCategories from '@/components/SectionSliderNewCategories'
+import SectionVincCesitleri from '@/components/SectionVincCesitleri'
 import { getVincCategories } from '@/data/categories'
 import heroImage from '@/images/vinc/hero-home.webp'
 import ButtonPrimary from '@/shared/ButtonPrimary'
@@ -54,7 +54,7 @@ async function Page() {
           <HeadingWithSub subheading="İhtiyacınıza uygun kiralık vinç çeşitlerini keşfedin.">
             Vinç Çeşitlerimiz
           </HeadingWithSub>
-          <SectionSliderNewCategories categoryCardType="card3" categories={vincCategories} />
+          <SectionVincCesitleri categories={vincCategories} />
         </div>
 
         <SectionUrunVitrini />
