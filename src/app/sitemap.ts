@@ -18,6 +18,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/mini-vinc',
     '/markalar',
     '/hakkimizda',
+    '/katalog',
     '/referanslar',
     '/blog',
     '/sss',
