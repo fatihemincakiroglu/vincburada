@@ -5,11 +5,6 @@ export async function getNavigation(): Promise<TNavigationItem[]> {
 
   return [
     {
-      id: '1',
-      href: '/',
-      name: 'Ana Sayfa',
-    },
-    {
       id: '2',
       href: '/vinc',
       name: 'Vinç Çeşitleri',
