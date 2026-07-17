@@ -5,26 +5,21 @@ import { CheckIcon, ChevronDownIcon } from '@heroicons/react/24/solid'
 import clsx from 'clsx'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
+import {
+  TOption,
+  isTuruOptions,
+  isTuruHedef,
+  isTuruIkinciAlan,
+  tonajOptions,
+  yukseklikOptions,
+  vincTipiOptions,
+  yukseklikToParams,
+} from './vincAramaSecenekleri'
 
 interface Props {
   className?: string
   formStyle: 'default' | 'small'
 }
-
-type TOption = { value: string; label: string }
-
-const cargoOptions: TOption[] = [
-  { value: '', label: 'Lütfen seçiniz' },
-  { value: 'insan', label: 'İnsan' },
-  { value: 'malzeme', label: 'Malzeme' },
-]
-
-const powerOptions: TOption[] = [
-  { value: '', label: 'Enerji türü seçiniz' },
-  { value: 'akulu', label: 'Akülü' },
-  { value: 'dizel', label: 'Dizel' },
-  { value: 'cift_enerjili', label: 'Çift Enerjili' },
-]
 
 const labelClass = 'block text-xs font-semibold tracking-wide text-neutral-400 uppercase mb-1'
 
@@ -80,85 +75,151 @@ const PremiumSelect = ({
   )
 }
 
+type TMode = 'is' | 'tip'
+
 export const ManliftSearchForm = ({ className, formStyle = 'default' }: Props) => {
   const router = useRouter()
+  const [mode, setMode] = useState<TMode>('is')
 
-  const [cargo, setCargo] = useState<TOption>(cargoOptions[0])
-  const [power, setPower] = useState<TOption>(powerOptions[0])
-  const [heightMin, setHeightMin] = useState('')
-  const [heightMax, setHeightMax] = useState('')
+  // A) iş türü sekmesi
+  const [isTuru, setIsTuru] = useState<TOption>(isTuruOptions[0])
+  const [tonaj, setTonaj] = useState<TOption>(tonajOptions[0])
+  const [yukseklik, setYukseklik] = useState<TOption>(yukseklikOptions[0])
+
+  // B) vinç tipi sekmesi
+  const [vincTipi, setVincTipi] = useState<TOption>(vincTipiOptions[0])
+  const [kapasiteTon, setKapasiteTon] = useState('')
+  const [yukseklikM, setYukseklikM] = useState('')
+
+  const ikinciAlan = isTuruIkinciAlan[isTuru.value] ?? 'tonaj'
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-
     const params = new URLSearchParams()
-    if (cargo.value) params.set('cargo_type', cargo.value)
-    if (power.value) params.set('power_source', power.value)
-    if (heightMin) params.set('height_min', heightMin)
-    if (heightMax) params.set('height_max', heightMax)
 
-    router.push(`/sepetli-vinc?${params.toString()}#modeller`)
+    if (mode === 'is') {
+      const hedef = isTuruHedef[isTuru.value]
+      if (!hedef) return
+      if (hedef === '/sepetli-vinc') {
+        params.set('cargo_type', 'insan')
+        for (const [k, v] of Object.entries(yukseklikToParams(yukseklik.value))) params.set(k, v)
+      } else if (ikinciAlan === 'tonaj' && tonaj.value) {
+        params.set('kapasite', tonaj.value)
+      } else if (yukseklik.value) {
+        params.set('yukseklik', yukseklik.value)
+      }
+      const qs = params.toString()
+      router.push(`${hedef}${qs ? `?${qs}` : ''}#modeller`)
+      return
+    }
+
+    // mode === 'tip'
+    if (!vincTipi.value) return
+    if (vincTipi.value === '/sepetli-vinc') {
+      if (yukseklikM) params.set('height_min', yukseklikM)
+    } else {
+      if (kapasiteTon) params.set('kapasite', kapasiteTon)
+      if (yukseklikM) params.set('yukseklik', yukseklikM)
+    }
+    const qs = params.toString()
+    router.push(`${vincTipi.value}${qs ? `?${qs}` : ''}#modeller`)
   }
 
   const inputClass =
     'w-full border-0 bg-transparent p-0 text-base font-medium text-neutral-800 placeholder:text-neutral-400 focus:ring-0 focus:outline-hidden dark:text-neutral-100 dark:placeholder:text-neutral-500'
 
+  const sekmeClass = (aktif: boolean) =>
+    clsx(
+      'rounded-full px-4 py-1.5 text-xs font-semibold transition-colors',
+      aktif
+        ? 'bg-orange-500 text-white shadow'
+        : 'bg-white/80 text-neutral-600 hover:bg-white dark:bg-neutral-800/80 dark:text-neutral-300'
+    )
+
   return (
-    <div className={clsx('flex w-full flex-col gap-3 sm:flex-row sm:items-stretch', className)}>
-      <div className="flex shrink-0 items-center justify-center rounded-2xl bg-orange-500 px-6 py-4 text-center text-sm font-bold text-white shadow-lg sm:w-44">
-        ARADIĞIN VİNÇ BURADA
+    <div className={clsx('flex w-full flex-col gap-3', className)}>
+      {/* Sekmeler */}
+      <div className="flex gap-2">
+        <button type="button" className={sekmeClass(mode === 'is')} onClick={() => setMode('is')}>
+          İşe Göre Ara
+        </button>
+        <button type="button" className={sekmeClass(mode === 'tip')} onClick={() => setMode('tip')}>
+          Vinç Tipine Göre Ara
+        </button>
       </div>
 
-      <form
-        className={clsx(
-          'relative z-10 flex w-full flex-col divide-y divide-neutral-200 rounded-2xl bg-white shadow-xl sm:flex-row sm:divide-x sm:divide-y-0 dark:divide-neutral-700 dark:bg-neutral-800',
-          formStyle === 'small' && 'custom-shadow-1'
-        )}
-        onSubmit={handleSubmit}
-      >
-        <PremiumSelect label="Ne Taşıyacaksınız?" options={cargoOptions} value={cargo} onChange={setCargo} />
-
-        <PremiumSelect label="Güç Kaynağı" options={powerOptions} value={power} onChange={setPower} />
-
-        <div className="flex-1 px-6 py-4 transition-colors hover:bg-neutral-50 dark:hover:bg-neutral-700/40">
-          <label className={labelClass} htmlFor="height_min">
-            Yükseklik (Min)
-          </label>
-          <input
-            id="height_min"
-            type="number"
-            min={0}
-            placeholder="0"
-            value={heightMin}
-            onChange={(e) => setHeightMin(e.target.value)}
-            className={inputClass}
-          />
+      <div className="flex w-full flex-col gap-3 sm:flex-row sm:items-stretch">
+        <div className="flex shrink-0 items-center justify-center rounded-2xl bg-orange-500 px-6 py-4 text-center text-sm font-bold text-white shadow-lg sm:w-44">
+          ARADIĞIN VİNÇ BURADA
         </div>
 
-        <div className="flex-1 px-6 py-4 transition-colors hover:bg-neutral-50 dark:hover:bg-neutral-700/40">
-          <label className={labelClass} htmlFor="height_max">
-            Yükseklik (Max)
-          </label>
-          <input
-            id="height_max"
-            type="number"
-            min={0}
-            placeholder="0"
-            value={heightMax}
-            onChange={(e) => setHeightMax(e.target.value)}
-            className={inputClass}
-          />
-        </div>
+        <form
+          className={clsx(
+            'relative z-10 flex w-full flex-col divide-y divide-neutral-200 rounded-2xl bg-white shadow-xl sm:flex-row sm:divide-x sm:divide-y-0 dark:divide-neutral-700 dark:bg-neutral-800',
+            formStyle === 'small' && 'custom-shadow-1'
+          )}
+          onSubmit={handleSubmit}
+        >
+          {mode === 'is' ? (
+            <>
+              <PremiumSelect label="Ne Yapacaksınız?" options={isTuruOptions} value={isTuru} onChange={setIsTuru} />
+              {ikinciAlan === 'tonaj' ? (
+                <PremiumSelect label="Kaldırılacak Yük" options={tonajOptions} value={tonaj} onChange={setTonaj} />
+              ) : (
+                <PremiumSelect
+                  label="Çalışma Yüksekliği"
+                  options={yukseklikOptions}
+                  value={yukseklik}
+                  onChange={setYukseklik}
+                />
+              )}
+            </>
+          ) : (
+            <>
+              <PremiumSelect label="Vinç Tipi" options={vincTipiOptions} value={vincTipi} onChange={setVincTipi} />
 
-        <div className="flex items-center justify-center p-3 sm:pe-3 sm:ps-0">
-          <button
-            type="submit"
-            className="flex w-full items-center justify-center gap-2 rounded-xl bg-orange-500 px-6 py-4 font-bold text-white shadow-md transition-all hover:bg-orange-600 hover:shadow-lg active:scale-95 sm:w-auto sm:rounded-2xl"
-          >
-            BUL
-          </button>
-        </div>
-      </form>
+              <div className="flex-1 px-6 py-4 transition-colors hover:bg-neutral-50 dark:hover:bg-neutral-700/40">
+                <label className={labelClass} htmlFor="kapasite_ton">
+                  Kapasite (Ton)
+                </label>
+                <input
+                  id="kapasite_ton"
+                  type="number"
+                  min={0}
+                  placeholder="örn. 50"
+                  value={kapasiteTon}
+                  onChange={(e) => setKapasiteTon(e.target.value)}
+                  className={inputClass}
+                />
+              </div>
+
+              <div className="flex-1 px-6 py-4 transition-colors hover:bg-neutral-50 dark:hover:bg-neutral-700/40">
+                <label className={labelClass} htmlFor="yukseklik_m">
+                  Yükseklik (Metre)
+                </label>
+                <input
+                  id="yukseklik_m"
+                  type="number"
+                  min={0}
+                  placeholder="örn. 30"
+                  value={yukseklikM}
+                  onChange={(e) => setYukseklikM(e.target.value)}
+                  className={inputClass}
+                />
+              </div>
+            </>
+          )}
+
+          <div className="flex items-center justify-center p-3 sm:pe-3 sm:ps-0">
+            <button
+              type="submit"
+              className="flex w-full items-center justify-center gap-2 rounded-xl bg-orange-500 px-6 py-4 font-bold text-white shadow-md transition-all hover:bg-orange-600 hover:shadow-lg active:scale-95 sm:w-auto sm:rounded-2xl"
+            >
+              BUL
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   )
 }
