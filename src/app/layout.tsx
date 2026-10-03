@@ -29,6 +29,10 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  // Google Search Console sahiplik doğrulaması → <meta name="google-site-verification" ...>
+  verification: {
+    google: 'yuurDSjIYugWZ3J88qP4K1cdwVryNcTdGFXwLQVvJCw',
+  },
   alternates: {
     // Göreli canonical: her sayfada o sayfanın kendi URL'ine çözümlenir.
     canonical: './',
