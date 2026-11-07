@@ -217,7 +217,16 @@ export default async function Footer2() {
         </div>
 
         <div className="mt-16 flex flex-col gap-3 border-t border-white/10 pt-8 sm:mt-20 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-sm/6 text-neutral-500">&copy; Fatih Emin Çakıroğlu 2026 Tüm Hakları Saklıdır.</p>
+          <p className="text-sm/6 text-neutral-500">
+            <a
+              href="https://fatihemincakiroglu.com/geo-uzmani"
+              target="_blank"
+              rel="noopener"
+              className="text-neutral-400 hover:text-white"
+            >
+              GEO Uzmanı
+            </a>{' '}
+            &copy; Fatih Emin Çakıroğlu 2026 Tüm Hakları Saklıdır.</p>
           <p className="text-xs text-neutral-600">Vinç · Sepetli Vinç · Kule Vinç · Mobil Vinç · Hiyap Vinç · Mini Vinç</p>
         </div>
       </div>
